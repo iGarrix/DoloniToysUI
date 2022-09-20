@@ -1,0 +1,21 @@
+.simplemainbanner {
+    @apply w-full py-[30px] px-[50px] bg-banana-100 grid grid-cols-9 grid-rows-1 gap-[50px];
+
+    .firstside {
+        @apply col-span-6 flex flex-col justify-center pl-[20%] gap-[40px];
+
+        .title {
+            @apply text-[32px] leading-[40px] font-[700];
+        }
+        .desc {
+            @apply text-[20px] leading-[25px] font-[500] w-[70%];
+        }
+    }
+
+    .secondside {
+        @apply col-span-3 w-full;
+        .banner_3_img {
+            @apply w-full h-[390px] bg-cover object-cover rounded-[15px];
+        }
+    }
+}

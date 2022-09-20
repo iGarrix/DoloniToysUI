@@ -1,0 +1,11 @@
+.reccard {
+    @apply flex flex-col items-center justify-center rounded-[15px] py-[50px] px-[3%] gap-[50px] max-w-[320px] text-center;
+
+    .title {
+        @apply font-[600] leading-[35px] text-[30px] text-center;
+    }
+
+    .image {
+        @apply w-[130px] h-[130px]
+    }
+}

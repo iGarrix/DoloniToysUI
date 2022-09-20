@@ -1,0 +1,29 @@
+.carouselbanner1 {
+    @apply w-[full] h-[95vh] relative px-[4%];
+
+    .bannerimage {
+        @apply absolute top-0 left-0 w-full h-full object-cover bg-cover;
+    }
+
+    
+    .textbanner {
+        @apply bg-lightgreen-100 z-10 w-[40%] px-[78px] pt-[135px] pb-[5%] h-[80%] rounded-b-[50px]
+        text-center flex flex-col justify-end gap-[40px] relative;
+
+        .rocket {
+            @apply absolute top-[35%] right-[-10%] z-20;
+        }
+    }
+
+    .headerbanner {
+        @apply text-[50px] font-[700] leading-[60px];
+    }
+
+    .subheaderbanner {
+        @apply text-[30px] font-[400] leading-[40px];
+    }
+
+    .sublink {
+        @apply text-cherry-200 cursor-pointer;
+    }
+}

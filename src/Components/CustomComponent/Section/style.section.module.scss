@@ -1,0 +1,11 @@
+.section {
+    @apply w-full py-[80px] flex flex-col items-center justify-center bg-bluesky-100 gap-[80px];
+
+    .title {
+        @apply text-[30px] leading-[40px] font-[700];
+    }
+
+    .sect_cards {
+        @apply flex gap-[120px];
+    }
+}

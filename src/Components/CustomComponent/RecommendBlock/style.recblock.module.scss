@@ -1,0 +1,11 @@
+.recblock {
+    @apply bg-light py-[100px] px-2 w-full h-full flex flex-col gap-[60px] items-center justify-center;
+
+    .titleblock {
+        @apply text-[30px] leading-[40px] font-[700];
+    }
+
+    .cardblock {
+        @apply flex gap-[120px];
+    }
+}

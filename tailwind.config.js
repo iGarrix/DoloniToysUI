@@ -18,7 +18,29 @@ module.exports = {
 
       '2xl': { 'min': '1536px' },
     },
-    extend: {},
+    extend: {
+      colors: {
+        banana: {
+          100: "#FFCE56",
+        },
+        bluesky: {
+          100: "#9DC1E4",
+        },
+        cherry: {
+          100: "#F96E43",
+          200: "#CB2552"
+        },
+        lightgreen: {
+          100: "#AEEBAD"
+        },
+        dark: {
+          DEFAULT: "#262626",
+        },
+        light: {
+          DEFAULT: "#E5EFEF",       
+        }
+      }
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,12 @@
+.section_card {
+    @apply flex flex-col items-center relative bg-banana-100 px-[40px] pb-[40px]
+    rounded-[15px] gap-[80px] w-[320px] max-w-[320px];
+
+    .sect_image {
+        @apply rounded-full w-[210px] h-[210px] object-cover bg-cover translate-y-[-15%];
+    }
+
+    .title {
+        @apply text-[30px] leading-[40px] font-[700] text-center;
+    }
+}

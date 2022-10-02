@@ -47,8 +47,8 @@ function App() {
               <Route path='about' element={<AboutusView />} />
               <Route path='for-partners' element={<ForpartnersView />} />
               <Route path='contact-us' element={<ContactsView />} />
-              <Route path='for-admins' element={<ContactsView />} />
           </Route>
+          <Route path='for-admins' element={<ContactsView />} />
           <Route path='*' element={<Oops />} />
         </Route>
         <Route path='*' element={<>Oops</>} />

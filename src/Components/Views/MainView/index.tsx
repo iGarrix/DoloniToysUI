@@ -111,7 +111,6 @@ export const MainView: React.FC = () => {
             <Section />
             <MainBannerOne />
             <SimpleMainBanner />
-            <MainFooter />
         </section>
     )
 }

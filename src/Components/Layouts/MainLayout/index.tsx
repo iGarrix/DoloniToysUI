@@ -7,7 +7,7 @@ export const MainLayout: React.FC = () => {
         <div className="">
             <MainHeader />
             <Outlet/>
-            {/* <MainFooter /> */}
+            <MainFooter />
         </div>
     )
 }

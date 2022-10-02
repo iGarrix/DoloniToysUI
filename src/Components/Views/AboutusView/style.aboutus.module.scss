@@ -1,0 +1,274 @@
+.aboutusContainer {
+    @apply bg-light;
+
+    .imageContainer {
+        @apply flex justify-center;
+    }
+
+    .divider {
+        @apply bg-cherry-200 w-full py-[30px] relative;
+
+        .sub_divider {
+            @apply absolute bottom-0 left-0 w-full bg-black/20 py-[5px];
+        }
+    }
+
+    .blockContainer {
+        @apply bg-light flex flex-col gap-[70px];
+
+        .blockItem {
+            @apply bg-bluesky-100 py-[4%] flex justify-center relative;
+
+            .imagegroup1_Container {
+                @apply absolute flex justify-between w-full px-[20%] h-full top-0 left-0 overflow-hidden;
+                
+                .imageScaling {
+                    @apply scale-[0.8];
+                }
+            }
+
+            .imagegroup2_Container {
+                @apply absolute flex justify-center gap-[5%] w-full h-full top-0 left-0 overflow-hidden;
+                
+                .image2Scaling1 {
+                    @apply scale-[0.9] mt-auto opacity-40;
+                }
+                .image2Scaling2 {
+                    @apply scale-[0.8] mb-auto opacity-80;
+                }
+            }
+
+            .firstBlockContainer {
+                @apply flex flex-col gap-[50px] items-center w-[40%] z-10;
+
+                .title {
+                    @apply font-[600] text-2xl text-center;
+                }
+                .desc {
+                    @apply font-[500];
+                }
+            }
+
+            .lastBlockImage {
+                @apply absolute flex justify-center w-full h-full top-0 left-0 overflow-hidden;
+
+                .itemScaling {
+                    @apply scale-[0.8] mb-auto opacity-80 w-full;
+                }
+
+            }
+
+            .lbContainer {
+                @apply flex flex-col gap-[50px] z-10 px-[90px];
+
+                .title {
+                    @apply font-[600] text-2xl text-center;
+                }
+
+                .gridContainer {
+                    @apply w-full grid grid-cols-11 grid-rows-3 gap-[20px];
+
+                    .firstItem {
+                        @apply bg-banana-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] col-span-5;
+
+                        .content {
+                            @apply text-center font-[500] text-[17px];
+                        }
+                    }
+
+                    .secondItem {
+                        @apply bg-lightgreen-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] row-start-2 col-start-4 col-span-5;
+
+                        .content {
+                            @apply text-center font-[500] text-[17px];
+                        }
+                    }
+
+                    .thirdItem {
+                        @apply bg-cherry-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] row-start-3 col-start-7 col-span-6;
+
+                        .content {
+                            @apply text-center font-[500] text-[17px];
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+// Adaptive Size [MM]
+
+.aboutusContainer {
+
+    .blockContainer {
+        @apply mm:gap-[40px];
+
+        .blockItem {
+
+            .imagegroup1_Container {
+                @apply mm:hidden;
+            }
+
+            .lastBlockImage {
+                @apply mm:hidden;
+            }
+
+            .firstBlockContainer {
+                @apply mm:w-[90%];
+            }
+
+            .lbContainer {
+                @apply mm:px-[10px];
+
+                .gridContainer {
+                    
+                    .firstItem {
+                        @apply mm:col-span-full;
+                    }
+                    .secondItem {
+                        @apply mm:col-span-full;
+                    }
+                    .thirdItem {
+                        @apply mm:col-span-full;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+//Adaptive Size [SM]
+
+.aboutusContainer {
+
+    .blockContainer {
+        @apply sm:gap-[40px];
+
+        .blockItem {
+
+            .imagegroup1_Container {
+                @apply sm:hidden;
+            }
+
+            .lastBlockImage {
+                @apply sm:hidden;
+            }
+
+            .firstBlockContainer {
+                @apply sm:w-[90%];
+            }
+
+            .lbContainer {
+                @apply sm:px-[10px];
+
+                .gridContainer {
+                    
+                    .firstItem {
+                        @apply sm:col-span-full;
+                    }
+                    .secondItem {
+                        @apply sm:col-span-full;
+                    }
+                    .thirdItem {
+                        @apply sm:col-span-full;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// Adaptive Size [MD]
+
+.aboutusContainer {
+
+    .blockContainer {
+        @apply md:gap-[40px];
+
+        .blockItem {
+
+            .imagegroup1_Container {
+                @apply md:hidden;
+            }
+
+            .lastBlockImage {
+                @apply md:hidden;
+            }
+
+            .firstBlockContainer {
+                @apply md:w-[90%];
+            }
+
+            .lbContainer {
+                @apply md:px-[10px];
+
+                .gridContainer {
+                    
+                    .firstItem {
+                        @apply md:col-span-full;
+                    }
+                    .secondItem {
+                        @apply md:col-span-full;
+                    }
+                    .thirdItem {
+                        @apply md:col-span-full;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// Adaptive Size [LG]
+
+.aboutusContainer {
+
+    .blockContainer {
+        @apply lg:gap-[40px];
+
+        .blockItem {
+
+            .imagegroup1_Container {
+                @apply lg:hidden;
+            }
+
+            .lastBlockImage {
+                @apply lg:hidden;
+            }
+
+            .firstBlockContainer {
+                @apply lg:w-[90%];
+            }
+
+            .lbContainer {
+                @apply lg:px-[10px];
+
+                
+            }
+        }
+
+    }
+}
+
+// Adaptive Size [XL]
+
+.aboutusContainer {
+
+    .blockContainer {
+
+        .blockItem {
+
+            .firstBlockContainer {
+                @apply xl:w-[70%];
+            }
+        }
+
+    }
+}
+
+// Adaptive Size [FULL]

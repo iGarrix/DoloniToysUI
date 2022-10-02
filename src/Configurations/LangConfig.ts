@@ -43,6 +43,14 @@ i18n.use(initReactI18next).init({
         "Toys from all over the world": "Toys from all over the world",
         // Section
         "Section": "Section",
+        // Carousel Banner 1
+        "We present": "We present",
+        "new world": "new world",
+        "ideas": "ideas",
+        "Help your children": "Help your children",
+        "plunge into the dimension": "plunge into the dimension",
+        "ideas and": "ideas and",
+        "fantasies": "fantasies",
       }
     },
     ua: {
@@ -82,6 +90,14 @@ i18n.use(initReactI18next).init({
         "Toys from all over the world": "Іграшки з всього світу",
         // Section
         "Section": "Розділи",
+        // Carousel Banner 1
+        "We present": "Представляємо",
+        "new world": "новий світ",
+        "ideas": "ідей",
+        "Help your children": "Допоможіть своїм дітям",
+        "plunge into the dimension": "поринути у вимір",
+        "ideas and": "ідей і",
+        "fantasies": "фантазій",
       }
     },
   },

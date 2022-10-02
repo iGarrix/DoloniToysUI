@@ -26,10 +26,10 @@ export const MainFooter : React.FC = () => {
             <div className={`${style.footer_item}`}>
                 <strong>{t(`Home`)}</strong>
                 <ol className={`${style.list}`}>
-                    <li onClick={() => {onScroll("#none")}}>{t(`Banners`)}</li>
-                    <li onClick={() => {onScroll("#rec_block")}}>{t(`Email`)}</li>
-                    <li onClick={() => {onScroll("#sect_block")}}>{t(`Section`)}</li>
-                    <li onClick={() => {onScroll("main_carousel")}}>{t(`Carousel`)}</li>
+                    <li onClick={() => {onNavigateWithScroll("/", "#none")}}>{t(`Banners`)}</li>
+                    <li onClick={() => {onNavigateWithScroll("/", "#rec_block")}}>{t(`Why you should choose us?`)}</li>
+                    <li onClick={() => {onNavigateWithScroll("/", "#sect_block")}}>{t(`Section`)}</li>
+                    <li onClick={() => {onNavigateWithScroll("/", "main_carousel")}}>{t(`Carousel`)}</li>
                 </ol>
             </div>
             <div className={`${style.footer_item}`}>
@@ -37,7 +37,7 @@ export const MainFooter : React.FC = () => {
                 <ol className={`${style.list}`}>
                     <li onClick={() => {onNavigateWithScroll("/about", null)}}>{t(`Who am me?`)}</li>
                     <li onClick={() => {onNavigateWithScroll("/about", null)}}>{t(`What's are we doing?`)}</li>
-                    <li onClick={() => {onNavigateWithScroll("/for-parents", null)}}>{t(`For partners`)}</li>
+                    <li onClick={() => {onNavigateWithScroll("/for-partners", null)}}>{t(`For partners`)}</li>
                 </ol>
             </div>
             <div className={`${style.footer_item}`}>

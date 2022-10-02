@@ -1,0 +1,35 @@
+.carouselFullContainer {
+    @apply w-screen overflow-hidden relative mm:hidden sm:hidden md:hidden lg:hidden;
+
+    .maincarouselFull {
+        @apply flex overflow-x-hidden relative;
+
+    
+    }
+    .npbuttonContainer {
+        @apply absolute top-0 left-0 w-full h-full flex items-center justify-between px-[1%];
+
+        .npbutton {
+            @apply scale-[0.7] opacity-20 transition-all z-[100];
+
+            &:hover {
+                @apply opacity-100 cursor-pointer;
+            }
+        }
+    }
+
+    .counterContainer {
+        @apply absolute left-0 w-screen bottom-5 flex justify-center;
+
+        .bodyContainer {
+            @apply bg-light px-[15px] py-[7px] rounded-[15px] gap-[10px] flex justify-center;
+
+            .bodyItem {
+                @apply w-[20px] h-[20px] rounded-full border border-black;
+            }
+            .bodyItem.selected {
+                @apply bg-cherry-200;
+            }
+        }
+    }
+}

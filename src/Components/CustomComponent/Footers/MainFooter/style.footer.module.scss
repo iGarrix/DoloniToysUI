@@ -1,0 +1,38 @@
+.footer {
+    @apply w-screen py-[130px] px-[120px] bg-dark flex gap-[130px] items-start justify-between flex-wrap;
+    .footer_item {
+        @apply flex flex-col gap-[22px] text-white text-xl;
+
+        .list {
+            li {
+                &:hover {
+                    @apply text-banana-100 cursor-pointer select-none;
+                }
+            }
+        }
+    }
+
+    // Adaptive Size [MM]
+    @apply mm:px-[25px] mm:py-[25px] mm:gap-[50px];
+
+    .footer_item {
+        @apply mm:text-center mm:w-full mm:gap-[10px]; 
+
+    }
+
+    // Adaptive Size [SM]
+    @apply sm:grid sm:grid-cols-2 sm:px-[25px] sm:py-[25px] sm:gap-[50px];
+
+    .footer_item {
+        @apply sm:w-full sm:gap-[10px]; 
+
+    }
+
+    // Adaptive Size [MD]
+    @apply md:grid md:grid-cols-2 md:px-[25px] md:py-[25px] md:gap-[50px];
+
+    .footer_item {
+        @apply md:w-full md:gap-[10px]; 
+
+    }
+}

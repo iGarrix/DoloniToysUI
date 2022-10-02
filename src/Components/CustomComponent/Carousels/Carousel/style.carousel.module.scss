@@ -1,0 +1,23 @@
+.carouselContainer {
+    @apply w-screen overflow-hidden relative;
+
+    .maincarousel {
+        @apply flex overflow-x-hidden gap-[20px] relative px-[120px] mm:px-0 sm:px-0 md:px-0 pr-[135px] mm:py-0 mm:gap-0 sm:py-0 sm:gap-0 md:py-0 md:gap-0;
+
+        .carouselItemImage {
+            @apply w-[320px] mm:w-screen sm:w-screen md:w-screen h-[320px] rounded-[15px] mm:rounded-none sm:rounded-none md:rounded-none;
+        }
+    
+    }
+    .npbuttonContainer {
+        @apply absolute top-0 left-0 w-full h-full flex items-center justify-between px-[1%];
+
+        .npbutton {
+            @apply scale-[0.7] opacity-20 transition-all;
+
+            &:hover {
+                @apply opacity-100 cursor-pointer;
+            }
+        }
+    }
+}

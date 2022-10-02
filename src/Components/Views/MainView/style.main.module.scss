@@ -1,0 +1,7 @@
+.slidercarouserContainer {
+    @apply bg-bluesky-100 py-[50px] mb-[150px] mm:py-0 sm:py-0 md:py-0;
+}
+
+.carouselChildContainer {
+    @apply w-[320px] h-[320px] mm:w-screen sm:w-screen md:w-screen;
+}

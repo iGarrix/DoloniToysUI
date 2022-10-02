@@ -1,4 +1,5 @@
 import { apiUrl } from "./api";
+import i18n from "./LangConfig";
 
 export enum RecCardType {
     Gift = "gift",
@@ -34,4 +35,26 @@ export interface IExceptionHandleResponse {
 
 export function GetApiUrl(rootRoute: string, route: string) {
     return apiUrl + "api/" + rootRoute + "/" + route;
+}
+
+export function changeLanguage(lang: string) {
+    if (lang) {
+        switch (lang) {
+            case LanguageType.EN:
+                localStorage.setItem("lang", LanguageType.EN);
+                i18n.changeLanguage(LanguageType.EN);
+                break;
+            case LanguageType.UA:
+                localStorage.setItem("lang", LanguageType.UA);
+                i18n.changeLanguage(LanguageType.UA);
+                break;  
+            default:
+                localStorage.setItem("lang", LanguageType.EN);
+                i18n.changeLanguage(LanguageType.EN);
+                break;
+        }
+    }
+    else {
+        i18n.changeLanguage(LanguageType.EN);
+    }
 }

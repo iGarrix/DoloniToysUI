@@ -23,5 +23,58 @@
             }
         }
     }
+
+    // Adaptive Size [MM]
+    @apply mm:py-0 mm:px-0;
+
+    .gridside {
+        @apply mm:rounded-none mm:grid-cols-1;
+    }
+    .grid_item_2 {
+        @apply mm:text-center mm:w-full mm:gap-0 mm:px-0 mm:py-[30px] mm:items-center;
+
+        .desc {
+            @apply mm:w-full;
+        }
+    }
+
+    // Adaptive Size [SM]
+
+    @apply sm:py-0 sm:px-0;
+
+    .gridside {
+        @apply sm:rounded-none sm:grid-cols-1;
+    }
+    .grid_item_2 {
+        @apply sm:text-center sm:w-full sm:gap-0 sm:px-0 sm:py-[30px] sm:items-center;
+
+        .desc {
+            @apply sm:w-full;
+        }
+    }
+
+    // Adaptive Size [MD]
+
+    @apply md:py-0 md:px-0;
+
+    .gridside {
+        @apply md:rounded-none md:grid-cols-1;
+    }
+    .grid_item_2 {
+        @apply md:text-center md:w-full md:gap-0 md:px-0 md:py-[30px] md:items-center;
+
+        .desc {
+            @apply md:w-full;
+        }
+    }
+
+    // Adaptive Size [LG]
+
+    @apply lg:py-[30px] lg:px-[30px];
+
+
+    // Adaptive Size [XL]
+
+    @apply xl:py-[40px] xl:px-[40px];
     
 }

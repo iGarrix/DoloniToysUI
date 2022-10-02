@@ -6,6 +6,34 @@
     }
 
     .cardblock {
-        @apply flex gap-[120px];
+        @apply flex gap-[120px] flex-wrap;
+    }
+
+    // Adaptive Size [MM]
+
+    @apply mm:text-center mm:w-full;
+    .cardblock {
+        @apply mm:flex mm:flex-col mm:gap-[30px];
+    }
+
+    // Adaptive Size [SM]
+
+    @apply sm:text-center sm:w-full;
+    .cardblock {
+        @apply sm:flex sm:gap-[25px] sm:justify-center;
+    }
+
+    // Adaptive Size [MD]
+
+    @apply md:text-center md:w-full;
+    .cardblock {
+        @apply md:flex md:gap-[25px] md:justify-center;
+    }
+
+    // Adaptive Size [LG]
+
+    @apply lg:text-center lg:w-full;
+    .cardblock {
+        @apply lg:flex lg:gap-[60px] lg:justify-center;
     }
 }

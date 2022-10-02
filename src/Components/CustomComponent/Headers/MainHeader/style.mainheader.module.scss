@@ -1,12 +1,12 @@
 .mainheader {
-    @apply py-[10px] w-screen px-[25px] pr-[50px] flex gap-8 justify-between items-center shadow-md sticky left-0 top-0 z-[100] bg-white;
+    @apply w-screen px-[25px] mm:px-[10px] pr-[50px] flex gap-8 justify-between shadow-md sticky left-0 top-0 z-[100] bg-white;
 
     .logo {
-        @apply scale-[0.9];
+        @apply scale-[0.9] py-[10px] mm:scale-[1];
     }
 
     .langside {
-        @apply flex gap-[20px] h-full items-center;
+        @apply flex gap-[20px] h-full py-[10px] mm:hidden;
 
         .langicon {
             @apply w-[43px] h-[43px] cursor-pointer transition-all;
@@ -17,15 +17,54 @@
         }
     }
 
+    .minibutton {
+        @apply hidden mm:flex items-center justify-end w-full ;
+    }
+
     .headernav {
-        @apply flex;
+        @apply flex h-full mm:hidden;
 
         .headeritem {
-            @apply font-[500] text-lg cursor-pointer px-[15px] h-full flex items-center justify-center;
+            @apply font-[500] text-lg cursor-pointer px-[15px] h-full flex items-center justify-center
+            select-none transition-all relative;
 
-            // &:hover {
-            //     @apply text-banana-100;
-            // }
+            &::before {
+                content: '';
+                @apply h-[3px] w-[0%] bg-cherry-200 absolute left-0 bottom-[0] transition-all shadow-2xl rounded-xl;
+            }
+
+            &:hover {
+                @apply text-cherry-200;
+
+                &::before {
+                    @apply w-full;
+                }
+            }
         }
     }
 }
+
+.miniheader {
+    @apply w-full py-5 absolute z-[100] bg-light px-[5%];
+
+    .miniheadernav {
+        @apply flex flex-col gap-[10px] items-start;
+
+        .headeritem {
+            @apply font-[500] text-lg cursor-pointer h-full select-none transition-all relative;
+
+            &::before {
+                content: '';
+                @apply h-[3px] w-[0%] bg-cherry-200 absolute left-0 bottom-[0] transition-all shadow-2xl rounded-xl;
+            }
+
+            &:hover {
+                @apply text-cherry-200;
+
+                &::before {
+                    @apply w-full;
+                }
+            }
+        }
+    }
+}   

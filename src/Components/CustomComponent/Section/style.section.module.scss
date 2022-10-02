@@ -8,4 +8,39 @@
     .sect_cards {
         @apply flex gap-[120px];
     }
+
+    // Adaptive Size [MM]
+
+    @apply mm:text-center mm:w-full;
+    .sect_cards {
+        @apply mm:flex mm:flex-col mm:gap-[60px];
+    }
+
+    // Adaptive Size [SM]
+
+    @apply sm:text-center sm:w-full;
+    .sect_cards {
+        @apply sm:flex sm:flex-wrap sm:gap-[60px] sm:justify-center;
+    }
+
+    // Adaptive Size [MD]
+
+    @apply md:text-center md:w-full;
+    .sect_cards {
+        @apply md:flex md:flex-wrap md:gap-[60px] md:justify-center;
+    }
+
+    // Adaptive Size [LG]
+
+    @apply lg:text-center lg:w-full;
+    .sect_cards {
+        @apply lg:flex lg:flex-wrap lg:gap-[60px] lg:justify-center px-[10px];
+    }
+
+    // Adaptive Size [XL]
+
+    @apply xl:text-center xl:w-full;
+    .sect_cards {
+        @apply xl:flex xl:flex-wrap xl:gap-[90px] xl:justify-center;
+    }
 }

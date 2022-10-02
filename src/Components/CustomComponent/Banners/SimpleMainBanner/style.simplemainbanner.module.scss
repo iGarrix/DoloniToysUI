@@ -2,7 +2,7 @@
     @apply w-full py-[30px] px-[50px] bg-banana-100 grid grid-cols-9 grid-rows-1 gap-[50px];
 
     .firstside {
-        @apply col-span-6 flex flex-col justify-center pl-[20%] gap-[40px];
+        @apply col-span-6 flex flex-col justify-center pl-[20%] gap-[40px] relative;
 
         .title {
             @apply text-[32px] leading-[40px] font-[700];
@@ -10,12 +10,106 @@
         .desc {
             @apply text-[20px] leading-[25px] font-[500] w-[70%];
         }
+
+        .groupimagecontainer {
+            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[10%];
+            .groupimage1 {
+                @apply top-0 left-0;
+            }
+            .groupimage2 {
+                @apply translate-x-[-20%];
+            }
+        }
     }
+
 
     .secondside {
         @apply col-span-3 w-full;
         .banner_3_img {
             @apply w-full h-[390px] bg-cover object-cover rounded-[15px];
+        }
+    }
+
+    // Adaptive Size [MM]
+
+    @apply mm:grid-cols-1 mm:grid-rows-2 mm:gap-0 mm:px-[10px] mm:w-full;
+
+    .firstside {
+        @apply mm:p-0 mm:text-center;
+
+        .desc {
+            @apply mm:w-full
+        }
+
+        .groupimagecontainer {
+            @apply mm:hidden
+        }
+    }
+
+    .secondside {
+        @apply mm:col-span-full mm:px-0;
+    }
+
+    // Adaptive Size [SM]
+
+    @apply sm:grid-cols-1 sm:grid-rows-2 sm:gap-0 sm:px-[10px] sm:w-full;
+
+    .firstside {
+        @apply sm:p-0 sm:text-center;
+
+        .desc {
+            @apply sm:w-full
+        }
+
+        .groupimagecontainer {
+            @apply sm:hidden
+        }
+    }
+
+    .secondside {
+        @apply sm:col-span-full sm:px-0;
+    }
+
+    // Adaptive Size [MD]
+
+    @apply md:gap-0 md:px-[10px] md:w-full;
+
+    .firstside {
+        @apply md:col-span-5 md:px-[10px];
+
+        .groupimagecontainer {
+            @apply md:hidden;
+        }
+    }
+
+    .secondside {
+        @apply md:col-span-4;
+    }
+
+    // Adaptive Size [LG]
+
+    @apply lg:gap-0 lg:px-[10px] lg:w-full;
+
+    .firstside {
+        @apply lg:col-span-5 lg:px-[20px];
+
+        .groupimagecontainer {
+            @apply lg:hidden;
+        }
+    }
+
+    .secondside {
+        @apply lg:col-span-4;
+    }
+
+     // Adaptive Size [XL]
+
+     @apply xl:gap-0 xl:px-[10px] xl:w-full;
+
+     .firstside {
+
+        .groupimagecontainer {
+            @apply xl:hidden;
         }
     }
 }

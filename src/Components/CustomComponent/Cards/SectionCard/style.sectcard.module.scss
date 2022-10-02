@@ -1,9 +1,13 @@
 .section_card {
-    @apply flex flex-col items-center relative bg-banana-100 px-[40px] pb-[40px]
-    rounded-[15px] gap-[80px] w-[320px] max-w-[320px];
+    @apply flex flex-col items-center relative px-[40px] pb-[40px]
+    rounded-[15px] gap-[80px] w-[320px] max-w-[320px] select-none cursor-pointer;
 
     .sect_image {
-        @apply rounded-full w-[210px] h-[210px] object-cover bg-cover translate-y-[-15%];
+        @apply rounded-full w-[205px] h-[205px] object-cover bg-cover translate-y-[-15%] z-[1] select-none;
+    }
+
+    .group_sect_image {
+        @apply absolute top-0 left-0 w-full select-none scale-[0.99];
     }
 
     .title {

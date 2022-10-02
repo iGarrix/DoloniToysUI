@@ -1,5 +1,5 @@
 .carouselbanner1 {
-    @apply w-[full] h-[95vh] relative px-[4%];
+    @apply w-screen whitespace-nowrap h-[95vh] relative px-[4%];
 
     .bannerimage {
         @apply absolute top-0 left-0 w-full h-full object-cover bg-cover;

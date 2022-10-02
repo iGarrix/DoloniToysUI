@@ -21,13 +21,13 @@ module.exports = {
     extend: {
       colors: {
         banana: {
-          100: "#FFCE56",
+          100: "#FBCB63",
         },
         bluesky: {
-          100: "#9DC1E4",
+          100: "#C1E3DF",
         },
         cherry: {
-          100: "#F96E43",
+          100: "#ED8621",
           200: "#CB2552"
         },
         lightgreen: {

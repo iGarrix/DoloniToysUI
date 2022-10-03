@@ -42,6 +42,9 @@
                 }
             }
         }
+        .headeritem.selected {
+            @apply text-cherry-200;
+        }
     }
 }
 

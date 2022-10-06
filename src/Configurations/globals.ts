@@ -58,3 +58,9 @@ export function changeLanguage(lang: string) {
         i18n.changeLanguage(LanguageType.EN);
     }
 }
+
+export interface IBaseReducerState {
+    isLoading: boolean;
+    error: string;
+    successMessage: string,
+}

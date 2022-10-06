@@ -32,7 +32,7 @@ export const MainHeader: React.FC = () => {
                 <aside>
                     <ol className={`${styles.headernav}`}>
                         <li className={`${styles.headeritem} ${history.pathname === "/" ? styles.selected : ""}`} onClick={() => { nav('/') }}>{t(`Home`)}</li>
-                        <li className={`${styles.headeritem} ${history.pathname === "/" ? styles.selected : ""}`} onClick={() => { nav('/catalog/Bob') }}>{t(`Catalog`)}</li>
+                        <li className={`${styles.headeritem} ${history.pathname.includes(`catalog`) ? styles.selected : ""}`} onClick={() => { nav('/catalog/Bob') }}>{t(`Catalog`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/about" ? styles.selected : ""}`} onClick={() => { nav('/about') }}>{t(`About us`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/for-partners" ? styles.selected : ""}`} onClick={() => { nav('/for-partners') }}>{t(`For partners`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/contact-us" ? styles.selected : ""}`} onClick={() => { nav('/contact-us') }}>{t(`Contacts`)}</li>

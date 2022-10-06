@@ -1,0 +1,18 @@
+.fieldContainer {
+    @apply flex flex-col gap-1;
+
+    .errorContainer {
+        @apply flex flex-wrap gap-2 overflow-hidden;
+
+        .placeholder {
+            @apply font-[500];
+        }
+        .error {
+            @apply text-red-500 font-medium;
+        }
+    }
+    
+    .inpField {
+        @apply text-black rounded-md py-2.5 px-4 outline-none bg-white;
+    }
+}

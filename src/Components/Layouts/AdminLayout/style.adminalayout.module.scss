@@ -1,0 +1,40 @@
+.adminLayoutContainer {
+    @apply flex flex-col relative;
+
+    .header {
+        @apply sticky top-0 left-0 w-full border-b-2 px-[5%] flex;
+
+        .list {
+            @apply flex;
+
+            .item {
+                @apply px-[15px] py-[10px] font-[500] cursor-pointer transition-all;
+
+                &.selected {
+                    @apply bg-cherry-200 font-[600] text-white;
+
+                    &:hover {
+                        @apply text-white;
+                    }
+                }
+
+                &:hover {
+                    @apply text-cherry-200;
+                }
+            }
+
+            
+        }
+
+        .logoutContainer {
+            @apply flex gap-[20px] items-center ml-auto;
+
+            .back {
+                @apply text-cherry-200 text-2xl leading-none cursor-pointer;
+            }
+            .logout {
+                @apply text-cherry-200 text-2xl leading-none cursor-pointer;
+            }
+        }
+    }
+}

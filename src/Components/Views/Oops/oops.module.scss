@@ -1,3 +1,11 @@
 .oops {
-     
+    @apply bg-bluesky-100 overflow-hidden w-screen h-screen flex justify-center items-center relative;
+
+    .extend {
+        @apply absolute top-0 left-0 w-full h-full object-cover bg-cover;
+    }
+
+    .title {
+        @apply text-4xl font-[800] z-[10];
+    }
 }

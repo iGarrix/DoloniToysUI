@@ -22,6 +22,10 @@ const bg7 = require('../../../Assets/Backgrounds/bg7.jpg');
 const bg8 = require('../../../Assets/Backgrounds/bg8.jpg');
 const bg9 = require('../../../Assets/Backgrounds/bg9.jpg');
 
+const mbg1 = require('../../../Assets/Backgrounds/mini_banner1.png');
+const mbg2 = require('../../../Assets/Backgrounds/mini_banner2.png');
+const mbg3 = require('../../../Assets/Backgrounds/mini_banner3.png');
+
 export const MainView: React.FC = () => {
 
     const dispatch = useAppDispatch();
@@ -41,8 +45,7 @@ export const MainView: React.FC = () => {
     }
 
     return (
-        <section className="flex flex-col bg-light" id="#none">
-
+        <section className="flex flex-col bg-light">
             <CarouselFullscreen childrens={
                 [
                     {
@@ -107,9 +110,14 @@ export const MainView: React.FC = () => {
                     ]
                 } />
             </section>
+            <section className={`${style.thirdblockImages}`}>
+                <img alt="mbg1" src={mbg1} className={`${style.item}`}/>
+                <img alt="mbg2" src={mbg2} className={`${style.item}`}/>
+                <img alt="mbg3" src={mbg3} className={`${style.item}`}/>
+            </section>
             <RecommendBlock />
-            <Section />
-            <MainBannerOne />
+            {/* <Section /> */}
+            {/* <MainBannerOne /> */}
             <SimpleMainBanner />
         </section>
     )

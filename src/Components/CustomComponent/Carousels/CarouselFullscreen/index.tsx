@@ -9,6 +9,7 @@ const prev = require('../../../../Assets/Icons/Prev.png');
 
 export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) => {
 
+    const [interval, initInterval] = useState(0);
     const [carousel, setCarousel] = useState(() => {
         const carousel = window.document.getElementById("mainCarouselFull");
         if (carousel) {      
@@ -28,32 +29,39 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
         }
     }, []);
 
+    useEffect(() => {
+        if (interval > 0) {          
+            const intervalId = setInterval(() => {
+                initInterval(interval - 1);
+            }, 1000);
+            return () => clearInterval(intervalId);
+        }
+    }, [interval]);
+
     function onNext() {
-        if (carousel) {      
-            setTimeout(() => {
-                carousel.scrollTo(carousel.scrollLeft + (carousel.clientWidth), 0);
-                setLeft(carousel.scrollLeft + (carousel.clientWidth));
-                if (count < props.childrens.length - 1) {          
-                    setCount(count + 1);
-                }
-            }, 500);
+        if (carousel && interval === 0) {      
+            carousel.scrollTo(carousel.scrollLeft + (carousel.clientWidth), 0);
+            setLeft(carousel.scrollLeft + (carousel.clientWidth));
+            if (count < props.childrens.length - 1) {          
+                setCount(count + 1);
+                initInterval(1);
+            }
         }
     }
 
     function onPrev() {
-        if (carousel) {      
-            setTimeout(() => {
-                carousel.scrollTo(carousel.scrollLeft - (carousel.clientWidth), 0);
-                setLeft(carousel.scrollLeft - (carousel.clientWidth));
-                if (count > 0) {             
-                    setCount(count - 1);
-                }
-            }, 500);
+        if (carousel && interval === 0) {      
+            carousel.scrollTo(carousel.scrollLeft - (carousel.clientWidth), 0);
+            setLeft(carousel.scrollLeft - (carousel.clientWidth));
+            if (count > 0) {             
+                setCount(count - 1);
+                initInterval(1);
+            }
         }
     }
 
     return (
-        <div className={`${style.carouselFullContainer}`}>
+        <div className={`${style.carouselFullContainer}`} id="#none">
             <div className={`${style.maincarouselFull}`} id="mainCarouselFull">
                 {
                     props.childrens.map(item => {

@@ -1,5 +1,5 @@
 .container {
-    @apply flex justify-center items-center w-full h-screen overflow-hidden;
+    @apply flex justify-center items-center w-full h-screen overflow-hidden bg-light;
 
     .blockSide {
         @apply flex flex-col items-center shadow-2xl rounded-[15px] py-[5vh] px-[4vw] w-[30%] bg-banana-100/80 gap-[20px];

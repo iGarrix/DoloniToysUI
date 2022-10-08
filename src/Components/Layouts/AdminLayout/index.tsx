@@ -1,4 +1,4 @@
-import { faArrowLeft, faArrowRightFromBracket, faCaretLeft } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useAppDispatch } from "../../../Redux/hooks/hooks";

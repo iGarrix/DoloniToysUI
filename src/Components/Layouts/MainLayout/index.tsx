@@ -4,7 +4,7 @@ import { MainHeader } from "../../CustomComponent/Headers/MainHeader"
 
 export const MainLayout: React.FC = () => {
     return (
-        <div className="">
+        <div className="relative min-h-screen">
             <MainHeader />
             <Outlet/>
             <MainFooter />

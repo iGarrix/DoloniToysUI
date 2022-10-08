@@ -2,7 +2,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate } from "react-router-dom"
+import { Navigate, useLocation, useNavigate } from "react-router-dom"
 import { changeLanguage, LanguageType } from "../../../../Configurations/globals";
 
 import styles from "./style.mainheader.module.scss";
@@ -14,11 +14,15 @@ const usa = require('../../../../Assets/Icons/usa.png');
 
 export const MainHeader: React.FC = () => {
 
-    const nav = useNavigate();
+    const navigate = useNavigate();
     const { t } = useTranslation();
 
     const [isOpen, setOpen] = useState(false);
     const history = useLocation();
+
+    function nav(path: string) {
+        navigate(path);
+    }
 
     return (
         <div className="sticky left-0 top-0 z-[100]">
@@ -31,6 +35,7 @@ export const MainHeader: React.FC = () => {
                 </aside>
                 <aside>
                     <ol className={`${styles.headernav}`}>
+
                         <li className={`${styles.headeritem} ${history.pathname === "/" ? styles.selected : ""}`} onClick={() => { nav('/') }}>{t(`Home`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname.includes(`catalog`) ? styles.selected : ""}`} onClick={() => { nav('/catalog/Bob') }}>{t(`Catalog`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/about" ? styles.selected : ""}`} onClick={() => { nav('/about') }}>{t(`About us`)}</li>

@@ -31,10 +31,12 @@ export const accountSlice = createSlice({
         onSuccess(state: IAccountState, action: PayloadAction<string>)
         {
             state.successMessage = action.payload;
+            state.isLoading = false;
         },
         onError(state: IAccountState, action: PayloadAction<string>)
         {
             state.error = action.payload;
+            state.isLoading = false;
         },
         onLoading(state: IAccountState)
         {

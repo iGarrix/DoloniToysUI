@@ -20,3 +20,10 @@ export enum ProductController {
     Change = "CHANGE_PRODUCT",
     Remove = "REMOVE_PRODUCT",
 }
+
+export enum QuestionController
+{
+    Default = "Question",
+    Add = "ADD_QUESTION",
+    Get = "GET_ALL",
+}

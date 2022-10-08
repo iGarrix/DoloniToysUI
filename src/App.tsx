@@ -57,7 +57,7 @@ function App() {
   const { auth, isLoading, error } = useAppSelector(state => state.accountReducer);
 
   return (
-    <main className='min-h-screen h-screen overflow-x-hidden scroll scroll-smooth'>
+    <main className='min-h-screen h-screen overflow-x-hidden scroll scroll-smooth bg-dark'>
       <Routes>
         <Route path='/' element={<LoaderLayout />}>
           <Route path='/' element={<MainLayout />} >

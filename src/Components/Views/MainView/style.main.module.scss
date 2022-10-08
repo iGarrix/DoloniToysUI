@@ -1,7 +1,17 @@
 .slidercarouserContainer {
-    @apply bg-bluesky-100 py-[50px] mb-[150px] mm:py-0 sm:py-0 md:py-0;
+    @apply bg-bluesky-100 py-[50px] mm:py-0 sm:py-0 md:py-0;
 }
 
 .carouselChildContainer {
     @apply w-[320px] h-[320px] mm:w-screen sm:w-screen md:w-screen;
+}
+
+.thirdblockImages {
+    @apply flex gap-[20px] justify-around py-[50px] mm:flex-col 
+    mm:items-center sm:flex-col sm:items-center sm:flex-wrap
+     md:flex-wrap;
+
+    .item {
+        @apply rounded-[15px] w-[350px] h-[350px];
+    }
 }

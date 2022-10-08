@@ -20,7 +20,7 @@
     }
 
     .subheaderbanner {
-        @apply text-[30px] font-[400] leading-[40px];
+        @apply text-[30px] font-[400] leading-[40px] flex flex-wrap justify-center overflow-hidden;
     }
 
     .sublink {

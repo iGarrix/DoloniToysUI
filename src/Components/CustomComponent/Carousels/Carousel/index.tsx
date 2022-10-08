@@ -28,19 +28,15 @@ export const Carousel : React.FC<ICarousel> = ({...props}) => {
 
     function onNext() {
         if (carousel) {      
-            setTimeout(() => {
-                carousel.scrollTo(carousel.scrollLeft + (carousel.clientWidth), 0);
-                setLeft(carousel.scrollLeft + (carousel.clientWidth));
-            }, 500);
+            carousel.scrollTo(carousel.scrollLeft + (carousel.clientWidth), 0);
+            setLeft(carousel.scrollLeft + (carousel.clientWidth));
         }
     }
 
     function onPrev() {
         if (carousel) {      
-            setTimeout(() => {
-                carousel.scrollTo(carousel.scrollLeft - (carousel.clientWidth), 0);
-                setLeft(carousel.scrollLeft - (carousel.clientWidth));
-            }, 500);
+            carousel.scrollTo(carousel.scrollLeft - (carousel.clientWidth), 0);
+            setLeft(carousel.scrollLeft - (carousel.clientWidth));
         }
     }
 

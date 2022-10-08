@@ -30,6 +30,7 @@ export const categorySlice = createSlice({
         },
         initSuccess(state: ICategoryState, action: PayloadAction<string>) {
             state.successMessage = action.payload;
+            state.isLoading = false;
         },
         ClearAll(state: ICategoryState) {
             state.categories = null;

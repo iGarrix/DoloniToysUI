@@ -34,6 +34,7 @@ export const productSlice = createSlice({
         },
         initSuccess(state: IProductState, action: PayloadAction<string>) {
             state.successMessage = action.payload;
+            state.isLoading = false;
         },
         ClearAll(state: IProductState) {
             state.products = null;

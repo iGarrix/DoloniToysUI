@@ -22,11 +22,15 @@ export const productSlice = createSlice({
         },
         initSelectProduct(state: IProductState, action: PayloadAction<IProduct>) {
             state.selectedProduct = action.payload;
+            state.isLoading = false;
+            state.error = "";
         },
         initError(state: IProductState, action: PayloadAction<string>) {
             state.error = action.payload;
             state.isLoading = false;
             state.successMessage = '';
+            state.products = null;
+            state.selectedProduct = null;
         },
         initLoading(state: IProductState) {
             state.isLoading = true;

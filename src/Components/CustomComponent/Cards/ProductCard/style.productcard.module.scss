@@ -1,0 +1,19 @@
+
+.productCardContainer {
+    @apply rounded-[15px] bg-white overflow-hidden py-[30px] gap-[15px] flex flex-col transition-all
+    items-center cursor-pointer;
+
+    @apply mm:rounded-none;
+
+    &:hover {
+        @apply shadow-lg;
+    }
+
+    .img {
+        @apply bg-cover object-cover w-[250px] h-[250px];
+    }
+
+    .title {
+        @apply text-center font-[700] text-lg px-[10px];
+    }
+}

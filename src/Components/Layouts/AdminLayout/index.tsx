@@ -1,7 +1,5 @@
-import { faArrowLeft, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
-import { useAppDispatch } from "../../../Redux/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks/hooks";
 import { accountSlice } from "../../../Redux/reducers/accountReducer/accountSlice";
 
 import style from "./style.adminalayout.module.scss";
@@ -12,6 +10,8 @@ export const AdminLayout : React.FC = () => {
     const dispatch = useAppDispatch();
     const nav = useNavigate();
 
+    const { auth } = useAppSelector(state => state.accountReducer);
+
     function onLogoutUser() {
         dispatch(accountSlice.actions.onLogout());
         nav("/");
@@ -19,17 +19,30 @@ export const AdminLayout : React.FC = () => {
     
     return (
         <section className={`${style.adminLayoutContainer}`}>
-            <header className={`${style.header}`}>
-                <ul className={`${style.list}`}>
-                    <li className={`${style.item} ${history.pathname === "/for-admins" ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>Products</li>
-                    <li className={`${style.item} ${history.pathname.includes("reports") ? style.selected : null}`} onClick={() => {nav("reports")}}>Reports</li>
-                </ul>
-                <div className={`${style.logoutContainer}`}>
-                    <FontAwesomeIcon icon={faArrowLeft} className={`${style.back}`} onClick={() => {nav("/")}}/>
-                    <FontAwesomeIcon icon={faArrowRightFromBracket} className={`${style.logout}`} onClick={onLogoutUser}/>
-                </div>
-            </header>
-            <Outlet />
+            <div className={`${style.headerWrapper}`}>
+                <header className={`${style.headerContainer}`}>
+                    <div className={`${style.infoBlock}`}>
+                        <img alt="image" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+                        className={`${style.avatar}`} />
+                        <div>
+                            <h1 className={`${style.username}`}>{auth?.username}</h1>
+                            <p className={`${style.email}`}>{auth?.email}</p>
+                        </div>
+                    </div>
+                    <ul className={`${style.listContainer}`}>
+                        <li className={`${style.item} ${history.pathname === "/for-admins" ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>Products</li>
+                        <li className={`${style.item} ${history.pathname.includes("categories") ? style.selected : null}`} onClick={() => {nav("categories")}}>Categories</li>
+                        <li className={`${style.item} ${history.pathname.includes("reports") ? style.selected : null}`} onClick={() => {nav("reports")}}>Contacts</li>
+                        <div className={`${style.external}`}>
+                            <li className={`${style.exititem}`} onClick={() => {nav("/")}}>Exit</li>
+                            <li className={`${style.exititem}`} onClick={onLogoutUser}>Logout</li>
+                        </div>
+                    </ul>
+                </header>
+            </div>
+            <main className={`${style.contentContainer}`}>
+                <Outlet />
+            </main>
         </section>
     )
 }

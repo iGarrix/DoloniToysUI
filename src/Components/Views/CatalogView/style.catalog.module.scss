@@ -1,0 +1,174 @@
+.catalogContainer {
+    @apply bg-bluesky-100 grid grid-cols-7 grid-rows-1;
+
+    .filterGridContainer {
+        @apply w-full px-[10%] py-[40px] col-span-2 relative;
+
+        .filterGridWrapper {
+            @apply rounded-[15px] bg-white flex flex-col h-auto gap-[15px] px-[20px] py-[10px] sticky top-[12%] left-0 shadow-sm overflow-hidden;
+
+            .headerFilter {
+                @apply flex justify-between items-center w-full;
+
+                .title {
+                    @apply font-[700] text-lg;
+                }
+
+                .turnButton {
+                    @apply font-[700] text-xl cursor-pointer;
+
+                    &:hover {
+                        @apply text-red-500;
+                    }
+                }
+            }
+
+            .mainFilter {
+                @apply flex-col gap-[10px] px-[5%] select-none;
+
+                .item {
+                    @apply font-[500] cursor-pointer transition-all;
+
+                    &:hover {
+                        @apply text-cherry-200;
+                    }
+
+                    &.selected {
+                        @apply text-cherry-200;
+                    }
+                }
+
+
+            }
+
+            .opened {
+                @apply flex;
+            }
+            .closed {
+                @apply hidden;
+            }
+        }
+    }
+
+
+
+    .productContainer {
+        @apply col-span-5 w-full grid grid-cols-4 gap-x-[30px] gap-y-[30px] py-[40px] px-[20px];
+
+        .paginatorContainer {
+            @apply col-span-full;
+        }
+    }
+    .productErrorContainer {
+        @apply col-span-5 w-full grid grid-cols-4 gap-x-[30px] gap-y-[30px] py-[40px] px-[20px];
+
+        .errorContainer {
+            @apply col-span-full bg-cherry-200/80 rounded-[15px] w-full py-[20px] h-min flex justify-center items-center;
+
+            .errorMessage {
+                @apply text-white font-[600] text-center;
+            }
+        }
+    }
+}
+
+// Adaptive Size [MM]
+.catalogContainer {
+    @apply mm:grid-cols-1;
+
+    .filterGridContainer {
+        @apply mm:px-[2%] mm:py-[2%];
+    }
+    
+    .productContainer {
+        @apply mm:col-span-full mm:grid-cols-1 mm:px-0 mm:py-0 mm:gap-y-[1px];
+        
+        .paginatorContainer {
+            @apply mm:py-[10px] mm:px-[2%];
+        }
+    }
+
+    .productErrorContainer {
+        @apply mm:px-[2%] mm:py-[2%];
+    }
+}
+
+// Adaptive Size [SM]
+.catalogContainer {
+    @apply sm:grid-cols-1;
+
+    .filterGridContainer {
+        @apply sm:px-[1%] sm:py-[2%];
+    }
+    
+    .productContainer {
+        @apply sm:col-span-full sm:grid-cols-2 sm:px-0 sm:py-0 sm:gap-y-[10px] sm:gap-x-[10px];
+        
+        .paginatorContainer {
+            @apply sm:py-[10px] sm:px-[2%];
+        }
+    }
+
+    .productErrorContainer {
+        @apply sm:px-[2%] sm:py-[2%];
+    }
+}
+
+// Adaptive Size [MD]
+.catalogContainer {
+    @apply md:grid-cols-1;
+
+    .filterGridContainer {
+        @apply md:px-[1%] md:py-[2%];
+    }
+    
+    .productContainer {
+        @apply md:col-span-full md:grid-cols-3 md:px-0 md:py-0 md:gap-y-[10px] md:gap-x-[10px];
+        
+        .paginatorContainer {
+            @apply md:py-[10px] md:px-[2%];
+        }
+    }
+
+    .productErrorContainer {
+        @apply md:px-[2%] md:py-[2%];
+    }
+}
+
+// Adaptive Size [LG]
+.catalogContainer {
+    @apply lg:grid-cols-1;
+
+    .filterGridContainer {
+        @apply lg:px-[1%] lg:py-[2%];
+    }
+    
+    .productContainer {
+        @apply lg:col-span-full lg:grid-cols-3 lg:px-0 lg:py-0 lg:gap-y-[10px] lg:gap-x-[10px];
+        
+        .paginatorContainer {
+            @apply lg:py-[10px] lg:px-[2%];
+        }
+    }
+
+    .productErrorContainer {
+        @apply lg:px-[2%] lg:py-[2%];
+    }
+}
+
+// Adaptive Size [XL]
+.catalogContainer {
+    .productContainer {
+        @apply xl:grid-cols-3;
+        
+        .paginatorContainer {
+            @apply xl:py-[10px];
+        }
+    }
+
+    .productErrorContainer {
+        @apply xl:px-[2%] xl:py-[2%];
+    }
+}
+
+// Adaptive Size [FULL]

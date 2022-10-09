@@ -1,5 +1,5 @@
 .footer {
-    @apply w-screen h-full sticky bottom-[-100%] left-0 py-[130px] px-[120px] bg-dark flex gap-[130px] items-start justify-between flex-wrap;
+    @apply w-screen h-full left-0 py-[130px] px-[120px] bg-dark flex gap-[130px] items-start justify-between flex-wrap;
     .footer_item {
         @apply flex flex-col gap-[22px] text-white text-xl;
 

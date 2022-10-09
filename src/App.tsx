@@ -9,6 +9,9 @@ import { LoaderLayout } from './Components/Layouts/LoaderLayout';
 import { MainLayout } from './Components/Layouts/MainLayout';
 import { AboutusView } from './Components/Views/AboutusView';
 import { LoginView } from './Components/Views/Admins/Auth/LoginView';
+import { ManageCategoryView } from './Components/Views/Admins/ManageCategoryView';
+import { ManageContactView } from './Components/Views/Admins/ManageContactView';
+import { ManageProductView } from './Components/Views/Admins/ManageProductView';
 import { CatalogView } from './Components/Views/CatalogView';
 import { ProductDetails } from './Components/Views/CatalogView/ProductDetails';
 import { ContactsView } from './Components/Views/ContactsView';
@@ -52,6 +55,7 @@ function App() {
 
   useEffect(() => {
     login();
+    document.documentElement.scrollTo(0,0);
   }, []);
 
   const { auth, isLoading, error } = useAppSelector(state => state.accountReducer);
@@ -62,7 +66,9 @@ function App() {
         <Route path='/' element={<LoaderLayout />}>
           <Route path='/' element={<MainLayout />} >
               <Route index element={<MainView />} />
-              <Route path='catalog/:title' element={<CatalogView />} />
+              <Route path='catalog' element={<CatalogView />} >
+                <Route path=':category' element={<CatalogView />}/>
+              </Route>
               <Route path='product/:article' element={<ProductDetails />}/>
               <Route path='about' element={<AboutusView />} />
               <Route path='for-partners' element={<ForpartnersView />} />
@@ -74,8 +80,9 @@ function App() {
             <Route index element={<LoginView />} />
           </Route>
           <Route path='for-admins' element={<AuthLayout isPredicate={auth !== null || localStorage.getItem("token") !== null} elseReturn="/login" ><AdminLayout /></AuthLayout>} >
-            <Route index element={<ContactsView />} />
-            <Route path="reports" element={<ContactsView />} />
+            <Route index element={<ManageProductView />} />
+            <Route path="categories" element={<ManageCategoryView />} />
+            <Route path="reports" element={<ManageContactView />} />
           </Route>
 
           <Route path='*' element={<Oops />} />

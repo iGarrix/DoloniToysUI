@@ -37,7 +37,7 @@ export const MainHeader: React.FC = () => {
                     <ol className={`${styles.headernav}`}>
 
                         <li className={`${styles.headeritem} ${history.pathname === "/" ? styles.selected : ""}`} onClick={() => { nav('/') }}>{t(`Home`)}</li>
-                        <li className={`${styles.headeritem} ${history.pathname.includes(`catalog`) ? styles.selected : ""}`} onClick={() => { nav('/catalog/Bob') }}>{t(`Catalog`)}</li>
+                        <li className={`${styles.headeritem} ${history.pathname.includes(`catalog`) ? styles.selected : ""}`} onClick={() => { nav('/catalog') }}>{t(`Catalog`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/about" ? styles.selected : ""}`} onClick={() => { nav('/about') }}>{t(`About us`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/for-partners" ? styles.selected : ""}`} onClick={() => { nav('/for-partners') }}>{t(`For partners`)}</li>
                         <li className={`${styles.headeritem} ${history.pathname === "/contact-us" ? styles.selected : ""}`} onClick={() => { nav('/contact-us') }}>{t(`Contacts`)}</li>
@@ -51,7 +51,7 @@ export const MainHeader: React.FC = () => {
             <div className={`${styles.miniheader} ${isOpen ? "translate-x-[0%]" : "translate-x-[-100%]"}`}>
                 <ol className={`${styles.miniheadernav}`}>
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/') }}>{t(`Home`)}</li>
-                    <li className={`${styles.headeritem}`} onClick={() => { nav('/catalog/Bob') }}>{t(`Catalog`)}</li>
+                    <li className={`${styles.headeritem}`} onClick={() => { nav('/catalog') }}>{t(`Catalog`)}</li>
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/about') }}>{t(`About us`)}</li>
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/for-partners') }}>{t(`For partners`)}</li>
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/contact-us') }}>{t(`Contacts`)}</li>

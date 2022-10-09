@@ -1,0 +1,82 @@
+.container {
+    @apply flex flex-col w-full items-center;
+    
+    .infoContainer {
+        @apply flex items-center justify-center py-[15px] bg-lightgreen-100/40 w-full;
+
+        .message {
+            @apply font-[400] text-xl text-center;
+
+            .link {
+                @apply text-blue-500 cursor-pointer;
+            }
+        }
+    }
+
+    .errorContainer {
+        @apply w-[98%] bg-cherry-200 rounded-[15px] py-[20px] flex justify-center items-end my-[10px];
+
+        .message {
+            @apply text-center text-white font-[500] text-center;
+        }
+    }
+
+    .table {
+        @apply w-full divide-x divide-y border-y;
+
+        .headerContainer {
+            @apply divide-y;
+
+            .block {
+                @apply divide-x divide-y;
+
+                .title {
+                    @apply py-[15px] font-[600] text-lg w-[20%];
+                }
+            }
+        }
+
+        .mainContainer {
+            @apply divide-y;
+
+            .block {
+                @apply divide-x divide-y;
+
+                .item {
+                    @apply px-[20px] font-[500];
+
+                    .categoryitem {
+                        @apply flex gap-[5px] items-center;
+
+                        .imageitem {
+                            @apply w-[64px] h-[64px];
+                        }
+                    }
+
+                    .removebtn {
+                        @apply w-full h-full flex justify-center text-cherry-200;
+                    }
+                }
+            }
+        }
+    }
+
+    .paginatorContainer {
+        @apply py-[10px] w-full px-[10px];
+
+        &.visible {
+            @apply flex;
+        }
+
+        &.hide {
+            @apply hidden;
+        }
+    }
+}
+
+// Adaptive Size [MM]
+// Adaptive Size [SM]
+// Adaptive Size [MD]
+// Adaptive Size [LG]
+// Adaptive Size [XL]
+// Adaptive Size [FULL]

@@ -1,8 +1,15 @@
-import { IBaseReducerState } from "../../../Configurations/globals";
+import { IBaseReducerState, IPaginateResponse } from "../../../Configurations/globals";
 import * as Yup from "yup";
 
-export interface IContactState extends IBaseReducerState {
+export interface IContact {
+    name: string,
+    email: string,
+    message: string,
+    create: Date,
+}
 
+export interface IContactState extends IBaseReducerState {
+    contacts: IPaginateResponse<IContact> | null,
 }
 
 export interface ISendContactRequest {

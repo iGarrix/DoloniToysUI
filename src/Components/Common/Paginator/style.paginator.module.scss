@@ -1,0 +1,62 @@
+// Containers 
+
+.paginator__classname {
+   @apply flex flex-wrap gap-2 items-center justify-center select-none transition-all overflow-hidden w-full;
+}
+
+.paginator__container {
+    
+}
+
+// Active - Disable links
+
+.paginator__activeLink {
+    @apply bg-cherry-200 text-white border-blue-500;
+}
+
+.paginator__active {
+}
+
+.paginator__disabled {
+    @apply bg-white;
+}
+
+
+// Main Nodes
+
+.paginator__next {
+    @apply rounded-sm ml-auto hover:bg-cherry-200 hover:text-white;
+}
+
+.paginator__previous {
+    @apply rounded-sm mr-auto hover:bg-cherry-200 hover:text-white;
+}
+
+.paginator__page {
+    @apply font-bold flex items-center justify-center text-center rounded-sm hover:bg-white;
+}
+
+.paginator__break {
+    
+}
+
+.paginator__breakLink {
+
+}
+
+.paginator__disabledLink {
+   
+}
+
+.paginator__previousLink {
+    @apply w-[40px] h-[40px] font-medium flex items-center justify-center text-center rounded-sm;
+}
+
+.paginator__nextLink {
+    @apply w-[40px] h-[40px] font-medium flex items-center justify-center text-center rounded-sm;
+}
+
+.paginator__pageLink {
+    @apply w-[40px] h-[40px] flex items-center justify-center text-center rounded-sm;
+}
+

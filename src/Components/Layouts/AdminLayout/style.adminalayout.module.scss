@@ -1,40 +1,139 @@
 .adminLayoutContainer {
-    @apply flex flex-col relative;
+    @apply grid grid-cols-12 grid-rows-1 bg-white min-h-screen relative;
 
-    .header {
-        @apply sticky top-0 left-0 w-full border-b-2 px-[5%] flex;
+    .headerWrapper {
+        @apply col-span-2;
 
-        .list {
-            @apply flex;
-
-            .item {
-                @apply px-[15px] py-[10px] font-[500] cursor-pointer transition-all;
-
-                &.selected {
-                    @apply bg-cherry-200 font-[600] text-white;
-
+        .headerContainer {
+            @apply flex flex-col gap-[15px] border-r sticky top-0 left-0 h-screen;
+    
+            .infoBlock {
+                @apply flex flex-col items-center justify-center gap-[10px];
+    
+                .avatar {
+                    @apply w-[152px] h-[152px] rounded-full shadow-xl p-2;
+                }
+    
+                .username {
+                    @apply font-[500] text-xl text-center;
+                }
+                .email {
+                    @apply text-center font-[500];
+                }
+            }
+    
+            .listContainer {
+                @apply w-full h-full flex flex-col pb-[10%] select-none;
+    
+                .item {
+                    @apply px-[20px] py-[15px] font-[500] cursor-pointer transition-all;
+    
                     &:hover {
-                        @apply text-white;
+                        @apply bg-light;
+                    }
+    
+                    &.selected {
+                        @apply bg-cherry-200 text-white;
                     }
                 }
-
-                &:hover {
-                    @apply text-cherry-200;
+    
+                .external {
+                    @apply mt-auto divide-y;
+    
+                    .exititem {
+                        @apply text-dark mt-auto px-[20px] py-[15px] font-[500] cursor-pointer transition-all;
+        
+                        &:hover {
+                            @apply bg-light;
+                        }
+                    }
                 }
-            }
-
-            
-        }
-
-        .logoutContainer {
-            @apply flex gap-[20px] items-center ml-auto;
-
-            .back {
-                @apply text-cherry-200 text-2xl leading-none cursor-pointer;
-            }
-            .logout {
-                @apply text-cherry-200 text-2xl leading-none cursor-pointer;
+    
             }
         }
     }
+
+    .contentContainer {
+        @apply col-span-10;
+    }
 }
+
+// Adaptive Size [MM]
+.adminLayoutContainer {
+    @apply mm:grid-cols-1;
+    .headerWrapper {
+        @apply mm:col-span-full;
+        .headerContainer {
+            @apply mm:h-auto;
+            .listContainer {
+                .external {
+                    @apply mm:mt-[20px];
+                }
+            }
+        }
+    }
+
+    .contentContainer {
+        @apply mm:col-span-full;
+    }
+}
+
+// Adaptive Size [SM]
+.adminLayoutContainer {
+    @apply sm:grid-cols-1;
+    .headerWrapper {
+
+        .headerContainer {
+            @apply sm:h-auto;
+            .listContainer {
+                .external {
+                    @apply sm:mt-[20px];
+                }
+            }
+        }
+    }
+
+    .contentContainer {
+        @apply sm:col-span-full;
+    }
+}
+
+// Adaptive Size [MD]
+.adminLayoutContainer {
+    @apply md:grid-cols-1;
+    .headerWrapper {
+        .headerContainer {
+            @apply md:h-auto;
+            .listContainer {
+                .external {
+                    @apply md:mt-[20px];
+                }
+            }
+        }
+    }
+    .contentContainer {
+        @apply md:col-span-full;
+    }
+}
+
+// Adaptive Size [LG]
+.adminLayoutContainer {
+    .headerWrapper {
+        @apply lg:col-span-3;
+    }
+    .contentContainer {
+        @apply lg:col-span-9
+    }
+}
+
+// Adaptive Size [XL]
+.adminLayoutContainer {
+    .headerWrapper {
+        @apply xl:col-span-3;
+    }
+    .contentContainer {
+        @apply xl:col-span-9
+    }
+}
+
+// Adaptive Size [FULL]

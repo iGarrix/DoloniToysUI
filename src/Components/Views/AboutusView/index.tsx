@@ -18,15 +18,15 @@ export const AboutusView : React.FC = () => {
     return (
         <section className={`${style.aboutusContainer}`}>
             <div className={`${style.imageContainer}`}>
-                <img alt="parent" src={parent}/>
+                <img alt="parent" src={parent} className={`${style.image}`}/>
             </div>
-            <div className={`${style.divider}`}>
+            {/* <div className={`${style.divider}`}>
                 <div className={`${style.sub_divider}`}>
 
                 </div>
-            </div>
+            </div> */}
             <div className={`${style.blockContainer}`}>
-                <aside className={`${style.blockItem}`}>
+                <aside className={`${style.blockItem} ${style.blockBlue}`}>
                     <div className={`${style.imagegroup1_Container}`}>
                         <img alt="group1" src={group1} className={`${style.imageScaling}`} />
                         <img alt="group2" src={group2} className={`${style.imageScaling}`} />
@@ -41,7 +41,7 @@ export const AboutusView : React.FC = () => {
                         <p className={`${style.desc}`}>{t(`TM DOLONI-TOYS - дивує своїх клієнтів високою якістю продукції, неймовірним рівнем сервісу, зарекомендувавши себе як перевірений помічник в непростій справі - створенні дитячого щастя`)}</p>
                     </div>
                 </aside>
-                <aside className={`${style.blockItem}`}>
+                <aside className={`${style.blockItem} ${style.blockGreen}`}>
                 <div className={`${style.imagegroup1_Container}`}>
                         <img alt="group21" src={group1} className={`${style.imageScaling}`} />
                         <img alt="group22" src={group3} className={`${style.imageScaling}`} />
@@ -57,7 +57,7 @@ export const AboutusView : React.FC = () => {
                             Займуть перше місце на полиці Вашого магазину, складе гідну конкуренцію закордонним аналогам.`)}</p>
                     </div>
                 </aside>
-                <aside className={`${style.blockItem}`}>
+                {/* <aside className={`${style.blockItem}`}>
                     <div className={`${style.lastBlockImage}`}>
                         <img alt="extend" src={extend} className={`${style.itemScaling}`} />
                     </div>
@@ -75,7 +75,7 @@ export const AboutusView : React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </aside>
+                </aside> */}
             </div>
         </section>
     )

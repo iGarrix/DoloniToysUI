@@ -2,22 +2,34 @@
     @apply bg-light;
 
     .imageContainer {
-        @apply flex justify-center;
-    }
+        //@apply flex justify-center;
 
-    .divider {
-        @apply bg-cherry-200 w-full py-[30px] relative;
-
-        .sub_divider {
-            @apply absolute bottom-0 left-0 w-full bg-black/20 py-[5px];
+        .image {
+            @apply w-full h-full object-cover bg-cover;
         }
     }
+
+    // .divider {
+    //     @apply bg-cherry-200 w-full py-[30px] relative;
+
+    //     .sub_divider {
+    //         @apply absolute bottom-0 left-0 w-full bg-black/20 py-[5px];
+    //     }
+    // }
 
     .blockContainer {
         @apply bg-light flex flex-col gap-[70px];
 
+        .blockGreen {
+            @apply bg-lightgreen-100;
+        }
+
+        .blockBlue {
+            @apply bg-bluesky-100;
+        }
+
         .blockItem {
-            @apply bg-bluesky-100 py-[4%] flex justify-center relative;
+            @apply py-[4%] flex justify-center relative;
 
             .imagegroup1_Container {
                 @apply absolute flex justify-between w-full px-[20%] h-full top-0 left-0 overflow-hidden;

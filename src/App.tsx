@@ -10,8 +10,10 @@ import { MainLayout } from './Components/Layouts/MainLayout';
 import { AboutusView } from './Components/Views/AboutusView';
 import { LoginView } from './Components/Views/Admins/Auth/LoginView';
 import { ManageCategoryView } from './Components/Views/Admins/ManageCategoryView';
+import { CreateCategoryView } from './Components/Views/Admins/ManageCategoryView/CreateCategoryView';
 import { ManageContactView } from './Components/Views/Admins/ManageContactView';
 import { ManageProductView } from './Components/Views/Admins/ManageProductView';
+import { CreateProductView } from './Components/Views/Admins/ManageProductView/CreateProductView';
 import { CatalogView } from './Components/Views/CatalogView';
 import { ProductDetails } from './Components/Views/CatalogView/ProductDetails';
 import { ContactsView } from './Components/Views/ContactsView';
@@ -83,6 +85,8 @@ function App() {
             <Route index element={<ManageProductView />} />
             <Route path="categories" element={<ManageCategoryView />} />
             <Route path="reports" element={<ManageContactView />} />
+            <Route path="create-category" element={<CreateCategoryView />} />
+            <Route path="create-product" element={<CreateProductView />} />
           </Route>
 
           <Route path='*' element={<Oops />} />

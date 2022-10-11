@@ -54,7 +54,7 @@ export const ManageProductView : React.FC = () => {
     return (
         <div className={`${style.container}`}>
             <div className={`${style.infoContainer}`}>
-                <h1 className={`${style.message}`}>There are {products?.total ? products.total : "none"} pages and {products ? products.totalObj : "none"} products, <span className={`${style.link}`} onClick={() => {nav("../create-product")}}>Create</span></h1>
+                <h1 className={`${style.message}`}>There are {products?.total ? products.total : "none"} pages and {products ? products.totalObj : "none"} products, <span className={`${style.link}`} onClick={() => {nav("create-product")}}>Create</span></h1>
             </div>
             {
                 error ?
@@ -74,13 +74,13 @@ export const ManageProductView : React.FC = () => {
                                 products?.pageables?.map((item, index) => {
                                     return (
                                         <tr key={index} className={`${style.block}`}>
-                                            <td className={`${style.item} w-[45%]`}>
+                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>
                                                 <div className={`${style.categoryitem}`}>
                                                     <img alt="img" className={`${style.imageitem}`} src={ImageCombiner(ImagePaths.Product, item.images[0])} onError={(tg: any) => { tg.target.src = ErrorImage}} />
                                                     {item.title}
                                                 </div>
                                             </td>
-                                            <td className={`${style.item} w-[45%]`}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
+                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
                                             <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveProduct(item)}}>Remove</button></td>                            
                                         </tr>
                                     )

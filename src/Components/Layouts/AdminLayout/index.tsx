@@ -30,8 +30,8 @@ export const AdminLayout : React.FC = () => {
                         </div>
                     </div>
                     <ul className={`${style.listContainer}`}>
-                        <li className={`${style.item} ${history.pathname === "/for-admins" ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>Products</li>
-                        <li className={`${style.item} ${history.pathname.includes("categories") ? style.selected : null}`} onClick={() => {nav("categories")}}>Categories</li>
+                        <li className={`${style.item} ${history.pathname === "/for-admins" || history.pathname.includes("product") ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>Products</li>
+                        <li className={`${style.item} ${history.pathname.includes("categ")  ? style.selected : null}`} onClick={() => {nav("categories")}}>Categories</li>
                         <li className={`${style.item} ${history.pathname.includes("reports") ? style.selected : null}`} onClick={() => {nav("reports")}}>Contacts</li>
                         <div className={`${style.external}`}>
                             <li className={`${style.exititem}`} onClick={() => {nav("/")}}>Exit</li>

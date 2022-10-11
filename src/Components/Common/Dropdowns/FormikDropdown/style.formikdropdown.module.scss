@@ -1,0 +1,19 @@
+.container {
+    @apply flex flex-col gap-1 text-dark;
+
+    .errorContainer {
+        @apply flex flex-wrap gap-2;
+
+        .title {
+            @apply text-black font-medium;
+        }
+
+        .message {
+            @apply text-red-500 font-medium;
+        }
+    }
+
+    .dropdown {
+        @apply outline-0 rounded-md py-3 px-3 pr-20 w-full text-dark bg-white;
+    }
+}

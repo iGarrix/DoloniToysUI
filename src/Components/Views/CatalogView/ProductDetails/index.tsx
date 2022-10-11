@@ -12,7 +12,7 @@ export const ProductDetails : React.FC = () => {
 
     const {article} = useParams();
     const dispatch = useAppDispatch();
-    const [selectImage, setSelectImage] = useState(1);
+    const [selectImage, setSelectImage] = useState(0);
 
     const { selectedProduct } = useAppSelector(state => state.productReducer);
 

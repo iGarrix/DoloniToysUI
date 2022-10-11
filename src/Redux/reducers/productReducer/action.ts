@@ -5,7 +5,7 @@ import http from "../../../Configurations/axios/axios";
 import { GetApiUrl, IExceptionHandleResponse, IPaginateResponse } from "../../../Configurations/globals";
 import { AppDispatch } from "../../store/store";
 import { productSlice } from "./productSlice";
-import { IProduct } from "./types";
+import { ICreateProductRequest, IProduct, IRemoveProductRequest } from "./types";
 
 export const GetAllProduct = (page: number, take: number) => async (dispatch: AppDispatch) => {
     try {
@@ -89,10 +89,45 @@ export const GetProduct = (article: string) => async (dispatch: AppDispatch) => 
     }
 }
 
+export const CreateProduct = (data: ICreateProductRequest) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(productSlice.actions.initLoading());
+        const form: FormData = new FormData();
+        form.append("Title", data.title);
+        for (let index = 0; index < data.images.length; ++index) {
+            console.log();
+            form.append("Images", data.images[index]);
+        }
+        form.append("Images", data.images[0]);
+        form.append("Description", data.description);
+        form.append("Rating", `${data.rating}`);
+        form.append("Article", data.article);
+        form.append("CategoryTitle", data.categoryTitle);
+        if (form) {         
+            const request = await http.post<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Add), form);
+            const error : IExceptionHandleResponse = request.data as IExceptionHandleResponse;
+            if ('StatusCode' in error) {
+               throw error;
+            }
+        }  
+    } catch (e) {
+        const error = e as IExceptionHandleResponse;
+        if (error) {
+            dispatch(productSlice.actions.initError(error.Message));
+        }
+        else {
+            dispatch(productSlice.actions.initError(defaultErrorMessage));
+        }
+    }
+}
+
 export const RemoveProduct = (product: IProduct) => async (dispatch: AppDispatch) => {
     try {
         dispatch(productSlice.actions.initLoading());
-        const request = await http.delete<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Remove), {data: product.article});
+        const model : IRemoveProductRequest = {
+            article: product.article
+        }
+        const request = await http.delete<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Remove), {data: model});
         const error : IExceptionHandleResponse = request.data as IExceptionHandleResponse;
         if ('StatusCode' in error) {
            throw error;

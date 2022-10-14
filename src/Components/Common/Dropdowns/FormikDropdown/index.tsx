@@ -24,7 +24,7 @@ export const FormikDropdown: React.FC<FormikDropdownProps> = ({
         onChange={field.onChange}
         name={field.name}
       >
-        <option value="" disabled>
+        <option value="" label={title}>
           {title}
         </option>
         {options.map((item) => {

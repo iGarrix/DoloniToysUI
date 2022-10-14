@@ -1,7 +1,9 @@
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Formik } from "formik";
-import { useState } from "react";
+import { t } from "i18next";
+import { useState, useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { ErrorImage } from "../../../../../Configurations/api/resources/api.resourceimage";
 import { useAppDispatch, useAppSelector } from "../../../../../Redux/hooks/hooks";
@@ -14,7 +16,7 @@ import { Field } from "../../../../Common/Inputs/Field";
 import style from "./style.ccat.module.scss";
 
 export const CreateCategoryView : React.FC = () => {
-
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const nav = useNavigate();
     const {error} = useAppSelector(state => state.categoryReducer);
@@ -61,11 +63,11 @@ export const CreateCategoryView : React.FC = () => {
         <section className={`${style.container}`}>
         <aside className={`${style.blockSide}`}>
             <div className={`${style.titleBlock}`}>
-                <h1 className={`${style.title}`}>Create new category</h1>
+                <h1 className={`${style.title}`}>{t("Create new category")}</h1>
                 {
                     error ?
                     <p className={`${style.error}`}>{error}</p> :
-                    <p className={`${style.desc}`}>You can create a new category</p>
+                    <p className={`${style.desc}`}>{t("You can create a new category")}</p>
                 }
             </div>
             <Formik initialValues={values} validationSchema={CreateCategoryScheme} onSubmit={onSubmitForm}>
@@ -80,10 +82,10 @@ export const CreateCategoryView : React.FC = () => {
                         </div>
                     </div>          
                     <div className={`${style.fieldBlock}`}>
-                        <Field placeholder="Title" name="title" type="text" />
+                        <Field placeholder={t("Title")} name="title" type="text" />
                     </div>
                     <div className={`${style.buttonContainer}`}>
-                        <DefButton title="Create" />
+                        <DefButton title={t("Create")} />
                     </div>
                 </Form>
             </Formik>

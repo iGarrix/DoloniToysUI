@@ -1,5 +1,6 @@
 import moment from "moment";
 import { useEffect, useState, useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks"
 import { GetAllContact } from "../../../../Redux/reducers/contactReducer/actions";
@@ -8,7 +9,7 @@ import { Paginator } from "../../../Common/Paginator";
 import style from "./style.managecontact.module.scss";
 
 export const ManageContactView: React.FC = () => {
-
+    const {t} = useTranslation();
     const { contacts, isLoading, error } = useAppSelector(state => state.contactReducer);
     const dispatch = useAppDispatch();
     const [isPending, startTransition] = useTransition();
@@ -46,7 +47,7 @@ export const ManageContactView: React.FC = () => {
     return (
         <div className={`${style.container}`}>
             <div className={`${style.infoContainer}`}>
-                <h1 className={`${style.message}`}>There are {contacts?.total ? contacts.total : "none"} pages and {contacts ? contacts.totalObj : "none"} messages</h1>
+                <h1 className={`${style.message}`}>{t("There are")} {contacts?.total ? contacts.total : "none"} {t("pages and")} {contacts ? contacts.totalObj : "none"} {t("messages")}</h1>
             </div>
             {
                 error ?
@@ -56,10 +57,10 @@ export const ManageContactView: React.FC = () => {
                     <table className={`${style.table}`}>
                         <thead className={`${style.headerContainer}`}>
                             <tr className={`${style.block}`}>
-                                <th className={`${style.title}`}>Name</th>
-                                <th className={`${style.title}`}>Email Address</th>
-                                <th className={`${style.title}`}>Message</th>
-                                <th className={`${style.title}`}>Send time</th>
+                                <th className={`${style.title}`}>{t("Name")}</th>
+                                <th className={`${style.title}`}>{t("Email Address")}</th>
+                                <th className={`${style.title}`}>{t("Message")}</th>
+                                <th className={`${style.title}`}>{t("Send time")}</th>
                             </tr>
                         </thead>
                         <tbody className={`${style.mainContainer}`}>

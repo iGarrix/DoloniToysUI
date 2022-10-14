@@ -1,5 +1,6 @@
 import moment from "moment";
 import { useEffect, useState, useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
@@ -10,7 +11,7 @@ import { Paginator } from "../../../Common/Paginator";
 import style from "./style.manageproduct.module.scss";
 
 export const ManageProductView : React.FC = () => {
-    
+    const {t} = useTranslation();
     const { products, isLoading, error } = useAppSelector(state => state.productReducer);
     const nav = useNavigate();
     const dispatch = useAppDispatch();
@@ -54,7 +55,7 @@ export const ManageProductView : React.FC = () => {
     return (
         <div className={`${style.container}`}>
             <div className={`${style.infoContainer}`}>
-                <h1 className={`${style.message}`}>There are {products?.total ? products.total : "none"} pages and {products ? products.totalObj : "none"} products, <span className={`${style.link}`} onClick={() => {nav("create-product")}}>Create</span></h1>
+                <h1 className={`${style.message}`}>{t("There are")} {products?.total ? products.total : "none"} {t("pages and")} {products ? products.totalObj : "none"} {t("products,")} <span className={`${style.link}`} onClick={() => {nav("create-product")}}>{t("Create")}</span></h1>
             </div>
             {
                 error ?
@@ -64,9 +65,9 @@ export const ManageProductView : React.FC = () => {
                     <table className={`${style.table}`}>
                         <thead className={`${style.headerContainer}`}>
                             <tr className={`${style.block}`}>
-                                <th className={`${style.title}`}>Title</th>
-                                <th className={`${style.title}`}>Create time</th>
-                                <th className={`${style.title}`}>Delete</th>
+                                <th className={`${style.title}`}>{t("Title")}</th>
+                                <th className={`${style.title}`}>{t("Create time")}</th>
+                                <th className={`${style.title}`}>{t("Delete")}</th>
                             </tr>
                         </thead>
                         <tbody className={`${style.mainContainer}`}>
@@ -81,7 +82,7 @@ export const ManageProductView : React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
-                                            <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveProduct(item)}}>Remove</button></td>                            
+                                            <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveProduct(item)}}>{t("Remove")}</button></td>                            
                                         </tr>
                                     )
                                 })

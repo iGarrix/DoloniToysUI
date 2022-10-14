@@ -36,9 +36,9 @@ export const AboutusView : React.FC = () => {
                         <img alt="circle2" src={circle2} className={`${style.image2Scaling2}`} />
                     </div>
                     <div className={`${style.firstBlockContainer}`}>
-                        <h1 className={`${style.title}`}>{t(`TM "DOLONI-TOYS" - Фабрика дитячого щастя!`)}</h1>
-                        <p className={`${style.desc}`}>{t(`Радісні дитячі очі, веселий безтурботний сміх, здійснення заповітних бажань, а до всього цього розвиток, зацікавленість, поглиблення вмінь і навичок дітей - це, без сумніву, наша мета! `)}</p>
-                        <p className={`${style.desc}`}>{t(`TM DOLONI-TOYS - дивує своїх клієнтів високою якістю продукції, неймовірним рівнем сервісу, зарекомендувавши себе як перевірений помічник в непростій справі - створенні дитячого щастя`)}</p>
+                        <h1 className={`${style.title}`}>{t(`TM DOLONI-TOYS - Factory of children's happiness!`)}</h1>
+                        <p className={`${style.desc}`}>{t(`Joyful children's eyes, cheerful carefree laughter, fulfillment of cherished wishes, and in addition to all this, the development, interest, deepening of skills and abilities of children - this, without a doubt, is our goal!`)}</p>
+                        <p className={`${style.desc}`}>{t(`TM DOLONI-TOYS - surprises its customers with high quality products, an incredible level of service, proving itself as a proven assistant in a difficult task - creating children's happiness`)}</p>
                     </div>
                 </aside>
                 <aside className={`${style.blockItem} ${style.blockGreen}`}>
@@ -51,10 +51,8 @@ export const AboutusView : React.FC = () => {
                         <img alt="circle2" src={circle2} className={`${style.image2Scaling2}`} />
                     </div>
                     <div className={`${style.firstBlockContainer}`}>
-                        <h1 className={`${style.title}`}>{t(`Компанія "ВІП-ТОЙС" Український виробник іграшок під торговою маркою "DOLONI-TOYS"`)}</h1>
-                        <p className={`${style.desc}`}>{t(`Ми пропонуємо широкий асортимент різних видів безпечних і цікавих іграшок та товарів для дітей на будь-який смак та уподобання. 
-                            Наші дитячі будтночки, гірки для катання, різнокольорові конструктори, іграшки для піску, машинки, мотобайки і багато інших чудових іграшок можуть вже сьогодні стати в нагоді Вашій дитині.
-                            Займуть перше місце на полиці Вашого магазину, складе гідну конкуренцію закордонним аналогам.`)}</p>
+                        <h1 className={`${style.title}`}>{t(`VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS`)}</h1>
+                        <p className={`${style.desc}`}>{t(`We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.`)}</p>
                     </div>
                 </aside>
                 {/* <aside className={`${style.blockItem}`}>

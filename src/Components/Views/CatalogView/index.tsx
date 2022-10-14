@@ -1,6 +1,7 @@
 import { faAngleDown, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { IGetProductFilter } from "../../../Configurations/api/requestmodels/models";
 import { ExpressionTypes } from "../../../Configurations/api/resources/api.expressiontypes";
@@ -14,7 +15,7 @@ import { ProductCard } from "../../CustomComponent/Cards/ProductCard";
 import style from "./style.catalog.module.scss";
 
 export const CatalogView: React.FC = () => {
-
+    const {t} = useTranslation();
     const { category } = useParams();
     const nav = useNavigate();
     const [isOpen, setOpen] = useState(false);
@@ -74,12 +75,12 @@ export const CatalogView: React.FC = () => {
             <aside className={`${style.filterGridContainer}`}>
                 <div className={`${style.filterGridWrapper}`}>
                     <div className={`${style.headerFilter}`}>
-                        <h1 className={`${style.title}`}>Фільтри</h1>
+                        <h1 className={`${style.title}`}>{t('Filters')}</h1>
                         <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => {setOpen(!isOpen)}} />
                     </div>
                     <div className={`${style.mainFilter} ${isOpen ? style.opened : style.closed}`}>
                         <p  className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
-                            Всі
+                            {t('All')}
                         </p>
                         {categories?.pageables?.map(item => {
                             return (
@@ -90,16 +91,16 @@ export const CatalogView: React.FC = () => {
                         })}
                         <hr />
                         <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterNameOrder)}}>
-                            Фільтрувати по назві (по зростанню)
+                            {t('Filter by name (ascending)')}
                         </p>
                         <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterNameOrderByDescending)}}>
-                            Фільтрувати по назві (по спаданню)
+                            {t('Filter by name (descending)')}
                         </p>
                         <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterRatingOrder)}}>
-                            Фільтрувати по рейтингу (по зростанню)
+                            {t('Filter by rating (ascending)')}
                         </p>
                         <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterRatingOrderByDescending)}}>
-                            Фільтрувати по рейтингу (по спаданню)
+                            {t('Filter by rating (descending)')}
                         </p>
                     </div>
                 </div>

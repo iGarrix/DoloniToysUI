@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom"
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
@@ -9,7 +10,7 @@ import style from "./style.pdetail.module.scss";
 const extend = require('../../../../Assets/Icons/detailextend.png');
 
 export const ProductDetails : React.FC = () => {
-
+    const {t} = useTranslation();
     const {article} = useParams();
     const dispatch = useAppDispatch();
     const [selectImage, setSelectImage] = useState(0);
@@ -59,7 +60,7 @@ export const ProductDetails : React.FC = () => {
                 <div className={`${style.contentContainer}`}>
                     <h1 className={`${style.title}`}>{selectedProduct?.title}</h1>
                     <h2 className={`${style.desc}`}>{selectedProduct?.description}</h2>
-                    <p className={`${style.article}`}>Article №: {selectedProduct?.article}</p>
+                    <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
                 </div>
             </aside>
         </section>

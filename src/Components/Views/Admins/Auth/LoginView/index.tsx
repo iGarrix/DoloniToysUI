@@ -1,5 +1,6 @@
 import { Form, Formik } from "formik";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../../Redux/hooks/hooks";
 import { accountSlice } from "../../../../../Redux/reducers/accountReducer/accountSlice";
@@ -10,7 +11,7 @@ import { Field } from "../../../../Common/Inputs/Field";
 import style from "./style.login.module.scss";
 
 export const LoginView : React.FC = () => {
-
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
 
     const { auth, error } = useAppSelector(state => state.accountReducer);
@@ -39,22 +40,22 @@ export const LoginView : React.FC = () => {
         <section className={`${style.container}`}>
             <aside className={`${style.blockSide}`}>
                 <div className={`${style.titleBlock}`}>
-                    <h1 className={`${style.title}`}>Log in</h1>
+                    <h1 className={`${style.title}`}>{t("Log in")}</h1>
                     {
                         error ?
                         <p className={`${style.error}`}>{error}</p> :
-                        <p className={`${style.desc}`}>Log in to the admin panel to manage products</p>
+                        <p className={`${style.desc}`}>{t("Log in to the admin panel to manage products")}</p>
                     }
                 </div>
                 <Formik initialValues={values} validationSchema={LoginScheme} onSubmit={onSubmitForm}>
                     <Form className={`${style.formContainer}`}>             
                         <div className={`${style.fieldBlock}`}>
-                            <Field placeholder="Email" name="email" type="email" />
-                            <Field placeholder="Password" name="password" type="password" />
+                            <Field placeholder={t("Email")} name="email" type="email" />
+                            <Field placeholder={t("Password")} name="password" type="password" />
                         </div>
                         <div className={`${style.buttonContainer}`}>
-                            <DefButton title="Back" onClick={() => {nav(-1)}}/>
-                            <DefButton title="Login" />
+                            <DefButton title={t("Back")} onClick={() => {nav(-1)}}/>
+                            <DefButton title={t("Login")} />
                         </div>
                     </Form>
                 </Formik>

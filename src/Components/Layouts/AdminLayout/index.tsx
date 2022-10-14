@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks/hooks";
 import { accountSlice } from "../../../Redux/reducers/accountReducer/accountSlice";
@@ -5,7 +6,7 @@ import { accountSlice } from "../../../Redux/reducers/accountReducer/accountSlic
 import style from "./style.adminalayout.module.scss";
 
 export const AdminLayout : React.FC = () => {
-
+    const {t} = useTranslation();
     const history = useLocation();
     const dispatch = useAppDispatch();
     const nav = useNavigate();
@@ -30,12 +31,12 @@ export const AdminLayout : React.FC = () => {
                         </div>
                     </div>
                     <ul className={`${style.listContainer}`}>
-                        <li className={`${style.item} ${history.pathname === "/for-admins" || history.pathname.includes("product") ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>Products</li>
-                        <li className={`${style.item} ${history.pathname.includes("categ")  ? style.selected : null}`} onClick={() => {nav("categories")}}>Categories</li>
-                        <li className={`${style.item} ${history.pathname.includes("reports") ? style.selected : null}`} onClick={() => {nav("reports")}}>Contacts</li>
+                        <li className={`${style.item} ${history.pathname === "/for-admins" || history.pathname.includes("product") ? style.selected : null}`} onClick={() => {nav("/for-admins")}}>{t("Products")}</li>
+                        <li className={`${style.item} ${history.pathname.includes("categ")  ? style.selected : null}`} onClick={() => {nav("categories")}}>{t("Categories")}</li>
+                        <li className={`${style.item} ${history.pathname.includes("reports") ? style.selected : null}`} onClick={() => {nav("reports")}}>{t("Contacts")}</li>
                         <div className={`${style.external}`}>
-                            <li className={`${style.exititem}`} onClick={() => {nav("/")}}>Exit</li>
-                            <li className={`${style.exititem}`} onClick={onLogoutUser}>Logout</li>
+                            <li className={`${style.exititem}`} onClick={() => {nav("/")}}>{t("Exit")}</li>
+                            <li className={`${style.exititem}`} onClick={onLogoutUser}>{t("Logout")}</li>
                         </div>
                     </ul>
                 </header>

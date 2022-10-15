@@ -55,7 +55,7 @@ i18n.use(initReactI18next).init({
         "Feedback": "Feedback",
         "St. Mlynivska 18": "St. Mlynivska 18",
         "33000 m. Rivne": "33000 m. Rivne",
-        "Send": "Send",
+        "Send form": "Send form",
         "Send2": "Send",
         "Your message": "Your message",
         //Forparthers
@@ -125,6 +125,14 @@ i18n.use(initReactI18next).init({
         "Categories": "Categories",
         "Exit": "Exit",
         "Logout": "Logout",
+        // Banner 2
+        "The new ones are interesting": "The new ones are interesting",
+        "toys": "toys",
+        "children directly in": "children directly in",
+        "palms!": "palms!",
+        "A great variety of toys": "A great variety of toys",
+        "right here and": "right here and",
+        "now": "now",
       }
     },
     ua: {
@@ -176,7 +184,7 @@ i18n.use(initReactI18next).init({
         "Feedback": "Зворотній зв’язок",
         "St. Mlynivska 18": "Вул. Млинівська 18",
         "33000 m. Rivne": "33000 м. Рівне",
-        "Send": "Надіслати",
+        "Send form": "Надіслати форму",
         "Send2": "Відправити",
         "Your message": "Ваше повідомлення",
         //Forparthers
@@ -246,6 +254,14 @@ i18n.use(initReactI18next).init({
         "Categories": "Категорії",
         "Exit": "Вихід",
         "Logout": "Вийти",
+        // Banner 2
+        "The new ones are interesting": "Нові цікаві",
+        "toys": "іграшки",
+        "children directly in": "дітям прямо в",
+        "palms!": "долоньки!",
+        "A great variety of toys": "Велике різноманіття іграшок",
+        "right here and": "прямо тут і",
+        "now": "зараз",
       }
     },
   },

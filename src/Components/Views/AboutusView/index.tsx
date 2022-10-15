@@ -42,7 +42,7 @@ export const AboutusView : React.FC = () => {
                     </div>
                 </aside>
                 <aside className={`${style.blockItem} ${style.blockGreen}`}>
-                <div className={`${style.imagegroup1_Container}`}>
+                    <div className={`${style.imagegroup1_Container}`}>
                         <img alt="group21" src={group1} className={`${style.imageScaling}`} />
                         <img alt="group22" src={group3} className={`${style.imageScaling}`} />
                     </div>
@@ -51,7 +51,7 @@ export const AboutusView : React.FC = () => {
                         <img alt="circle2" src={circle2} className={`${style.image2Scaling2}`} />
                     </div>
                     <div className={`${style.firstBlockContainer}`}>
-                        <h1 className={`${style.title}`}>{t(`VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS`)}</h1>
+                        {/* <h1 className={`${style.title}`}>{t(`VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS`)}</h1> */}
                         <p className={`${style.desc}`}>{t(`We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.`)}</p>
                     </div>
                 </aside>

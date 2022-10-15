@@ -1,5 +1,6 @@
 
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { RedButton } from "../../../../Common/Buttons/RedButton";
 import style from "./style.carouselbannerone.module.scss";
 
@@ -9,6 +10,7 @@ const rocket = require('../../../../../Assets/Icons/rocket_.png');
 export const CarouselMainBannerOne : React.FC = () => {
 
     const {t} = useTranslation();
+    const nav = useNavigate();
 
     return (
         <div className={`${style.carouselbanner1}`}>
@@ -25,7 +27,7 @@ export const CarouselMainBannerOne : React.FC = () => {
                     <p><span className={`${style.sublink}`}>{t(`fantasies`)}</span></p>
                 </aside>
                 <aside>
-                    <RedButton title={t(`Catalog`)} onClick={() => {console.log(`go`);}} />
+                    <RedButton title={t(`Catalog`)} onClick={() => {nav("/catalog")}} />
                 </aside>
                 <img alt="rocket" src={rocket} className={`${style.rocket}`} />
             </section>

@@ -7,6 +7,7 @@ import { SimpleMainBanner } from "../../CustomComponent/Banners/SimpleMainBanner
 import { Carousel } from "../../CustomComponent/Carousels/Carousel";
 import { CarouselFullscreen } from "../../CustomComponent/Carousels/CarouselFullscreen";
 import { CarouselMainBannerOne } from "../../CustomComponent/Carousels/CarouselPages/CarouselMainBannerOne";
+import { CarouselMainBannerTwo } from "../../CustomComponent/Carousels/CarouselPages/CarouselMainBannerTwo";
 import { MainFooter } from "../../CustomComponent/Footers/MainFooter";
 import { RecommendBlock } from "../../CustomComponent/RecommendBlock";
 import { Section } from "../../CustomComponent/Section";
@@ -52,10 +53,7 @@ export const MainView: React.FC = () => {
                         children: <CarouselMainBannerOne />
                     },
                     {
-                        children: <CarouselMainBannerOne />
-                    },
-                    {
-                        children: <CarouselMainBannerOne />
+                        children: <CarouselMainBannerTwo />
                     },
                 ]} />
             <section className={`${style.slidercarouserContainer}`} id="main_carousel">

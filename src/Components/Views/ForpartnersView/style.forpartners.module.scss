@@ -31,7 +31,7 @@
     }
 
     .secondContainer {
-        @apply flex relative bg-lightgreen-100 py-[60px] px-[15%];
+        @apply flex relative bg-bluesky-100 py-[60px] px-[15%];
 
         .extendImageContainer {
             @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[5%];
@@ -43,7 +43,7 @@
     }
 
     .thirdContainer {
-        @apply flex relative bg-banana-100 py-[60px] px-[15%];
+        @apply flex relative bg-bluesky-100 py-[60px] px-[15%];
 
         .extendImageContainer {
             @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[5%];

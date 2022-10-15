@@ -18,10 +18,10 @@
     // }
 
     .blockContainer {
-        @apply bg-light flex flex-col gap-[70px];
+        @apply bg-light flex flex-col;
 
         .blockGreen {
-            @apply bg-lightgreen-100;
+            @apply bg-bluesky-100;
         }
 
         .blockBlue {

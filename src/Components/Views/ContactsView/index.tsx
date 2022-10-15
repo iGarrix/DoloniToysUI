@@ -63,8 +63,8 @@ export const ContactsView: React.FC = () => {
                 </div>
             </aside>
             <aside className={`${style.side_2}`}>
-                <h1 className={`${style.title}`}>{t("Send")}
-                    <img alt="pen" src={pen} className={`${style.pen}`} />
+                <h1 className={`${style.title}`}>{t("Send form")}
+                    {/* <img alt="pen" src={pen} className={`${style.pen}`} /> */}
                 </h1>
                 <Formik initialValues={values} validationSchema={SendContactScheme} onSubmit={onSubmitForm}>
                     <Form className={`${style.formContainer}`}>

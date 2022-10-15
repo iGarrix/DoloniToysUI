@@ -5,7 +5,7 @@
         @apply flex justify-center items-center relative w-[50vw] h-[90vh];
 
         .image {
-            @apply object-fill w-[600px] h-[600px];
+            @apply object-contain w-[600px] h-[600px];
         }
 
         .paginatorContainer {

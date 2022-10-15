@@ -15,7 +15,7 @@ import { ProductCard } from "../../CustomComponent/Cards/ProductCard";
 import style from "./style.catalog.module.scss";
 
 export const CatalogView: React.FC = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const { category } = useParams();
     const nav = useNavigate();
     const [isOpen, setOpen] = useState(false);
@@ -76,10 +76,24 @@ export const CatalogView: React.FC = () => {
                 <div className={`${style.filterGridWrapper}`}>
                     <div className={`${style.headerFilter}`}>
                         <h1 className={`${style.title}`}>{t('Filters')}</h1>
-                        <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => {setOpen(!isOpen)}} />
+                        <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => { setOpen(!isOpen) }} />
                     </div>
                     <div className={`${style.mainFilter} ${isOpen ? style.opened : style.closed}`}>
-                        <p  className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
+
+                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrder) }}>
+                            {t('Filter by name (ascending)')}
+                        </p>
+                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrderByDescending) }}>
+                            {t('Filter by name (descending)')}
+                        </p>
+                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrder) }}>
+                            {t('Filter by rating (ascending)')}
+                        </p>
+                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrderByDescending) }}>
+                            {t('Filter by rating (descending)')}
+                        </p>
+                        <hr />
+                        <p className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
                             {t('All')}
                         </p>
                         {categories?.pageables?.map(item => {
@@ -89,19 +103,7 @@ export const CatalogView: React.FC = () => {
                                 </p>
                             )
                         })}
-                        <hr />
-                        <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterNameOrder)}}>
-                            {t('Filter by name (ascending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterNameOrderByDescending)}}>
-                            {t('Filter by name (descending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterRatingOrder)}}>
-                            {t('Filter by rating (ascending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => {Filter(ExpressionTypes.FilterRatingOrderByDescending)}}>
-                            {t('Filter by rating (descending)')}
-                        </p>
+
                     </div>
                 </div>
             </aside>

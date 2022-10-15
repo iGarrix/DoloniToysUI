@@ -73,7 +73,7 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
                     })
                 }
             </div>
-            <div className={`${style.npbuttonContainer}`}>
+            <div className={`${style.npbuttonContainer} z-[1]`}>
                 <button className={`${style.npbutton} ${left === 0 ? "hidden" : "flex"}`} onClick={onPrev}>
                     <img alt="next" src={prev} />
                 </button>
@@ -81,7 +81,7 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
                     <img alt="next" src={next} />
                 </button>
             </div>
-            <div className={`${style.counterContainer}`}>
+            <div className={`${style.counterContainer} z-[100]`}>
                 <div className={`${style.bodyContainer}`}>
                     {
                         props.childrens.map((item : any, key: number) => {

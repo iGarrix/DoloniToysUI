@@ -1,23 +1,38 @@
 .simplemainbanner {
-    @apply w-full py-[30px] px-[50px] bg-banana-100 grid grid-cols-9 grid-rows-1 gap-[50px];
+    @apply w-full bg-banana-100 grid grid-cols-9 grid-rows-1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 50px;
 
     .firstside {
-        @apply col-span-6 flex flex-col justify-center pl-[20%] gap-[40px] relative;
+        @apply col-span-6 flex flex-col justify-center relative;
+        padding-left: 20%;
+        gap: 40px;
 
         .title {
-            @apply text-[32px] leading-[40px] font-[700];
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 700;
         }
         .desc {
-            @apply text-[20px] leading-[25px] font-[500] w-[70%];
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 500;
+            width: 70%;
         }
 
         .groupimagecontainer {
-            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[10%];
+            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center;
+            padding-left: 10%;
+            padding-right: 10%;
             .groupimage1 {
                 @apply top-0 left-0;
             }
             .groupimage2 {
-                @apply translate-x-[-20%];
+                --tw-translate-x: -20%;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
             }
         }
     }
@@ -26,90 +41,118 @@
     .secondside {
         @apply col-span-3 w-full;
         .banner_3_img {
-            @apply w-full h-[390px] bg-cover object-cover rounded-[15px];
+            @apply w-full bg-cover object-cover;
+            height: 390px;
+            border-radius: 15px;
         }
     }
 
     // Adaptive Size [MM]
 
-    @apply mm:grid-cols-1 mm:grid-rows-2 mm:gap-0 mm:px-[10px] mm:w-full;
-
-    .firstside {
-        @apply mm:p-0 mm:text-center;
-
-        .desc {
-            @apply mm:w-full
+    @media (min-width: 310px) and (max-width: 640px) {       
+        @apply mm:grid-cols-1 mm:grid-rows-2 mm:gap-0 mm:w-full;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+        .firstside {
+            @apply mm:p-0 mm:text-center;
+    
+            .desc {
+                @apply mm:w-full
+            }
+    
+            .groupimagecontainer {
+                @apply mm:hidden
+            }
         }
-
-        .groupimagecontainer {
-            @apply mm:hidden
+    
+        .secondside {
+            @apply mm:col-span-full mm:px-0;
         }
     }
 
-    .secondside {
-        @apply mm:col-span-full mm:px-0;
-    }
 
     // Adaptive Size [SM]
 
-    @apply sm:grid-cols-1 sm:grid-rows-2 sm:gap-0 sm:px-[10px] sm:w-full;
-
-    .firstside {
-        @apply sm:p-0 sm:text-center;
-
-        .desc {
-            @apply sm:w-full
+    @media (min-width: 640px) and (max-width: 767px) {       
+        @apply sm:grid-cols-1 sm:grid-rows-2 sm:gap-0 sm:w-full;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+        .firstside {
+            @apply sm:p-0 sm:text-center;
+    
+            .desc {
+                @apply sm:w-full
+            }
+    
+            .groupimagecontainer {
+                @apply sm:hidden
+            }
         }
-
-        .groupimagecontainer {
-            @apply sm:hidden
+    
+        .secondside {
+            @apply sm:col-span-full sm:px-0;
         }
     }
 
-    .secondside {
-        @apply sm:col-span-full sm:px-0;
-    }
 
     // Adaptive Size [MD]
 
-    @apply md:gap-0 md:px-[10px] md:w-full;
-
-    .firstside {
-        @apply md:col-span-5 md:px-[10px];
-
-        .groupimagecontainer {
-            @apply md:hidden;
+    @media (min-width: 768px) and (max-width: 1023px) {     
+        @apply md:gap-0 md:w-full;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+        .firstside {
+            @apply md:col-span-5;
+            padding-left: 10px;
+            padding-right: 10px;
+    
+            .groupimagecontainer {
+                @apply md:hidden;
+            }
         }
-    }
-
-    .secondside {
-        @apply md:col-span-4;
+    
+        .secondside {
+            @apply md:col-span-4;
+        }
     }
 
     // Adaptive Size [LG]
 
-    @apply lg:gap-0 lg:px-[10px] lg:w-full;
-
-    .firstside {
-        @apply lg:col-span-5 lg:px-[20px];
-
-        .groupimagecontainer {
-            @apply lg:hidden;
+    @media (min-width: 1024px) and (max-width: 1279px) {       
+        @apply lg:gap-0 lg:w-full;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+        .firstside {
+            @apply lg:col-span-5;
+            padding-left: 20px;
+            padding-right: 20px;
+    
+            .groupimagecontainer {
+                @apply lg:hidden;
+            }
+        }
+    
+        .secondside {
+            @apply lg:col-span-4;
         }
     }
 
-    .secondside {
-        @apply lg:col-span-4;
-    }
 
      // Adaptive Size [XL]
+     @media (min-width: 1280px) and (max-width: 1535px) {     
+         @apply xl:gap-0 xl:w-full;
+         padding-left: 10px;
+         padding-right: 10px;
 
-     @apply xl:gap-0 xl:px-[10px] xl:w-full;
-
-     .firstside {
-
-        .groupimagecontainer {
-            @apply xl:hidden;
+         .firstside {
+    
+            .groupimagecontainer {
+                @apply xl:hidden;
+            }
         }
     }
 }

@@ -1,3 +1,11 @@
 .redbutton {
-    @apply text-[30px] font-[500] leading-[30px] px-[32px] py-[14px] bg-cherry-200 text-white rounded-[15px];
+    @apply bg-cherry-200 text-white;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 15px;
 }

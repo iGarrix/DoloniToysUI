@@ -5,7 +5,7 @@
         @apply flex flex-wrap gap-2 overflow-hidden;
 
         .placeholder {
-            @apply font-[500];
+            font-weight: 500;
         }
         .error {
             @apply text-red-500 font-medium;

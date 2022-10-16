@@ -2,33 +2,44 @@
     @apply flex justify-center items-center w-full h-screen overflow-hidden;
 
     .blockSide {
-        @apply flex flex-col items-center shadow-2xl rounded-[15px] py-[5vh] px-[4vw] w-[30%] bg-banana-100/80 gap-[20px];
-    
+        @apply flex flex-col items-center shadow-2xl bg-banana-100/80;
+        border-radius: 15px;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        gap: 20px;
+        width: 30%;
         .titleBlock {
-            @apply flex flex-col gap-[5px];
+            @apply flex flex-col;
+            gap: 5px;
 
             .title {
-                @apply text-2xl font-[700] text-center;
+                @apply text-2xl text-center;
+                font-weight: 700;
             }
 
             .desc {
-                @apply font-[500] text-lg text-center;
+                @apply text-lg text-center;
+                font-weight: 500;
             }
 
             .error {
-                @apply text-red-500 font-[500] text-center;
+                @apply text-red-500 text-center;
+                font-weight: 500;
             }
         }
 
         .formContainer {
-            @apply flex flex-col gap-[20px] w-full;
-
+            @apply flex flex-col w-full;
+            gap: 20px;
             .imageBlock {
                 @apply w-full flex justify-center;
 
                 .imageContainer {
-                    @apply w-[100px] h-[100px] relative overflow-hidden rounded-xl;
-
+                    @apply relative overflow-hidden rounded-xl;
+                    width: 100px;
+                    height: 100px;
                     .imageEffect {
                         @apply w-full h-full transition-all bg-black/60 opacity-0 hover:opacity-100 absolute flex justify-center items-center;
 
@@ -44,11 +55,13 @@
             }
 
             .fieldBlock {
-                @apply flex flex-col gap-[10px];
+                @apply flex flex-col;
+                gap: 10px;
             }
 
             .buttonContainer {
-                @apply w-full flex justify-end gap-[5%];
+                @apply w-full flex justify-end;
+                gap: 5%;
             }
         }
     
@@ -82,40 +95,49 @@
     }
 }
 // Adaptive Size [MD]
-.container {
-    .blockSide {
-        @apply md:w-[80%];
-
-        .formContainer {
-            @apply md:h-full;
-            .buttonContainer {
-                @apply md:mt-auto;
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .container {
+        .blockSide {
+            width: 80%;
+    
+            .formContainer {
+                @apply md:h-full;
+                .buttonContainer {
+                    @apply md:mt-auto;
+                }
             }
         }
     }
 }
 // Adaptive Size [LG]
-.container {
-    .blockSide {
-        @apply lg:w-[60%];
-
-        .formContainer {
-            @apply lg:h-full;
-            .buttonContainer {
-                @apply lg:mt-auto;
+@media (min-width: 1024px) and (max-width: 1279px) {
+    
+    .container {
+        .blockSide {
+            width: 60%;
+    
+            .formContainer {
+                @apply lg:h-full;
+                .buttonContainer {
+                    @apply lg:mt-auto;
+                }
             }
         }
     }
 }
 // Adaptive Size [XL]
-.container {
-    .blockSide {
-        @apply xl:w-[50%];
-
-        .formContainer {
-            @apply xl:h-full;
-            .buttonContainer {
-                @apply xl:mt-auto;
+@media (min-width: 1280px) and (max-width: 1535px) {
+    
+    .container {
+        .blockSide {
+            width: 50%;
+    
+            .formContainer {
+                @apply xl:h-full;
+                .buttonContainer {
+                    @apply xl:mt-auto;
+                }
             }
         }
     }

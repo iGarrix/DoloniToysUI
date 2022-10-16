@@ -29,35 +29,52 @@
         }
 
         .blockItem {
-            @apply py-[4%] flex justify-center relative;
+            @apply flex justify-center relative;
+            padding-top: 4%;
+            padding-bottom: 4%;
 
             .imagegroup1_Container {
-                @apply absolute flex justify-between w-full px-[20%] h-full top-0 left-0 overflow-hidden;
-                
+                @apply absolute flex justify-between w-full h-full top-0 left-0 overflow-hidden;
+                padding-left: 20%;
+                padding-right: 20%;
+
                 .imageScaling {
-                    @apply scale-[0.8];
+                    --tw-scale-x: 0.8;
+                    --tw-scale-y: 0.8;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
                 }
             }
 
             .imagegroup2_Container {
-                @apply absolute flex justify-center gap-[5%] w-full h-full top-0 left-0 overflow-hidden;
-                
+                @apply absolute flex justify-center w-full h-full top-0 left-0 overflow-hidden;
+                gap: 5%;
+
                 .image2Scaling1 {
-                    @apply scale-[0.9] mt-auto opacity-40;
+                    @apply mt-auto opacity-40;
+                    --tw-scale-x: 0.9;
+                    --tw-scale-y: 0.9;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
                 }
+
                 .image2Scaling2 {
-                    @apply scale-[0.8] mb-auto opacity-80;
+                    @apply mb-auto opacity-80;
+                    --tw-scale-x: 0.8;
+                    --tw-scale-y: 0.8;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
                 }
             }
 
             .firstBlockContainer {
-                @apply flex flex-col gap-[50px] items-center w-[40%] z-10;
-
+                @apply flex flex-col items-center z-10;
+                gap: 50px;
+                width: 40%;
                 .title {
-                    @apply font-[600] text-2xl text-center;
+                    @apply text-2xl text-center;
+                    font-weight: 600;
                 }
+
                 .desc {
-                    @apply font-[500];
+                    font-weight: 500;
                 }
             }
 
@@ -65,207 +82,244 @@
                 @apply absolute flex justify-center w-full h-full top-0 left-0 overflow-hidden;
 
                 .itemScaling {
-                    @apply scale-[0.8] mb-auto opacity-80 w-full;
+                    @apply mb-auto opacity-80 w-full;
+                    --tw-scale-x: 0.8;
+                    --tw-scale-y: 0.8;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
                 }
 
             }
 
             .lbContainer {
-                @apply flex flex-col gap-[50px] z-10 px-[90px];
-
+                @apply flex flex-col z-10;
+                gap: 50px;
+                padding-left: 90px;
+                padding-right: 90px;
+                }
                 .title {
-                    @apply font-[600] text-2xl text-center;
+                    @apply text-2xl text-center;
+                    font-weight: 600;
                 }
 
                 .gridContainer {
-                    @apply w-full grid grid-cols-11 grid-rows-3 gap-[20px];
+                    @apply w-full grid grid-cols-11 grid-rows-3;
+                    gap: 20px;
 
                     .firstItem {
-                        @apply bg-banana-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] col-span-5;
-
+                        @apply bg-banana-100 flex items-center justify-center col-span-5;
+                        border-radius: 15px;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        padding-left: 16px;
+                        padding-right: 16px;
                         .content {
-                            @apply text-center font-[500] text-[17px];
+                            @apply text-center;
+                            font-weight: 500;
+                            font-size: 17px;
                         }
                     }
 
                     .secondItem {
-                        @apply bg-lightgreen-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] row-start-2 col-start-4 col-span-5;
-
+                        @apply bg-lightgreen-100 flex items-center justify-center row-start-2 col-start-4 col-span-5;
+                        border-radius: 15px;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        padding-left: 16px;
+                        padding-right: 16px;
                         .content {
-                            @apply text-center font-[500] text-[17px];
+                            @apply text-center;
+                            font-weight: 500;
+                            font-size: 17px;
                         }
                     }
 
                     .thirdItem {
-                        @apply bg-cherry-100 rounded-[15px] flex items-center justify-center py-[15px] px-[16px] row-start-3 col-start-7 col-span-6;
-
+                        @apply bg-cherry-100 flex items-center justify-center row-start-3 col-start-7 col-span-6;
+                        border-radius: 15px;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        padding-left: 16px;
+                        padding-right: 16px;
                         .content {
-                            @apply text-center font-[500] text-[17px];
+                            @apply text-center;
+                            font-weight: 500;
+                            font-size: 17px;
                         }
                     }
                 }
             }
-            
+
         }
     }
-}
 
 // Adaptive Size [MM]
-
-.aboutusContainer {
-
-    .blockContainer {
-        @apply mm:gap-[40px];
-
-        .blockItem {
-
-            .imagegroup1_Container {
-                @apply mm:hidden;
-            }
-
-            .lastBlockImage {
-                @apply mm:hidden;
-            }
-
-            .firstBlockContainer {
-                @apply mm:w-[90%];
-            }
-
-            .lbContainer {
-                @apply mm:px-[10px];
-
-                .gridContainer {
-                    
-                    .firstItem {
-                        @apply mm:col-span-full;
-                    }
-                    .secondItem {
-                        @apply mm:col-span-full;
-                    }
-                    .thirdItem {
-                        @apply mm:col-span-full;
+@media (min-width: 310px) and (max-width: 640px) {
+    .aboutusContainer {
+    
+        .blockContainer {
+            gap: 40px;
+    
+            .blockItem {
+    
+                .imagegroup1_Container {
+                    @apply mm:hidden;
+                }
+    
+                .lastBlockImage {
+                    @apply mm:hidden;
+                }
+    
+                .firstBlockContainer {
+                    width: 90%;
+                }
+    
+                .lbContainer {
+                    padding-left: 10px;
+                    padding-right: 10px;
+    
+                    .gridContainer {
+    
+                        .firstItem {
+                            @apply mm:col-span-full;
+                        }
+    
+                        .secondItem {
+                            @apply mm:col-span-full;
+                        }
+    
+                        .thirdItem {
+                            @apply mm:col-span-full;
+                        }
                     }
                 }
             }
+    
         }
-
     }
 }
 
 //Adaptive Size [SM]
-
-.aboutusContainer {
-
-    .blockContainer {
-        @apply sm:gap-[40px];
-
-        .blockItem {
-
-            .imagegroup1_Container {
-                @apply sm:hidden;
-            }
-
-            .lastBlockImage {
-                @apply sm:hidden;
-            }
-
-            .firstBlockContainer {
-                @apply sm:w-[90%];
-            }
-
-            .lbContainer {
-                @apply sm:px-[10px];
-
-                .gridContainer {
-                    
-                    .firstItem {
-                        @apply sm:col-span-full;
-                    }
-                    .secondItem {
-                        @apply sm:col-span-full;
-                    }
-                    .thirdItem {
-                        @apply sm:col-span-full;
+@media (min-width: 640px) and (max-width: 767px) {
+    .aboutusContainer {
+    
+        .blockContainer {
+            gap: 40px;
+    
+            .blockItem {
+    
+                .imagegroup1_Container {
+                    @apply sm:hidden;
+                }
+    
+                .lastBlockImage {
+                    @apply sm:hidden;
+                }
+    
+                .firstBlockContainer {
+                    width: 90%;
+                }
+    
+                .lbContainer {
+                    padding-left: 10px;
+                    padding-right: 10px;
+    
+                    .gridContainer {
+    
+                        .firstItem {
+                            @apply sm:col-span-full;
+                        }
+    
+                        .secondItem {
+                            @apply sm:col-span-full;
+                        }
+    
+                        .thirdItem {
+                            @apply sm:col-span-full;
+                        }
                     }
                 }
             }
+    
         }
-
     }
 }
 
 // Adaptive Size [MD]
-
-.aboutusContainer {
-
-    .blockContainer {
-        @apply md:gap-[40px];
-
-        .blockItem {
-
-            .imagegroup1_Container {
-                @apply md:hidden;
-            }
-
-            .lastBlockImage {
-                @apply md:hidden;
-            }
-
-            .firstBlockContainer {
-                @apply md:w-[90%];
-            }
-
-            .lbContainer {
-                @apply md:px-[10px];
-
-                .gridContainer {
-                    
-                    .firstItem {
-                        @apply md:col-span-full;
-                    }
-                    .secondItem {
-                        @apply md:col-span-full;
-                    }
-                    .thirdItem {
-                        @apply md:col-span-full;
+@media (min-width: 768px) and (max-width: 1023px) {
+    .aboutusContainer {
+    
+        .blockContainer {
+            gap: 40px;
+    
+            .blockItem {
+    
+                .imagegroup1_Container {
+                    @apply md:hidden;
+                }
+    
+                .lastBlockImage {
+                    @apply md:hidden;
+                }
+    
+                .firstBlockContainer {
+                    width: 90%;
+                }
+    
+                .lbContainer {
+                    padding-left: 10px;
+                    padding-right: 10px;
+    
+                    .gridContainer {
+    
+                        .firstItem {
+                            @apply md:col-span-full;
+                        }
+    
+                        .secondItem {
+                            @apply md:col-span-full;
+                        }
+    
+                        .thirdItem {
+                            @apply md:col-span-full;
+                        }
                     }
                 }
             }
+    
         }
-
     }
 }
 
 // Adaptive Size [LG]
-
-.aboutusContainer {
-
-    .blockContainer {
-        @apply lg:gap-[40px];
-
-        .blockItem {
-
-            .imagegroup1_Container {
-                @apply lg:hidden;
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .aboutusContainer {
+    
+        .blockContainer {
+            gap: 40px;
+    
+            .blockItem {
+    
+                .imagegroup1_Container {
+                    @apply lg:hidden;
+                }
+    
+                .lastBlockImage {
+                    @apply lg:hidden;
+                }
+    
+                .firstBlockContainer {
+                    width: 90%;
+                }
+    
+                .lbContainer {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    }
+                }
             }
-
-            .lastBlockImage {
-                @apply lg:hidden;
-            }
-
-            .firstBlockContainer {
-                @apply lg:w-[90%];
-            }
-
-            .lbContainer {
-                @apply lg:px-[10px];
-
-                
-            }
+    
         }
-
     }
-}
 
 // Adaptive Size [XL]
 
@@ -276,7 +330,7 @@
         .blockItem {
 
             .firstBlockContainer {
-                @apply xl:w-[70%];
+                width: 70%;
             }
         }
 

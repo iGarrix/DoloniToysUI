@@ -2,18 +2,22 @@
     @apply w-full grid grid-cols-2 grid-rows-1 bg-white;
 
     .side_1 {
-        @apply flex justify-center items-center relative w-[50vw] h-[90vh];
-
+        @apply flex justify-center items-center relative;
+        width: 50vw;
+        height: 90vh;
         .image {
-            @apply object-contain w-[600px] h-[600px];
+            @apply object-contain;
+            width: 600px;
+            height: 600px;
         }
 
         .paginatorContainer {
             @apply absolute bottom-0 left-0 p-3 flex flex-wrap gap-2;
 
             .item {
-                @apply object-cover bg-cover w-[64px] h-[64px] transition-all border-2 rounded-md shadow-sm cursor-pointer;
-            
+                @apply object-cover bg-cover transition-all border-2 rounded-md shadow-sm cursor-pointer;
+                width: 64px;
+                height: 64px;
                 &:hover {
                     @apply border-cherry-200;
                 }
@@ -39,107 +43,142 @@
         }
 
         .contentContainer {
-            @apply w-full h-full flex flex-col z-10 px-[20%] gap-[20px] py-[40%];
-
+            @apply w-full h-full flex flex-col z-10;
+            padding-left: 20%;
+            padding-right: 20%;
+            gap: 20px;
+            padding-top: 40%;
+            padding-bottom: 40%;
             .title {
-                @apply font-[700] text-2xl;
+                @apply text-2xl;
+                font-weight: 700;
             }
 
             .desc {
-                @apply font-[500] text-xl;
+                @apply text-xl;
+                font-weight: 500;
             }
 
             .article {
-                @apply font-[500];
+                font-weight: 500;
             }
         }
     }
 }
 
 // Adaptive Size [MM]
-
-.container {
-    @apply mm:flex mm:flex-col;
+@media (min-width: 310px) and (max-width: 640px) {
     
-    .side_1 {
-        @apply mm:w-full;
-
-        .image {
-            @apply mm:w-[350px] mm:h-[350px];
+    .container {
+        @apply mm:flex mm:flex-col;
+        
+        .side_1 {
+            @apply mm:w-full;
+    
+            .image {
+                height: 350px;
+                width: 350px;
+            }
+    
+            .paginatorContainer {
+                @apply mm:p-2 mm:justify-between mm:w-full;
+            }
         }
-
-        .paginatorContainer {
-            @apply mm:p-2 mm:justify-between mm:w-full;
-        }
-    }
-    .side_2 {
-        .contentContainer {
-            @apply mm:py-[20%];
+        .side_2 {
+            .contentContainer {
+                padding-top: 20%;
+                padding-bottom: 20%;
+            }
         }
     }
 }
 
 // Adaptive Size [SM]
-.container {
-    @apply sm:flex sm:flex-col;
+@media (min-width: 640px) and (max-width: 767px) {
     
-    .side_1 {
-        @apply sm:w-full;
-
-        .image {
-            @apply sm:w-[450px] sm:h-[450px];
+    .container {
+        @apply sm:flex sm:flex-col;
+        
+        .side_1 {
+            @apply sm:w-full;
+    
+            .image {
+                height: 450px;
+                width: 450px;
+            }
         }
-    }
-    .side_2 {
-        .contentContainer {
-            @apply sm:py-[10%] sm:px-[10%];
+        .side_2 {
+            .contentContainer {
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-top: 10%;
+                padding-bottom: 10%;
+            }
         }
     }
 }
 
 // Adaptive Size [MD]
-.container {
-    @apply md:flex md:flex-col;
+@media (min-width: 768px) and (max-width: 1023px) {
     
-    .side_1 {
-        @apply md:w-full;
-
-        .image {
-            @apply md:w-[500px] md:h-[500px];
+    .container {
+        @apply md:flex md:flex-col;
+        
+        .side_1 {
+            @apply md:w-full;
+    
+            .image {
+                height: 500px;
+                width: 500px;
+            }
         }
-    }
-    .side_2 {
-        .contentContainer {
-            @apply md:py-[7%] md:px-[7%];
+        .side_2 {
+            .contentContainer {
+                padding-left: 7%;
+                padding-right: 7%;
+                padding-top: 7%;
+                padding-bottom: 7%;
+            }
         }
     }
 }
 
 // Adaptive Size [LG]
-.container {
-    @apply lg:flex lg:flex-col;
+@media (min-width: 1024px) and (max-width: 1279px) {
     
-    .side_1 {
-        @apply lg:w-full;
-
-        .image {
-            @apply lg:w-[500px] lg:h-[500px];
+    .container {
+        @apply lg:flex lg:flex-col;
+        
+        .side_1 {
+            @apply lg:w-full;
+    
+            .image {
+                height: 500px;
+                width: 500px;
+            }
         }
-    }
-    .side_2 {
-        .contentContainer {
-            @apply lg:py-[7%] lg:px-[7%];
+        .side_2 {
+            .contentContainer {
+                padding-left: 7%;
+                padding-right: 7%;
+                padding-top: 7%;
+                padding-bottom: 7%;
+            }
         }
     }
 }
 
 // Adaptive Size [XL]
-.container {  
-    .side_1 {
-        @apply xl:w-full;
-
-        .image {
-            @apply xl:w-[500px] xl:h-[500px];
+@media (min-width: 1280px) and (max-width: 1535px) {
+    
+    .container {  
+        .side_1 {
+            @apply xl:w-full;
+    
+            .image {
+                height: 500px;
+                width: 500px;
+            }
         }
     }
 }

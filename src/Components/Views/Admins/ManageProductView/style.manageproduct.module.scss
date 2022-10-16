@@ -2,22 +2,29 @@
     @apply flex flex-col w-full items-center;
     
     .infoContainer {
-        @apply flex items-center justify-center py-[15px] bg-lightgreen-100/40 w-full;
-
+        @apply flex items-center justify-center bg-lightgreen-100/40 w-full;
+        padding-top: 15px;
+        padding-bottom: 15px;
         .message {
-            @apply font-[400] text-xl text-center;
-
-            .link {
+            @apply text-xl text-center;
+            font-weight: 400;
+            .link { 
                 @apply text-blue-500 cursor-pointer;
             }
         }
     }
 
     .errorContainer {
-        @apply w-[98%] bg-cherry-200 rounded-[15px] py-[20px] flex justify-center items-end my-[10px];
-
+        @apply bg-cherry-200 flex justify-center items-end;
+        width: 98%;
+        border-radius: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         .message {
-            @apply text-center text-white font-[500] text-center;
+            @apply text-center text-white text-center;
+            font-weight: 500;
         }
     }
 
@@ -31,7 +38,11 @@
                 @apply divide-x divide-y;
 
                 .title {
-                    @apply py-[15px] font-[600] text-lg w-[20%];
+                    @apply text-lg;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    font-weight: 600;
+                    width: 20%;
                 }
             }
         }
@@ -43,13 +54,16 @@
                 @apply divide-x divide-y;
 
                 .item {
-                    @apply px-[20px] font-[500];
+                    font-weight: 500;
+                    padding-left: 20px;
+                    padding-right: 20px;
 
                     .categoryitem {
                         @apply flex gap-[5px] items-center;
 
                         .imageitem {
-                            @apply w-[64px] h-[64px];
+                            height: 64px;
+                            width: 64px;
                         }
                     }
 
@@ -62,8 +76,11 @@
     }
 
     .paginatorContainer {
-        @apply py-[10px] w-full px-[10px];
-
+        @apply w-full;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
         &.visible {
             @apply flex;
         }

@@ -187,7 +187,10 @@
             column-gap: 10px;
             
             .paginatorContainer {
-                @apply md:py-[10px] md:px-[2%];
+                padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2%;
+        padding-right: 2%;
             }
         }
     

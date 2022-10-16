@@ -40,11 +40,12 @@
                     padding-top: 15px;
                     padding-bottom: 15px;
                     font-weight: 500;
+                    
+                    &:hover {
+                        @apply bg-light;
+                    }
                 }
 
-                &:hover {
-                    @apply bg-light;
-                }
 
                 &.selected {
                     @apply bg-cherry-200 text-white;

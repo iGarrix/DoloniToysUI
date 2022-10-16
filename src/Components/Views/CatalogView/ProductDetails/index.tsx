@@ -26,7 +26,6 @@ export const ProductDetails : React.FC = () => {
     useEffect(() => {
       fetchProduct(); 
     }, [])
-    
 
     return (
         <section className={`${style.container}`}>

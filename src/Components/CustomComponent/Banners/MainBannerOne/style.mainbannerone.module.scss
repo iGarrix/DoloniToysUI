@@ -1,80 +1,112 @@
 .mainbannerone {
-    @apply w-full py-[150px] px-[180px] bg-light;
+    @apply w-full bg-light;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: 180px;
+    padding-right: 180px;
 
     .gridside {
-        @apply grid grid-cols-2 grid-rows-1 bg-banana-100 rounded-[15px] overflow-hidden;
+        @apply grid grid-cols-2 grid-rows-1 bg-banana-100 overflow-hidden;
+        border-radius: 15px;
 
         .grid_item {
             @apply w-full;
 
             .imgbanner_1 {
-                @apply object-cover bg-cover w-full h-[500px];
+                @apply object-cover bg-cover w-full;
+                height: 500px;
             }
         }
         .grid_item_2 {
-            @apply w-full flex flex-col justify-center px-[50px] gap-[30px];
+            @apply w-full flex flex-col justify-center;
+            padding-left: 50px;
+            padding-right: 50px;
+            gap: 30px;
 
             .title {
-                @apply text-[32px] leading-[40px] font-[700];
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: 700;
             }
 
             .desc {
-                @apply text-[22px] leading-[25px] font-[500] w-[70%];
+                font-size: 22px;
+                line-height: 25px;
+                font-weight: 500;
+                width: 70%;
             }
         }
     }
 
     // Adaptive Size [MM]
-    @apply mm:py-0 mm:px-0;
 
-    .gridside {
-        @apply mm:rounded-none mm:grid-cols-1;
-    }
-    .grid_item_2 {
-        @apply mm:text-center mm:w-full mm:gap-0 mm:px-0 mm:py-[30px] mm:items-center;
-
-        .desc {
-            @apply mm:w-full;
+    @media (min-width: 310px) and (max-width: 640px) {       
+        @apply mm:py-0 mm:px-0;
+    
+        .gridside {
+            @apply mm:rounded-none mm:grid-cols-1;
+        }
+        .grid_item_2 {
+            @apply mm:text-center mm:w-full mm:gap-0 mm:px-0 mm:items-center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .desc {
+                @apply mm:w-full;
+            }
         }
     }
 
     // Adaptive Size [SM]
-
-    @apply sm:py-0 sm:px-0;
-
-    .gridside {
-        @apply sm:rounded-none sm:grid-cols-1;
-    }
-    .grid_item_2 {
-        @apply sm:text-center sm:w-full sm:gap-0 sm:px-0 sm:py-[30px] sm:items-center;
-
-        .desc {
-            @apply sm:w-full;
+    @media (min-width: 640px) and (max-width: 767px) {      
+        @apply sm:py-0 sm:px-0;
+    
+        .gridside {
+            @apply sm:rounded-none sm:grid-cols-1;
+        }
+        .grid_item_2 {
+            @apply sm:text-center sm:w-full sm:gap-0 sm:px-0 sm:items-center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .desc {
+                @apply sm:w-full;
+            }
         }
     }
 
     // Adaptive Size [MD]
-
-    @apply md:py-0 md:px-0;
-
-    .gridside {
-        @apply md:rounded-none md:grid-cols-1;
-    }
-    .grid_item_2 {
-        @apply md:text-center md:w-full md:gap-0 md:px-0 md:py-[30px] md:items-center;
-
-        .desc {
-            @apply md:w-full;
+    @media (min-width: 768px) and (max-width: 1023px) {      
+        @apply md:py-0 md:px-0;
+    
+        .gridside {
+            @apply md:rounded-none md:grid-cols-1;
+        }
+        .grid_item_2 {
+            @apply md:text-center md:w-full md:gap-0 md:px-0 md:items-center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .desc {
+                @apply md:w-full;
+            }
         }
     }
 
     // Adaptive Size [LG]
-
-    @apply lg:py-[30px] lg:px-[30px];
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        padding-top: 30px;
+        padding-bottom: 30px; 
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
 
     // Adaptive Size [XL]
-
-    @apply xl:py-[40px] xl:px-[40px];
-    
+    @media (min-width: 1280px) and (max-width: 1535px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }

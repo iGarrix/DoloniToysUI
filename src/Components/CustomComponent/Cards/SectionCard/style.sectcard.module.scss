@@ -1,16 +1,34 @@
 .section_card {
-    @apply flex flex-col items-center relative px-[40px] pb-[40px]
-    rounded-[15px] gap-[80px] w-[320px] max-w-[320px] select-none cursor-pointer;
+    @apply flex flex-col items-center relative select-none cursor-pointer;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    gap: 80px;
+    width: 320px;
+    max-width: 320px;
 
     .sect_image {
-        @apply rounded-full w-[205px] h-[205px] object-cover bg-cover translate-y-[-15%] z-[1] select-none;
+        @apply rounded-full object-cover bg-coverselect-none;
+        width: 205px;
+        height: 205px;
+        z-index: 1;
+        --tw-translate-y: -15%;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
 
     .group_sect_image {
-        @apply absolute top-0 left-0 w-full select-none scale-[0.99];
+        @apply absolute top-0 left-0 w-full select-none;
+        --tw-scale-x: 0.99;
+        --tw-scale-y: 0.99;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
 
     .title {
-        @apply text-[30px] leading-[40px] font-[700] text-center;
+        @apply text-center;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 700;
     }
 }

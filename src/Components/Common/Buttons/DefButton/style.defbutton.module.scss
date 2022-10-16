@@ -1,6 +1,11 @@
 .defbuttonContainer {
-    @apply bg-white leading-none shadow-xl px-[20px] py-[15px] rounded-[5px] font-[600]
-    transition-all;
+    @apply bg-white leading-none shadow-xl transition-all;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    font-weight: 600;
 
     &:hover {
         @apply bg-cherry-200 text-white;

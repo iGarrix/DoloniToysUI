@@ -1,7 +1,11 @@
 
 .productCardContainer {
-    @apply rounded-[15px] bg-white overflow-hidden py-[30px] gap-[15px] flex flex-col transition-all
+    @apply bg-white overflow-hidden flex flex-col transition-all
     items-center cursor-pointer;
+    border-radius: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 15px;
 
     @apply mm:rounded-none;
 
@@ -10,10 +14,15 @@
     }
 
     .img {
-        @apply bg-cover object-cover w-[250px] h-[250px];
+        @apply bg-cover object-cover;
+        width: 250px;
+        height: 250px;
     }
 
     .title {
-        @apply text-center font-[700] text-lg px-[10px];
+        @apply text-center text-lg;
+        font-weight: 700;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

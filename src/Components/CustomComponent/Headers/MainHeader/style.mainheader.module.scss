@@ -1,16 +1,60 @@
 .mainheader {
-    @apply w-screen h-full px-[25px] mm:px-[10px] sm:px-[10px] md:px-[10px] pr-[50px] 
-    flex gap-8 justify-between shadow-md sticky left-0 top-0 z-[100] bg-white;
+    @apply w-screen h-full flex gap-8 justify-between shadow-md sticky left-0 top-0 bg-white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-right: 50px;
+    z-index: 100;
 
-    .logo {
-        @apply scale-[0.9] py-[10px] mm:scale-[1] sm:scale-[1] md:scale-[1] cursor-pointer;
+    @media (min-width: 310px) and (max-width: 640px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @media (min-width: 640px) and (max-width: 767px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
+
+        .logo {
+            @apply cursor-pointer;
+            --tw-scale-x: 0.9;
+            --tw-scale-y: 0.9;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            padding-top: 10px;
+            padding-bottom: 10px;
+    
+            @media (min-width: 310px) and (max-width: 640px) {
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            @media (min-width: 640px) and (max-width: 767px) {
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+    
+        }
+
     .langside {
-        @apply flex gap-[20px] h-full py-[10px] mm:hidden sm:hidden md:hidden;
+        @apply flex h-full mm:hidden sm:hidden md:hidden;
+        gap: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         .langicon {
-            @apply w-[43px] h-[43px] cursor-pointer transition-all;
+            @apply cursor-pointer transition-all;
+            width: 43px;
+            height: 43px;
 
             &:hover {
                 @apply scale-105;
@@ -26,12 +70,18 @@
         @apply flex h-full mm:hidden sm:hidden md:hidden;
 
         .headeritem {
-            @apply font-[500] text-lg cursor-pointer px-[15px] h-full flex items-center justify-center
+            @apply text-lg cursor-pointer h-full flex items-center justify-center
             select-none transition-all relative;
+            font-weight: 500;
+            padding-left: 15px;
+            padding-right: 15px;
 
             &::before {
                 content: '';
-                @apply h-[3px] w-[0%] bg-cherry-200 absolute left-0 bottom-[0] transition-all shadow-2xl rounded-xl;
+                @apply bg-cherry-200 absolute left-0 transition-all shadow-2xl rounded-xl;
+                height: 3px;
+                width: 0%;
+                bottom: 0;
             }
 
             &:hover {
@@ -49,17 +99,26 @@
 }
 
 .miniheader {
-    @apply w-[50%] py-5 fixed top-0 h-screen z-[100] bg-light px-[5%] shadow-lg transition-all;
+    @apply py-5 fixed top-0 h-screen bg-light shadow-lg transition-all;
+    width: 50%;
+    z-index: 100;
+    padding-left: 5%;
+    padding-right: 5%;
 
     .miniheadernav {
-        @apply flex flex-col gap-[10px] items-start;
+        @apply flex flex-col items-start;
+        gap: 10px;
 
         .headeritem {
             @apply font-[500] text-lg cursor-pointer h-full select-none transition-all relative;
+            font-weight: 500;
 
             &::before {
                 content: '';
-                @apply h-[3px] w-[0%] bg-cherry-200 absolute left-0 bottom-[0] transition-all shadow-2xl rounded-xl;
+                @apply bg-cherry-200 absolute left-0 transition-all shadow-2xl rounded-xl;
+                height: 3px;
+                width: 0%;
+                bottom: 0;
             }
 
             &:hover {

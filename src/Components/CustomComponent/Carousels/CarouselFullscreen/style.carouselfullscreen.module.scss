@@ -7,10 +7,16 @@
     
     }
     .npbuttonContainer {
-        @apply absolute top-0 left-0 w-full h-full flex items-center justify-between px-[1%];
+        @apply absolute top-0 left-0 w-full h-full flex items-center justify-between;
+        padding-left: 1%;
+        padding-right: 1%;
 
         .npbutton {
-            @apply scale-[0.7] opacity-20 transition-all z-[100];
+            @apply opacity-20 transition-all;
+            --tw-scale-x: 0.7;
+            --tw-scale-y: 0.7;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            z-index: 100;
 
             &:hover {
                 @apply opacity-100 cursor-pointer;
@@ -22,10 +28,18 @@
         @apply absolute left-0 w-screen bottom-5 flex justify-center;
 
         .bodyContainer {
-            @apply bg-light px-[15px] py-[7px] rounded-[15px] gap-[10px] flex justify-center;
+            @apply bg-light flex justify-center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            border-radius: 15px;
+            gap: 10px;
 
             .bodyItem {
-                @apply w-[20px] h-[20px] rounded-full border border-black;
+                @apply rounded-full border border-black;
+                width: 20px;
+                height: 20px;
             }
             .bodyItem.selected {
                 @apply bg-cherry-200;

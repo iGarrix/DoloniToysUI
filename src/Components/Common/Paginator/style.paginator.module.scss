@@ -49,14 +49,20 @@
 }
 
 .paginator__previousLink {
-    @apply w-[40px] h-[40px] font-medium flex items-center justify-center text-center rounded-sm;
+    @apply font-medium flex items-center justify-center text-center rounded-sm;
+    width: 40px;
+    height: 40px;
 }
 
 .paginator__nextLink {
-    @apply w-[40px] h-[40px] font-medium flex items-center justify-center text-center rounded-sm;
+    @apply font-medium flex items-center justify-center text-center rounded-sm;
+    width: 40px;
+    height: 40px;
 }
 
 .paginator__pageLink {
-    @apply w-[40px] h-[40px] flex items-center justify-center text-center rounded-sm;
+    @apply flex items-center justify-center text-center rounded-sm;
+    width: 40px;
+    height: 40px;
 }
 

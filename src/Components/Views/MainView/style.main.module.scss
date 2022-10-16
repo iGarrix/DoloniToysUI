@@ -1,17 +1,26 @@
 .slidercarouserContainer {
-    @apply bg-bluesky-100 py-[50px] mm:py-0 sm:py-0 md:py-0;
+    @apply bg-bluesky-100 mm:py-0 sm:py-0 md:py-0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .carouselChildContainer {
-    @apply w-[320px] h-[320px] mm:w-screen sm:w-screen md:w-screen;
+    @apply mm:w-screen sm:w-screen md:w-screen;
+    width: 320px;
+    height: 320px;
 }
 
 .thirdblockImages {
-    @apply flex gap-[20px] justify-around py-[50px] mm:flex-col 
+    @apply flex justify-around mm:flex-col 
     mm:items-center sm:flex-col sm:items-center sm:flex-wrap
      md:flex-wrap;
+    gap: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     .item {
-        @apply rounded-[15px] w-[350px] h-[350px];
+        border-radius: 15px;
+        width: 350px;
+        height: 350px;
     }
 }

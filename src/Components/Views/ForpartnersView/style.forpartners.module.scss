@@ -2,8 +2,11 @@
     @apply flex flex-col bg-light;
 
     .firstContainer {
-        @apply bg-bluesky-100 flex flex-col items-center gap-[50px] relative overflow-hidden py-[100px];
-    
+        @apply bg-bluesky-100 flex flex-col items-center relative overflow-hidden;
+        gap: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
         .extendImageContainer {
             @apply absolute top-5 left-0 w-full flex justify-center;
 
@@ -11,118 +14,197 @@
                 @apply bg-cover object-cover opacity-60;
             }
         }
+
         .biglogo {
-            @apply scale-[0.6] z-10;
+            @apply z-10;
+            --tw-scale-x: 0.6;
+            --tw-scale-y: 0.6;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
         }
+
         .titleContainer {
             @apply text-center z-10;
 
             .title {
-                @apply font-[700] text-2xl;
+                @apply text-2xl;
+                font-weight: 700;
             }
         }
+
         .descContainer {
-            @apply flex items-center justify-center px-[25%] z-10 mt-[100px];
+            @apply flex items-center justify-center z-10;
+            padding-left: 25%;
+            padding-right: 25%;
+            margin-top: 100px;
 
             .desc {
-                @apply font-[600] text-[18px];
+                font-weight: 600;
+                font-size: 18px;
             }
         }
     }
 
     .secondContainer {
-        @apply flex relative bg-bluesky-100 py-[60px] px-[15%];
+        @apply flex relative bg-bluesky-100;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 15%;
+        padding-right: 15%;
 
         .extendImageContainer {
-            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[5%];
+            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center;
+            padding-left: 5%;
+            padding-right: 5%;
         }
 
         .title {
-            @apply font-[500] text-[17px] z-10;
+            @apply font-[500] z-10;
+            font-size: 17px;
         }
     }
 
     .thirdContainer {
-        @apply flex relative bg-bluesky-100 py-[60px] px-[15%];
+        @apply flex relative bg-bluesky-100;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 15%;
+        padding-right: 15%;
 
         .extendImageContainer {
-            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center px-[5%];
+            @apply absolute top-0 left-0 w-full h-full flex justify-between items-center;
+            padding-left: 5%;
+            padding-right: 5%;
         }
 
         .title {
-            @apply font-[500] text-[17px] z-10;
+            @apply z-10;
+            font-weight: 500;
+            font-size: 17px;
         }
     }
 
     .fourthContainer {
-        @apply py-[100px] w-full flex justify-center px-[15%];
+        @apply w-full flex justify-center;
+        padding-top:100px;
+        padding-bottom: 100px;
+        padding-left: 15%;
+        padding-right: 15%;
 
         .extendGridContainer {
-            @apply grid grid-rows-1 grid-cols-2 bg-cherry-100 rounded-[15px] overflow-hidden;
+            @apply grid grid-rows-1 grid-cols-2 bg-cherry-100 overflow-hidden;
+            border-radius: 15px;
 
             .image {
-                @apply h-[400px] w-full object-cover bg-cover;
+                @apply w-full object-cover bg-cover;
+                height: 400px;
             }
 
             .titleContainer {
-                @apply w-full h-full flex items-center px-[15%];
+                @apply w-full h-full flex items-center;
+                padding-left: 15%;
+    padding-right: 15%;
 
                 .title {
-                    @apply font-[500] text-[20px];
+                    font-weight: 500;
+                    font-size: 20px;
                 }
             }
         }
     }
 
     .fifethContainer {
-        @apply flex flex-col py-[20px] gap-[60px];
+        @apply flex flex-col;
+        padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 60px;
 
         .title {
-            @apply text-center text-2xl font-[700];
+            @apply text-center text-2xl;
+            font-weight: 700;
         }
 
         .itemGridContainer {
-            @apply grid grid-rows-6 grid-cols-9 px-[5%] gap-[20px];
+            @apply grid grid-rows-6 grid-cols-9;
+            padding-left: 5%;
+    padding-right: 5%;
+    gap: 20px;
 
             .desc {
-                @apply font-[600] text-[17px] text-center;
+                @apply text-center;
+                font-weight: 600;
+                font-size: 17px;
             }
 
             .firstItem {
-                @apply bg-banana-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center col-span-4;
+                @apply bg-banana-100 flex items-center justify-center col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .secondItem {
-                @apply bg-lightgreen-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center row-start-2 col-start-2 col-span-4;
+                @apply bg-lightgreen-100 flex items-center justify-center row-start-2 col-start-2 col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .thirdItem {
-                @apply bg-bluesky-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center row-start-3 col-start-3 col-span-4;
+                @apply bg-bluesky-100 flex items-center justify-center row-start-3 col-start-3 col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .fourthItem {
-                @apply bg-banana-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center row-start-4 col-start-4 col-span-4;
+                @apply bg-banana-100 flex items-center justify-center row-start-4 col-start-4 col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
-            
+
             .fifethItem {
-                @apply bg-lightgreen-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center row-start-5 col-start-5 col-span-4;
+                @apply bg-lightgreen-100 flex items-center justify-center row-start-5 col-start-5 col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .sixthItem {
-                @apply bg-bluesky-100 rounded-[15px] py-[20px] px-[12px] flex items-center justify-center row-start-6 col-start-6 col-span-4;
+                @apply bg-bluesky-100 flex items-center justify-center row-start-6 col-start-6 col-span-4;
+                border-radius: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
         }
-        
+
     }
 
     .sixthContainer {
-        @apply my-[50px] bg-bluesky-100 w-full grid grid-cols-12;
+        @apply bg-bluesky-100 w-full grid grid-cols-12;
+        margin-top: 50px;
+    margin-bottom: 50px;
 
         .imageItem {
             @apply col-span-5 flex justify-end;
 
             .imageItem {
-                @apply bg-cover object-cover rounded-[15px] w-[500px] h-[400px];
+                @apply bg-cover object-cover;
+                border-radius: 15px;
+                width: 500px;
+                height: 400px;
             }
         }
 
@@ -130,42 +212,67 @@
             @apply col-span-7 flex items-center relative;
 
             .extendImageContainer {
-                @apply absolute top-0 left-0 w-full h-full flex justify-between px-[1%];
+                @apply absolute top-0 left-0 w-full h-full flex justify-between;
+                padding-left: 1%;
+                padding-right: 1%;
 
                 .imageItem {
-                    @apply scale-[0.9] opacity-80;
+                    @apply opacity-80;
+                    --tw-scale-x: 0.9;
+                    --tw-scale-y: 0.9;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
                 }
             }
 
             .desc {
-                @apply font-[500] text-[19px] px-[10%] py-[5%] z-10;
+                @apply z-10;
+                font-weight: 500;
+                font-size: 19px;
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-top: 5%;
+                padding-bottom: 5%;
             }
         }
     }
 
     .seventhContainer {
-        @apply py-[60px] bg-banana-100 w-full grid grid-cols-12;
+        @apply bg-banana-100 w-full grid grid-cols-12;
+        padding-top: 60px;
+        padding-bottom: 60px;
 
         .contentContainer {
             @apply col-span-7 flex flex-col relative;
 
             .extendImageContainer {
-                @apply absolute top-0 left-0 w-full h-full flex justify-between px-[1%];
+                @apply absolute top-0 left-0 w-full h-full flex justify-between;
+                padding-left: 1%;
+                padding-right: 1%;
 
                 .imageItem {
-                    @apply scale-[0.9];
+                    --tw-scale-x: 0.9;
+    --tw-scale-y: 0.9;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
                 }
             }
 
             .content {
-                @apply flex flex-col py-[3%] px-[10%] gap-[20px];
+                @apply flex flex-col;
+                padding-top: 3%;
+                padding-bottom: 3%;
+                padding-left: 10%;
+                padding-right: 10%;
+                gap: 20px;
 
                 .title {
-                    @apply text-2xl font-[700];
+                    @apply text-2xl;
+                    font-weight: 700;
                 }
 
                 .desc {
-                    @apply font-[500] text-[19px] z-10;
+                    @apply z-10;
+                    font-weight: 500;
+                    font-size: 19px;
                 }
             }
         }
@@ -174,380 +281,462 @@
             @apply col-span-4 flex justify-start;
 
             .imageItem {
-                @apply bg-cover object-cover rounded-[15px] w-[450px] h-[350px];
+                @apply bg-cover object-cover;
+                border-radius: 15px;
+                width: 450px;
+                height: 350px;
             }
         }
     }
 }
 
 // Adaptive Size [MM]
-
-.forpartnersContainer {
-
-    .firstContainer {
-        .descContainer {
-            @apply mm:px-[5%] mm:mt-0;
-        }
-    }
-
-    .secondContainer {
-        @apply mm:px-[5%] mm:py-[30px];
-        .extendImageContainer {
-            @apply mm:hidden ;
-        }
-    }
-
-    .thirdContainer {
-        @apply mm:px-[5%] mm:py-[30px];
-        .extendImageContainer {
-            @apply mm:hidden;
-        }
-    }
-
-    .fourthContainer {
-        @apply mm:px-0;
-        .extendGridContainer {
-            @apply mm:grid-cols-1 mm:grid-rows-2 mm:rounded-none;
-
-            .titleContainer {
-                @apply mm:px-[5%];
-            }
-        }
-    }
-
-    .fifethContainer {
-        .itemGridContainer {
-
-            .firstItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-            .secondItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-            .thirdItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-            .fourthItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-            .fifethItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-            .sixthItem {
-                @apply mm:col-span-full mm:col-start-1;
-            }
-        }
-    }
-
-    .sixthContainer {
-        @apply mm:grid-cols-1;
-
-        .imageItem {
-            @apply mm:col-span-full;
-
-            .imageItem {
-                @apply mm:rounded-none mm:scale-100 mm:w-full;
-            }
-        }
-
-        .contentContainer {
-
-            .extendImageContainer {
-                @apply mm:hidden;
-            }
-
-            .desc {
-                @apply mm:px-[5%];
-            }
-        }
-    }
-
-    .seventhContainer {
-        @apply mm:grid-cols-1;
-
-        .contentContainer {
-            .extendImageContainer {
-                @apply mm:hidden;
-            }
-
-            .content {
-                @apply mm:px-[5%];
-            }
-        }
-
-        .imageContainer {
-            .imageItem {
-                @apply mm:rounded-none mm:w-full;
-            }
-        }
-    }
+@media (min-width: 310px) and (max-width: 640px) {   
+    .forpartnersContainer {
     
+        .firstContainer {
+            .descContainer {
+                @apply mm:mt-0;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+    
+        .secondContainer {
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .extendImageContainer {
+                @apply mm:hidden;
+            }
+        }
+    
+        .thirdContainer {
+            padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
+            .extendImageContainer {
+                @apply mm:hidden;
+            }
+        }
+    
+        .fourthContainer {
+            @apply mm:px-0;
+    
+            .extendGridContainer {
+                @apply mm:grid-cols-1 mm:grid-rows-2 mm:rounded-none;
+    
+                .titleContainer {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .fifethContainer {
+            .itemGridContainer {
+    
+                .firstItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+    
+                .secondItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+    
+                .thirdItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+    
+                .fourthItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+    
+                .fifethItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+    
+                .sixthItem {
+                    @apply mm:col-span-full mm:col-start-1;
+                }
+            }
+        }
+    
+        .sixthContainer {
+            @apply mm:grid-cols-1;
+    
+            .imageItem {
+                @apply mm:col-span-full;
+    
+                .imageItem {
+                    @apply mm:rounded-none mm:scale-100 mm:w-full;
+                }
+            }
+    
+            .contentContainer {
+    
+                .extendImageContainer {
+                    @apply mm:hidden;
+                }
+    
+                .desc {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .seventhContainer {
+            @apply mm:grid-cols-1;
+    
+            .contentContainer {
+                .extendImageContainer {
+                    @apply mm:hidden;
+                }
+    
+                .content {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+    
+            .imageContainer {
+                .imageItem {
+                    @apply mm:rounded-none mm:w-full;
+                }
+            }
+        }
+    
+    }
 }
 
 // Adaptive Size [SM]
-
-.forpartnersContainer {
-
-    .firstContainer {
-        .descContainer {
-            @apply sm:px-[5%] sm:mt-0;
-        }
-    }
-
-    .secondContainer {
-        @apply sm:px-[5%] sm:py-[30px];
-        .extendImageContainer {
-            @apply sm:hidden ;
-        }
-    }
-
-    .thirdContainer {
-        @apply sm:px-[5%] sm:py-[30px];
-        .extendImageContainer {
-            @apply sm:hidden;
-        }
-    }
-
-    .fourthContainer {
-        @apply sm:px-0;
-        .extendGridContainer {
-            @apply sm:grid-cols-1 sm:grid-rows-2 sm:rounded-none;
-
-            .titleContainer {
-                @apply sm:px-[5%];
-            }
-        }
-    }
-
-    .fifethContainer {
-        .itemGridContainer {
-
-            .firstItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-            .secondItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-            .thirdItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-            .fourthItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-            .fifethItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-            .sixthItem {
-                @apply sm:col-span-full sm:col-start-1;
-            }
-        }
-    }
-
-    .sixthContainer {
-        @apply sm:grid-cols-1;
-
-        .imageItem {
-            @apply sm:col-span-full;
-
-            .imageItem {
-                @apply sm:rounded-none sm:scale-100 sm:w-full;
-            }
-        }
-
-        .contentContainer {
-
-            .extendImageContainer {
-                @apply sm:hidden;
-            }
-
-            .desc {
-                @apply sm:px-[5%];
-            }
-        }
-    }
-
-    .seventhContainer {
-        @apply sm:grid-cols-1;
-
-        .contentContainer {
-            .extendImageContainer {
-                @apply sm:hidden;
-            }
-
-            .content {
-                @apply sm:px-[5%];
-            }
-        }
-
-        .imageContainer {
-            .imageItem {
-                @apply sm:rounded-none sm:w-full;
-            }
-        }
-    }
+@media (min-width: 640px) and (max-width: 767px) {   
+    .forpartnersContainer {
     
+        .firstContainer {
+            .descContainer {
+                @apply sm:mt-0;
+                padding-left: 5%;
+        padding-right: 5%;
+            }
+        }
+    
+        .secondContainer {
+            padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
+            .extendImageContainer {
+                @apply sm:hidden;
+            }
+        }
+    
+        .thirdContainer {
+            padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
+            .extendImageContainer {
+                @apply sm:hidden;
+            }
+        }
+    
+        .fourthContainer {
+            @apply sm:px-0;
+    
+            .extendGridContainer {
+                @apply sm:grid-cols-1 sm:grid-rows-2 sm:rounded-none;
+    
+                .titleContainer {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .fifethContainer {
+            .itemGridContainer {
+    
+                .firstItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+    
+                .secondItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+    
+                .thirdItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+    
+                .fourthItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+    
+                .fifethItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+    
+                .sixthItem {
+                    @apply sm:col-span-full sm:col-start-1;
+                }
+            }
+        }
+    
+        .sixthContainer {
+            @apply sm:grid-cols-1;
+    
+            .imageItem {
+                @apply sm:col-span-full;
+    
+                .imageItem {
+                    @apply sm:rounded-none sm:scale-100 sm:w-full;
+                }
+            }
+    
+            .contentContainer {
+    
+                .extendImageContainer {
+                    @apply sm:hidden;
+                }
+    
+                .desc {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .seventhContainer {
+            @apply sm:grid-cols-1;
+    
+            .contentContainer {
+                .extendImageContainer {
+                    @apply sm:hidden;
+                }
+    
+                .content {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+    
+            .imageContainer {
+                .imageItem {
+                    @apply sm:rounded-none sm:w-full;
+                }
+            }
+        }
+    
+    }
 }
 
 // Adaptive Size [MD]
-
-.forpartnersContainer {
-
-    .firstContainer {
-        .descContainer {
-            @apply md:px-[7%] md:mt-[2%];
-        }
-    }
-
-    .secondContainer {
-        @apply md:px-[10%] md:py-[30px];
-        .extendImageContainer {
-            @apply md:px-[2%];
-        }
-    }
-
-    .thirdContainer {
-        @apply md:px-[10%] md:py-[30px];
-        .extendImageContainer {
-            @apply md:px-[2%];
-        }
-    }
-
-    .fourthContainer {
-        @apply md:px-0;
-        .extendGridContainer {
-            @apply md:grid-cols-1 md:grid-rows-2 md:rounded-none;
-
-            .titleContainer {
-                @apply md:px-[5%];
+@media (min-width: 768px) and (max-width: 1023px) {    
+    .forpartnersContainer {
+    
+        .firstContainer {
+            .descContainer {
+                padding-left: 7%;
+        padding-right: 7%;
+        margin-top: 2%;
             }
         }
-    }
-
-    .fifethContainer {
-        .itemGridContainer {
-
-            .firstItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-            .secondItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-            .thirdItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-            .fourthItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-            .fifethItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-            .sixthItem {
-                @apply md:col-span-full md:col-start-1;
-            }
-        }
-    }
-
-    .sixthContainer {
-        @apply md:grid-cols-1;
-
-        .imageItem {
-            @apply md:col-span-full;
-
-            .imageItem {
-                @apply md:rounded-none md:scale-100 md:w-full;
-            }
-        }
-
-        .contentContainer {
-
+    
+        .secondContainer {
+            padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
             .extendImageContainer {
-                @apply md:hidden;
-            }
-
-            .desc {
-                @apply md:px-[5%];
+                padding-left: 2%;
+        padding-right: 2%;
             }
         }
-    }
-
-    .seventhContainer {
-        @apply md:grid-cols-1;
-
-        .contentContainer {
+    
+        .thirdContainer {
+            padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
             .extendImageContainer {
-                @apply md:hidden;
-            }
-
-            .content {
-                @apply md:px-[5%];
+                padding-left: 2%;
+        padding-right: 2%;
             }
         }
-
-        .imageContainer {
+    
+        .fourthContainer {
+            @apply md:px-0;
+    
+            .extendGridContainer {
+                @apply md:grid-cols-1 md:grid-rows-2 md:rounded-none;
+    
+                .titleContainer {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .fifethContainer {
+            .itemGridContainer {
+    
+                .firstItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+    
+                .secondItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+    
+                .thirdItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+    
+                .fourthItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+    
+                .fifethItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+    
+                .sixthItem {
+                    @apply md:col-span-full md:col-start-1;
+                }
+            }
+        }
+    
+        .sixthContainer {
+            @apply md:grid-cols-1;
+    
             .imageItem {
-                @apply md:rounded-none md:w-full;
+                @apply md:col-span-full;
+    
+                .imageItem {
+                    @apply md:rounded-none md:scale-100 md:w-full;
+                }
+            }
+    
+            .contentContainer {
+    
+                .extendImageContainer {
+                    @apply md:hidden;
+                }
+    
+                .desc {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .seventhContainer {
+            @apply md:grid-cols-1;
+    
+            .contentContainer {
+                .extendImageContainer {
+                    @apply md:hidden;
+                }
+    
+                .content {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+    
+            .imageContainer {
+                .imageItem {
+                    @apply md:rounded-none md:w-full;
+                }
             }
         }
     }
 }
 
 // Adaptive Size [LG]
-
-.forpartnersContainer {
-
-    .firstContainer {
-        .descContainer {
-            @apply lg:px-[7%] lg:mt-[7%];
-        }
-    }
-
-    .secondContainer {
-        @apply lg:px-[10%] lg:py-[30px];
-        .extendImageContainer {
-            @apply lg:px-[2%];
-        }
-    }
-
-    .thirdContainer {
-        @apply lg:px-[10%] lg:py-[30px];
-        .extendImageContainer {
-            @apply lg:px-[2%];
-        }
-    }
-
-    .fourthContainer {
-        @apply lg:px-0;
-        .extendGridContainer {
-            @apply lg:grid-cols-1 lg:grid-rows-2 lg:rounded-none;
-
-            .titleContainer {
-                @apply lg:px-[5%];
+@media (min-width: 1024px) and (max-width: 1279px) {    
+    .forpartnersContainer {
+    
+        .firstContainer {
+            .descContainer {
+                padding-left: 7%;
+                padding-right: 7%;
+                margin-top: 7%;
             }
         }
-    }
-
-    .sixthContainer {
-
-        .contentContainer {
-
+    
+        .secondContainer {
+            padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
             .extendImageContainer {
-                @apply lg:hidden;
-            }
-
-            .desc {
-                @apply lg:px-[5%];
+                padding-left: 2%;
+        padding-right: 2%;
             }
         }
-    }
-
-    .seventhContainer {
-        .contentContainer {
+    
+        .thirdContainer {
+            padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    
             .extendImageContainer {
-                @apply lg:hidden;
+                padding-left: 2%;
+        padding-right: 2%;
             }
-
-            .content {
-                @apply lg:px-[5%];
+        }
+    
+        .fourthContainer {
+            @apply lg:px-0;
+    
+            .extendGridContainer {
+                @apply lg:grid-cols-1 lg:grid-rows-2 lg:rounded-none;
+    
+                .titleContainer {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .sixthContainer {
+    
+            .contentContainer {
+    
+                .extendImageContainer {
+                    @apply lg:hidden;
+                }
+    
+                .desc {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
+            }
+        }
+    
+        .seventhContainer {
+            .contentContainer {
+                .extendImageContainer {
+                    @apply lg:hidden;
+                }
+    
+                .content {
+                    padding-left: 5%;
+        padding-right: 5%;
+                }
             }
         }
     }

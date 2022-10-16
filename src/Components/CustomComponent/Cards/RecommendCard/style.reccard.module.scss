@@ -1,11 +1,22 @@
 .reccard {
-    @apply flex flex-col items-center justify-center rounded-[15px] py-[50px] px-[3%] gap-[50px] max-w-[320px] text-center;
+    @apply flex flex-col items-center justify-center text-center;
+    border-radius: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 3%;
+    padding-right: 3%;
+    gap: 50px;
+    max-width: 320px;
 
     .title {
-        @apply font-[600] leading-[35px] text-[30px] text-center;
+        @apply text-center;
+        font-weight: 600;
+        line-height: 35px;
+        font-size: 30px;
     }
 
     .image {
-        @apply w-[130px] h-[130px]
+        width: 130px;
+        height: 130px;
     }
 }

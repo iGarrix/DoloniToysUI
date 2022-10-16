@@ -1,39 +1,53 @@
 .recblock {
-    @apply bg-light py-[100px] px-2 w-full h-full flex flex-col gap-[60px] items-center justify-center;
+    @apply bg-light px-2 w-full h-full flex flex-col items-center justify-center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 60px;
 
     .titleblock {
-        @apply text-[30px] leading-[40px] font-[700];
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 700;
     }
 
     .cardblock {
-        @apply flex gap-[120px] flex-wrap;
+        @apply flex flex-wrap;
+        gap: 120px;
     }
 
     // Adaptive Size [MM]
-
-    @apply mm:text-center mm:w-full;
-    .cardblock {
-        @apply mm:flex mm:flex-col mm:gap-[30px];
+    @media (min-width: 310px) and (max-width: 640px) {    
+        @apply mm:text-center mm:w-full;
+        .cardblock {
+            @apply mm:flex mm:flex-col;
+            gap: 30px;
+        }
     }
 
     // Adaptive Size [SM]
-
-    @apply sm:text-center sm:w-full;
-    .cardblock {
-        @apply sm:flex sm:gap-[25px] sm:justify-center;
+    @media (min-width: 640px) and (max-width: 767px) {       
+        @apply sm:text-center sm:w-full;
+        .cardblock {
+            @apply sm:flex sm:justify-center;
+            gap: 25px;
+        }
     }
 
     // Adaptive Size [MD]
-
-    @apply md:text-center md:w-full;
-    .cardblock {
-        @apply md:flex md:gap-[25px] md:justify-center;
+    @media (min-width: 768px) and (max-width: 1023px) {     
+        @apply md:text-center md:w-full;
+        .cardblock {
+            @apply md:flex md:justify-center;
+            gap: 25px;
+        }
     }
 
     // Adaptive Size [LG]
-
-    @apply lg:text-center lg:w-full;
-    .cardblock {
-        @apply lg:flex lg:gap-[60px] lg:justify-center;
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        @apply lg:text-center lg:w-full;
+        .cardblock {
+            @apply lg:flex lg:justify-center;
+            gap: 60px;
+        }
     }
 }

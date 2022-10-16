@@ -6,6 +6,8 @@
     }
 
     .title {
-        @apply text-4xl font-[800] z-[10];
+        @apply text-4xl;
+        font-weight: 800;
+        z-index: 10;
     }
 }

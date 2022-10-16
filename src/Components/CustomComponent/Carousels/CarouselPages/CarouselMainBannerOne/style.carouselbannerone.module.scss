@@ -1,5 +1,8 @@
 .carouselbanner1 {
-    @apply w-screen whitespace-nowrap h-[95vh] relative px-[4%];
+    @apply w-screen whitespace-nowrap relative;
+    height: 95vh;
+    padding-left: 4%;
+    padding-right: 4%;
 
     .bannerimage {
         @apply absolute top-0 left-0 w-full h-full object-cover bg-cover;
@@ -7,20 +10,35 @@
 
     
     .textbanner {
-        @apply bg-lightgreen-100 z-10 w-[40%] px-[78px] pt-[135px] pb-[5%] h-[80%] rounded-b-[50px]
-        text-center flex flex-col justify-end gap-[40px] relative;
+        @apply bg-lightgreen-100 z-10 text-center flex flex-col justify-end relative;
+        width: 40%;
+        padding-left: 78px;
+        padding-right: 78px;
+        padding-top: 135px;
+        padding-bottom: 5%;
+        height: 80%;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        gap: 40px;
 
         .rocket {
-            @apply absolute top-[35%] right-[-10%] z-20;
+            @apply absolute z-20;
+            top: 35%;
+            right: -10%;
         }
     }
 
     .headerbanner {
-        @apply text-[50px] font-[700] leading-[60px];
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 60px;
     }
 
     .subheaderbanner {
-        @apply text-[30px] font-[400] leading-[40px] flex flex-wrap justify-center overflow-hidden;
+        @apply flex flex-wrap justify-center overflow-hidden;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 40px;
     }
 
     .sublink {

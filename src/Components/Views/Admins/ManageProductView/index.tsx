@@ -3,6 +3,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
+import { ReplaceArticle } from "../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
 import { GetAllProduct, RemoveProduct } from "../../../../Redux/reducers/productReducer/action";
 import { IProduct } from "../../../../Redux/reducers/productReducer/types";
@@ -75,7 +76,7 @@ export const ManageProductView : React.FC = () => {
                                 products?.pageables?.map((item, index) => {
                                     return (
                                         <tr key={index} className={`${style.block}`}>
-                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>
+                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + ReplaceArticle(item.article, true))}}>
                                                 <div className={`${style.categoryitem}`}>
                                                     <img alt="img" className={`${style.imageitem}`} src={ImageCombiner(ImagePaths.Product, item.images[0])} onError={(tg: any) => { tg.target.src = ErrorImage}} />
                                                     {item.title}

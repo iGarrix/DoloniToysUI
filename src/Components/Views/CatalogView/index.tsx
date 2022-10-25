@@ -50,7 +50,8 @@ export const CatalogView: React.FC = () => {
             fetchFilterProducts(request);
         }
         else {
-            fetchProduct(1, 24);
+            //fetchProduct(1, 24);
+            Filter(ExpressionTypes.FilterRatingOrderByDescending);
         }
     }, [category]);
 
@@ -81,7 +82,18 @@ export const CatalogView: React.FC = () => {
                         <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => { setOpen(!isOpen) }} />
                     </div>
                     <div className={`${style.mainFilter} ${isOpen ? style.opened : style.closed}`}>
-
+                        
+                        <p className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
+                            {t('All')}
+                        </p>
+                        {categories?.pageables?.map(item => {
+                            return (
+                                <p key={item.title} className={`${style.item} ${category === item.title ? style.selected : null}`} onClick={() => { nav(item.title) }}>
+                                    {item.title}
+                                </p>
+                            )
+                        })}
+                        <hr />
                         <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrder) }}>
                             {t('Filter by name (ascending)')}
                         </p>
@@ -94,18 +106,6 @@ export const CatalogView: React.FC = () => {
                         <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrderByDescending) }}>
                             {t('Filter by rating (descending)')}
                         </p>
-                        <hr />
-                        <p className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
-                            {t('All')}
-                        </p>
-                        {categories?.pageables?.map(item => {
-                            return (
-                                <p key={item.title} className={`${style.item} ${category === item.title ? style.selected : null}`} onClick={() => { nav(item.title) }}>
-                                    {item.title}
-                                </p>
-                            )
-                        })}
-
                     </div>
                 </div>
             </aside>

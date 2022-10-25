@@ -59,6 +59,15 @@ export function changeLanguage(lang: string) {
     }
 }
 
+
+export function ReplaceArticle(article: string, isTo: boolean) 
+{
+    if (isTo) {
+        return article.replace("/", "_");
+    }
+    return article.replace("_", "/");
+}
+
 export interface IBaseReducerState {
     isLoading: boolean;
     error: string;

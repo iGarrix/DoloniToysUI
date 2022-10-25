@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom"
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
+import { ReplaceArticle } from "../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
 import { GetProduct } from "../../../../Redux/reducers/productReducer/action";
 
@@ -19,7 +20,7 @@ export const ProductDetails : React.FC = () => {
 
     async function fetchProduct() {
         if (article) {
-            await dispatch(GetProduct(article));
+            await dispatch(GetProduct(ReplaceArticle(article, false)));
         }
     }
 

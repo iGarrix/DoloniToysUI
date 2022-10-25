@@ -21,6 +21,7 @@ export const MainHeader: React.FC = () => {
     const history = useLocation();
 
     function nav(path: string) {
+        setOpen(false);
         navigate(path);
     }
 
@@ -56,6 +57,10 @@ export const MainHeader: React.FC = () => {
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/for-partners') }}>{t(`For partners`)}</li>
                     <li className={`${styles.headeritem}`} onClick={() => { nav('/contact-us') }}>{t(`Contacts`)}</li>
                 </ol>
+                <aside className={`flex gap-2`}>
+                    <img alt="logo" src={ukr} className={`${styles.langicon}`} onClick={() => { changeLanguage(LanguageType.UA) }} />
+                    <img alt="logo" src={usa} className={`${styles.langicon}`} onClick={() => { changeLanguage(LanguageType.EN) }} />
+                </aside>
             </div>
         </div>
     )

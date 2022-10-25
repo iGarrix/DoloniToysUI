@@ -52,7 +52,7 @@ export const ForpartnersView: React.FC = () => {
                     </div>
                 </div>
             </aside>
-            <aside className={`${style.fifethContainer}`}>
+            {/* <aside className={`${style.fifethContainer}`}>
                 <p className={`${style.title}`}>{t("Among our advantages")}</p>
                 <div className={`${style.itemGridContainer}`}>
                     <div className={`${style.firstItem}`}>
@@ -74,7 +74,7 @@ export const ForpartnersView: React.FC = () => {
                         <p className={`${style.desc}`}>{t("certified products.")}</p>
                     </div>
                 </div>
-            </aside>
+            </aside> */}
             <aside className={`${style.sixthContainer}`}>
                 <div className={`${style.imageItem}`}>
                     <img alt="mother" src={mother} className={`${style.imageItem}`} />

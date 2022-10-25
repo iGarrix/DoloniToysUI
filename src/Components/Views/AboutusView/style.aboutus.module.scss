@@ -2,7 +2,8 @@
     @apply bg-light;
 
     .imageContainer {
-        @apply flex justify-center h-[90vh];
+        @apply flex justify-center;
+        height: 90vh;
 
         .image {
             @apply w-full h-full object-cover bg-cover;
@@ -47,7 +48,7 @@
 
             .imagegroup2_Container {
                 @apply absolute flex justify-center w-full h-full top-0 left-0 overflow-hidden;
-                gap: 5%;
+                gap: 3%;
 
                 .image2Scaling1 {
                     @apply mt-auto opacity-40;
@@ -66,14 +67,15 @@
 
             .firstBlockContainer {
                 @apply flex flex-col items-center z-10;
-                gap: 50px;
+                gap: 30px;
                 width: 40%;
                 .title {
-                    @apply text-2xl text-center;
+                    @apply text-3xl text-center;
                     font-weight: 600;
                 }
 
                 .desc {
+                    @apply text-lg;
                     font-weight: 500;
                 }
             }
@@ -92,7 +94,7 @@
 
             .lbContainer {
                 @apply flex flex-col z-10;
-                gap: 50px;
+                gap: 30px;
                 padding-left: 90px;
                 padding-right: 90px;
                 }

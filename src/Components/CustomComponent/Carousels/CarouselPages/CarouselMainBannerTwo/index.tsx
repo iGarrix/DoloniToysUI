@@ -21,7 +21,6 @@ export const CarouselMainBannerTwo: React.FC = () => {
                 <div className={`${style.second}`}><img alt="extend2" src={extend2}/></div>
                 <div className={`${style.third}`}><img alt="extend3" src={extend3}/></div>
                 <div className={`${style.fourth}`}><img alt="extend4" src={extend4}/></div>
-
             </div>
             <div className={`${style.contentContainer}`}>
                 <h1 className={`${style.title}`}>{t(`The new ones are interesting`)}<br></br>

@@ -20,7 +20,6 @@
         border-bottom-right-radius: 50px;
         border-bottom-left-radius: 50px;
         gap: 40px;
-
         .rocket {
             @apply absolute z-20;
             top: 35%;
@@ -42,6 +41,63 @@
     }
 
     .sublink {
-        @apply text-cherry-200 cursor-pointer;
+        @apply text-cherry-200 cursor-pointer sm:cursor-auto;
+    }
+}
+
+
+@media (min-width: 310px) and (max-width: 640px) {
+    .carouselbanner1 {  
+        .textbanner {
+            width: 100%;
+            .headerbanner {
+                @apply flex justify-center flex-wrap text-3xl;
+            }
+            .rocket {
+                @apply hidden;
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .carouselbanner1 {  
+        .textbanner {
+            width: 100%;
+            .headerbanner {
+                @apply flex justify-center flex-wrap gap-3 text-3xl;
+            }
+            .rocket {
+                @apply hidden;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .carouselbanner1 {  
+        .textbanner {
+            width: 80%;
+            .headerbanner {
+                @apply flex justify-center flex-wrap gap-3 text-3xl;
+            }
+            .rocket {
+                @apply hidden;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .carouselbanner1 {  
+        .textbanner {
+            width: 60%;
+            .headerbanner {
+                @apply flex justify-center flex-wrap gap-3 text-3xl;
+            }
+            .rocket {
+                @apply hidden;
+            }
+        }
     }
 }

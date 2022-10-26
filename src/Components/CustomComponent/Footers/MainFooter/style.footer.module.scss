@@ -1,66 +1,76 @@
-.footer {
-    @apply w-screen h-full left-0 bg-dark flex items-start justify-between flex-wrap;
+
+.footerWrapper {
+    @apply flex flex-col flex-wrap;
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 120px;
-    padding-right: 120px;
-    gap: 130px;
+    gap: 40px;
 
-    .footer_item {
-        @apply flex flex-col text-white text-xl;
-        gap: 22px;
+    .logoWrapper {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
 
-        .list {
-            li {
-                &:hover {
-                    @apply text-banana-100 cursor-pointer select-none;
+    .footer {
+        @apply w-screen h-full left-0 bg-dark flex items-start justify-between flex-wrap;
+        gap: 40px;
+        padding-left: 120px;
+        padding-right: 120px;
+        .footer_item {
+            @apply flex flex-col text-white text-xl;
+            gap: 20px;
+    
+            .list {
+                li {
+                    &:hover {
+                        @apply text-banana-100 cursor-pointer select-none;
+                    }
                 }
             }
         }
-    }
-
-    // Adaptive Size [MM]
-    @media (min-width: 310px) and (max-width: 640px) {
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        gap: 50px;
-  
-        .footer_item {
-            @apply mm:text-center mm:w-full; 
-            gap: 10px; 
-        }
-    }
-
-    // Adaptive Size [SM]
-    @media (min-width: 640px) and (max-width: 767px) {    
-        @apply sm:grid sm:grid-cols-2;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        gap: 50px;
     
-        .footer_item {
-            @apply sm:w-full; 
-            gap: 10px;
+        // Adaptive Size [MM]
+        @media (min-width: 310px) and (max-width: 640px) {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            gap: 50px;
+      
+            .footer_item {
+                @apply mm:text-center mm:w-full; 
+                gap: 10px; 
+            }
         }
-    }
-
-    // Adaptive Size [MD]
-    @media (min-width: 768px) and (max-width: 1023px) {    
-        @apply md:grid md:grid-cols-2;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        gap: 50px;
-
-        .footer_item {
-            @apply md:w-full; 
-            gap: 10px;
     
+        // Adaptive Size [SM]
+        @media (min-width: 640px) and (max-width: 767px) {    
+            @apply sm:grid sm:grid-cols-2;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            gap: 50px;
+        
+            .footer_item {
+                @apply sm:w-full; 
+                gap: 10px;
+            }
+        }
+    
+        // Adaptive Size [MD]
+        @media (min-width: 768px) and (max-width: 1023px) {    
+            @apply md:grid md:grid-cols-2;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            gap: 50px;
+    
+            .footer_item {
+                @apply md:w-full; 
+                gap: 10px;
+        
+            }
         }
     }
 }

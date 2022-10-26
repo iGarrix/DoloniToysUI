@@ -26,7 +26,7 @@ export const MainHeader: React.FC = () => {
     }
 
     return (
-        <div className="sticky left-0 top-0 z-[100]">
+        <div className="sticky left-0 top-0 z-[1000]">
             <header className={`${styles.mainheader}`}>
                 <aside>
                     <img alt="logo" src={logo} className={`${styles.logo}`} onClick={() => { nav("/") }} />

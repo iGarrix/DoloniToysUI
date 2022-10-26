@@ -1,5 +1,5 @@
 .carouselFullContainer {
-    @apply w-screen overflow-hidden relative mm:hidden sm:hidden md:hidden lg:hidden;
+    @apply w-screen overflow-hidden relative;
 
     .maincarouselFull {
         @apply flex overflow-x-hidden relative;
@@ -10,7 +10,7 @@
         @apply absolute top-0 left-0 w-full h-full flex items-center justify-between;
         padding-left: 1%;
         padding-right: 1%;
-
+        
         .npbutton {
             @apply opacity-20 transition-all;
             --tw-scale-x: 0.7;

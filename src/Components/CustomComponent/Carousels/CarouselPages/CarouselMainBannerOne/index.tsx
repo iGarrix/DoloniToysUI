@@ -23,10 +23,10 @@ export const CarouselMainBannerOne : React.FC = () => {
                 </aside>
                 <aside className={`${style.subheaderbanner}`}>
                     <p>{t(`Help your children`)}</p>
-                    <p>{t(`plunge into the dimension`)} <span className={`${style.sublink}`}>{t(`ideas and`)}</span></p>
-                    <p><span className={`${style.sublink}`}>{t(`fantasies`)}</span></p>
+                    <p>{t(`plunge into the dimension`)} <span className={`${style.sublink}`} onClick={() => {nav("/catalog")}}>{t(`ideas and`)}</span></p>
+                    <p><span className={`${style.sublink}`} onClick={() => {nav("/catalog")}}>{t(`fantasies`)}</span></p>
                 </aside>
-                <aside>
+                <aside className="">
                     <RedButton title={t(`Catalog`)} onClick={() => {nav("/catalog")}} />
                 </aside>
                 <img alt="rocket" src={rocket} className={`${style.rocket}`} />

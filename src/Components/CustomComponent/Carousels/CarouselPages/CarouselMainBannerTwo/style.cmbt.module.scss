@@ -6,13 +6,13 @@
         @apply absolute top-0 left-0 w-full h-full grid grid-cols-4 grid-rows-2;
 
         .second {
-            @apply row-start-2;
+            @apply row-start-2 mm:hidden sm:hidden;
         }
         .third {
             @apply col-start-4;
         }
         .fourth {
-            @apply row-start-2 col-start-4;
+            @apply row-start-2 col-start-4 mm:hidden sm:hidden;
         }
     }
 

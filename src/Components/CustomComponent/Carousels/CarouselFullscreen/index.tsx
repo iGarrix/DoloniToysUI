@@ -73,7 +73,7 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
                     })
                 }
             </div>
-            <div className={`${style.npbuttonContainer} z-[1]`}>
+            <div className={`${style.npbuttonContainer}`}>
                 <button className={`${style.npbutton} ${left === 0 ? "hidden" : "flex"}`} onClick={onPrev}>
                     <img alt="next" src={prev} />
                 </button>

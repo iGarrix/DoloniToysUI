@@ -28,6 +28,7 @@
     }
 
     .headerbanner {
+        @apply flex gap-3;
         font-size: 40px;
         font-weight: 700;
         line-height: 45px;

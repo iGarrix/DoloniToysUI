@@ -6,7 +6,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { IGetProductFilter } from "../../../Configurations/api/requestmodels/models";
 import { ExpressionTypes } from "../../../Configurations/api/resources/api.expressiontypes";
 import { ImageCombiner, ImagePaths } from "../../../Configurations/api/resources/api.resourceimage";
-import { ReplaceArticle } from "../../../Configurations/globals";
+import { LanguageType, ReplaceArticle } from "../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks/hooks";
 import { GetAllCategory } from "../../../Redux/reducers/categoryReducer/action";
 import { GetAllFilteredProduct, GetAllProduct } from "../../../Redux/reducers/productReducer/action";
@@ -89,7 +89,7 @@ export const CatalogView: React.FC = () => {
                         {categories?.pageables?.map(item => {
                             return (
                                 <p key={item.title} className={`${style.item} ${category === item.title ? style.selected : null}`} onClick={() => { nav(item.title) }}>
-                                    {item.title}
+                                    {localStorage.getItem("lang") == LanguageType.UA ? item.uaTitle : item.title}
                                 </p>
                             )
                         })}
@@ -115,7 +115,7 @@ export const CatalogView: React.FC = () => {
                         {
                             products?.pageables?.map(item => {
                                 return (
-                                    <ProductCard key={item.article} src={ImageCombiner(ImagePaths.Product, item.images[0])} title={item.title} onClick={() => { nav("/product/" + ReplaceArticle(item.article, true)) }} />
+                                    <ProductCard key={item.article} src={ImageCombiner(ImagePaths.Product, item.images[0])} title={localStorage.getItem("lang") == LanguageType.UA ? item.uaTitle : item.title} onClick={() => { nav("/product/" + ReplaceArticle(item.article, true)) }} />
                                 )
                             })
                         }

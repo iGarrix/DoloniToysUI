@@ -3,8 +3,10 @@ import * as Yup from "yup";
 
 export interface IProduct {
     title: string,
+    uaTitle: string,
     images: Array<string>,
     description: string,
+    uaDescription: string,
     rating: number,
     article: string,
     create: Date,

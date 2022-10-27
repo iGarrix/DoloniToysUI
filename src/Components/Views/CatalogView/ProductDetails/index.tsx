@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom"
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
-import { ReplaceArticle } from "../../../../Configurations/globals";
+import { LanguageType, ReplaceArticle } from "../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
 import { GetProduct } from "../../../../Redux/reducers/productReducer/action";
 
@@ -58,8 +58,8 @@ export const ProductDetails : React.FC = () => {
                     <img alt="extend" src={extend} className={`${style.extend}`} />
                 </div>
                 <div className={`${style.contentContainer}`}>
-                    <h1 className={`${style.title}`}>{selectedProduct?.title}</h1>
-                    <h2 className={`${style.desc}`}>{selectedProduct?.description}</h2>
+                    <h1 className={`${style.title}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaTitle : selectedProduct?.title}</h1>
+                    <h2 className={`${style.desc}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaDescription : selectedProduct?.description}</h2>
                     <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
                 </div>
             </aside>

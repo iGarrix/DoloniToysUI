@@ -3,6 +3,7 @@ import * as Yup from "yup";
 
 export interface ICategory {
     title: string,
+    uaTitle: string,
     image: string,
     create: Date,
 }

@@ -23,9 +23,9 @@ export const AboutusView : React.FC = () => {
             <div className={`${style.blockContainer}`}>
                 <aside className={`${style.blockItem} ${style.blockBlue}`}>
                     <div className={`${style.firstBlockContainer}`}>
-                        <h1 className={`${style.title}`}>{t(`TM DOLONI-TOYS - Factory of children's happiness!`)}</h1>
+                        <h1 className={`${style.title}`}>{t(`TM DOLONI - Factory of children's happiness!`)}</h1>
                         <p className={`${style.desc}`}>{t(`Joyful children's eyes, cheerful carefree laughter, fulfillment of cherished wishes, and in addition to all this, the development, interest, deepening of skills and abilities of children - this, without a doubt, is our goal!`)}</p>
-                        <p className={`${style.desc}`}>{t(`TM DOLONI-TOYS - surprises its customers with high quality products, an incredible level of service, proving itself as a proven assistant in a difficult task - creating children's happiness`)}</p>
+                        <p className={`${style.desc}`}>{t(`TM DOLONI - surprises its customers with high quality products, an incredible level of service, proving itself as a proven assistant in a difficult task - creating children's happiness`)}</p>
                     </div>
                 </aside>
                 <aside className={`${style.blockItem} ${style.blockGreen}`}>

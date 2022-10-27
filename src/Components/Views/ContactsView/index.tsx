@@ -47,7 +47,7 @@ export const ContactsView: React.FC = () => {
                 <h1 className={`${style.title}`}>{t("Feedback")}</h1>
                 <div className={`${style.descContainer}`}>
                     <p className={`${style.subtitle}`}>
-                        ТМ "Doloni - Toys"
+                        ТМ "Doloni"
                     </p>
                     <div className={`${style.desc}`}>
                         <p>

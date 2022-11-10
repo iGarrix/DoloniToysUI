@@ -31,8 +31,8 @@ i18n.use(initReactI18next).init({
         "Sections": "Sections",
         "Carousel": "Carousel",
         // Simple Banner
-        "Dive into the exciting world of toys": "Dive into the exciting world of toys",
-        "Order toys from us and get a lot of exciting, incredible and educational products right now.": "Order toys from us and get a lot of exciting, incredible and educational products right now.",
+        "The most interesting products on the market": "The most interesting products on the market",
+        "Order products from us and get a lot of exciting, incredible and developing products right now.": "Order products from us and get a lot of exciting, incredible and developing products right now.",
         // Simple Banner 2
         "We create everything together for you": "We create everything together for you",
         "We make toys for you. Our craftsmen work day and night to make the best toys for your children.": "We make toys for you. Our craftsmen work day and night to make the best toys for your children.",
@@ -81,7 +81,7 @@ i18n.use(initReactI18next).init({
         "VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS": "VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS",
         "We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.": "We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.",
         //Not found
-        "Something went wrong:": "Something went wrong:",
+        "Something went wrong": "Something went wrong",
         //Catalog
         "Filters": "Filters",
         "Filter by name (ascending)": "Filter by name (ascending)",
@@ -160,8 +160,8 @@ i18n.use(initReactI18next).init({
         "Sections": "Секції",
         "Carousel": "Карусель",
         // Simple Banner
-        "Dive into the exciting world of toys": "Нирніть в захоплевий світ іграшок",
-        "Order toys from us and get a lot of exciting, incredible and educational products right now.": "Замовте іграшки в нас і отримайте безліч захоплюючих, неймовірних і розвиваючих товарів прямо зараз.",
+        "The most interesting products on the market": "Найцікавіша продукція на ринку",
+        "Order products from us and get a lot of exciting, incredible and developing products right now.": "Замовте продукцію в нас і отримайте безліч захоплюючих, неймовірних і розвиваючих товарів прямо зараз.",
         // Simple Banner 2
         "We create everything together for you": "Ми створюємо все разом для вас",
         "We make toys for you. Our craftsmen work day and night to make the best toys for your children.": "Ми робимо іграшки для вас. Наші майстри трудяться день і ніч щоб зробити вашим дітям найкращі іграшки.",
@@ -210,7 +210,7 @@ i18n.use(initReactI18next).init({
         "VIP-TOYS company Ukrainian manufacturer of toys under the trademark DOLONI-TOYS": "Компанія ВІП-ТОЙС Український виробник іграшок під торговою маркою DOLONI-TOYS",
         "We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.": "Ми пропонуємо широкий асортимент різних видів безпечних і цікавих іграшок та товарів для дітей на будь-який смак та уподобання. Наші дитячі будтночки, гірки для катання, різнокольорові конструктори, іграшки для піску, машинки, мотобайки і багато інших чудових іграшок можуть вже сьогодні стати в нагоді Вашій дитині.Займуть перше місце на полиці Вашого магазину, складе гідну конкуренцію закордонним аналогам.",
         //Not found
-        "Something went wrong:": "Щось пішло не так :",
+        "Something went wrong": "Щось пішло не так",
         //Catalog
         "Filters": "Фільтри",
         "Filter by name (ascending)": "Фільтрувати по назві (по зростанню)",

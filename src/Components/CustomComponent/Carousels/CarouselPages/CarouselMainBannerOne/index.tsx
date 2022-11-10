@@ -15,7 +15,7 @@ export const CarouselMainBannerOne : React.FC = () => {
     return (
         <div className={`${style.carouselbanner1}`}>
             <img alt="banner" src={banner} className={`${style.bannerimage}`} />
-            <section className={`${style.textbanner}`}>
+            {/* <section className={`${style.textbanner}`}>
                 <aside className={`${style.headerbanner}`}>
                     <h1>{t(`We present`)}</h1>
                     <h1>{t(`new world`)}</h1>
@@ -30,7 +30,7 @@ export const CarouselMainBannerOne : React.FC = () => {
                     <RedButton title={t(`Catalog`)} onClick={() => {nav("/catalog")}} />
                 </aside>
                 <img alt="rocket" src={rocket} className={`${style.rocket}`} />
-            </section>
+            </section> */}
         </div>
     )
 }

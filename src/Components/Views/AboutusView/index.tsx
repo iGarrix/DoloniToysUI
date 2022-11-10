@@ -4,12 +4,7 @@ import { useTranslation } from "react-i18next";
 import style from "./style.aboutus.module.scss";
 
 const parent = require('../../../Assets/Backgrounds/parent.png');
-const group1 = require('../../../Assets/Icons/group_aboutus1.png');
-const group2 = require('../../../Assets/Icons/group_aboutus2.png');
-const group3 = require('../../../Assets/Icons/group_aboutus3.png');
-const circle1 = require('../../../Assets/Icons/circle1.png');
-const circle2 = require('../../../Assets/Icons/circle2.png');
-const extend = require('../../../Assets/Icons/extend_group.png');
+const aboutus = require('../../../Assets/Icons/aboutus_cube.png');
 
 export const AboutusView : React.FC = () => {
 
@@ -21,6 +16,9 @@ export const AboutusView : React.FC = () => {
                 <img alt="parent" src={parent} className={`${style.image}`}/>
             </div>
             <div className={`${style.blockContainer}`}>
+                <div className="absolute top-0 left-0 z-10 w-full h-full flex items-center justify-center mm:hidden sm:hiddem md:hidden">
+                    <img alt="parent" src={aboutus} className=""/>
+                </div>
                 <aside className={`${style.blockItem} ${style.blockBlue}`}>
                     <div className={`${style.firstBlockContainer}`}>
                         <h1 className={`${style.title}`}>{t(`TM DOLONI - Factory of children's happiness!`)}</h1>

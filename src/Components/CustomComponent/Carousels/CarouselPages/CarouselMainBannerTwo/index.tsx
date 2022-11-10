@@ -8,6 +8,7 @@ const extend1 = require("../../../../../Assets/Icons/BannerExtend1.png");
 const extend2 = require("../../../../../Assets/Icons/BannerExtend2.png");
 const extend3 = require("../../../../../Assets/Icons/BannerExtend3.png");
 const extend4 = require("../../../../../Assets/Icons/BannerExtend4.png");
+const carousel2 = require("../../../../../Assets/Backgrounds/carousel2.png");
 
 export const CarouselMainBannerTwo: React.FC = () => {
 
@@ -16,7 +17,8 @@ export const CarouselMainBannerTwo: React.FC = () => {
 
     return (
         <div className={`${style.container}`}>
-            <div className={`${style.extendContainer}`}>
+            <img alt="carousel2" src={carousel2} className="w-full h-full bg-cover object-cover" />
+            {/* <div className={`${style.extendContainer}`}>
                 <div><img alt="extend1" src={extend1}/></div>
                 <div className={`${style.second}`}><img alt="extend2" src={extend2}/></div>
                 <div className={`${style.third}`}><img alt="extend3" src={extend3}/></div>
@@ -31,7 +33,7 @@ export const CarouselMainBannerTwo: React.FC = () => {
                 <div className={`${style.btnContainer}`}>
                     <RedButton title={t(`Catalog`)} onClick={() => {nav("/catalog")}}/>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

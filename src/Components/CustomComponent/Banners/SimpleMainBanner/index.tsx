@@ -16,10 +16,9 @@ export const SimpleMainBanner : React.FC = () => {
             <aside className={`${style.firstside}`}>
                 <div className={`${style.groupimagecontainer}`}>
                     <img alt="group_sectsub4" src={group_sectsub_4} className={`${style.groupimage1}`} />
-                    <img alt="group_sectsub44" src={group_sectsub_44} className={`${style.groupimage2}`} />
                 </div>
-                <h1 className={`${style.title}`}>{t(`Dive into the exciting world of toys`)}</h1>
-                <p className={`${style.desc}`}>{t(`Order toys from us and get a lot of exciting, incredible and educational products right now.`)}</p>
+                <h1 className={`${style.title} z-10`}>{t(`The most interesting products on the market`)}</h1>
+                <p className={`${style.desc} z-10`}>{t(`Order products from us and get a lot of exciting, incredible and developing products right now.`)}</p>
             </aside>
             <aside className={`${style.secondside}`}>
                 <img alt="banner3" src={banner} className={`${style.banner_3_img}`}  />

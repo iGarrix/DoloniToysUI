@@ -19,12 +19,14 @@ export const CatalogView: React.FC = () => {
     const { t } = useTranslation();
     const { category } = useParams();
     const nav = useNavigate();
-    const [isOpen, setOpen] = useState(false);
+    const [isOpen, setOpen] = useState(true);
     const { categories } = useAppSelector(state => state.categoryReducer);
     const { products, error, isLoading, successMessage } = useAppSelector(state => state.productReducer);
     const dispatch = useAppDispatch();
     const history = useLocation();
     const [isPending, startTransition] = useTransition();
+
+    
 
     async function fetchFilterProducts(request: IGetProductFilter) {
         await dispatch(GetAllFilteredProduct(request));
@@ -34,9 +36,9 @@ export const CatalogView: React.FC = () => {
         await dispatch(GetAllCategory(page, take));
     }
 
-    async function fetchProduct(page: number, take: number) {
-        await dispatch(GetAllProduct(page, take))
-    }
+    // async function fetchProduct(page: number, take: number) {
+    //     await dispatch(GetAllProduct(page, take))
+    // }
 
     useEffect(() => {
         fetchCategory(1, 1000);
@@ -51,22 +53,25 @@ export const CatalogView: React.FC = () => {
         }
         else {
             //fetchProduct(1, 24);
-            Filter(ExpressionTypes.FilterRatingOrderByDescending);
+            Filter(ExpressionTypes.FilterRatingOrderByDescending, 1);
         }
+        //window.scrollTo(0,0);
     }, [category]);
 
     const onPaginate = async (event: number) => {
+        console.log(event);
         startTransition(() => {
-            fetchProduct(event, 24);
+            Filter(ExpressionTypes.FilterRatingOrderByDescending, event);
+            //fetchProduct(event, 24);
             window.document.documentElement.scrollTo(0, 0);
         });
     }
 
-    async function Filter(filterParams: string) {
+    async function Filter(filterParams: string, page: number) {
         const request: IGetProductFilter = {
             categoryTitle: category ? category : "*",
             filterParam: filterParams,
-            page: 1,
+            page: page,
             take: 24
         }
         fetchFilterProducts(request);
@@ -77,40 +82,38 @@ export const CatalogView: React.FC = () => {
         <section className={`${style.catalogContainer}`}>
             <aside className={`${style.filterGridContainer}`}>
                 <div className={`${style.filterGridWrapper}`}>
-                    <div className={`${style.headerFilter}`}>
-                        <h1 className={`${style.title}`}>{t('Filters')}</h1>
-                        <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => { setOpen(!isOpen) }} />
-                    </div>
-                    <div className={`${style.mainFilter} ${isOpen ? style.opened : style.closed}`}>
-                        
-                        <p className={`${style.item} ${history.pathname === "/catalog" ? style.selected : null}`} onClick={() => { nav("") }}>
-                            {t('All')}
-                        </p>
-                        {categories?.pageables?.map(item => {
-                            return (
-                                <p key={item.title} className={`${style.item} ${category === item.title ? style.selected : null}`} onClick={() => { nav(item.title) }}>
-                                    {localStorage.getItem("lang") == LanguageType.UA ? item.uaTitle : item.title}
-                                </p>
-                            )
-                        })}
-                        <hr />
-                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrder) }}>
-                            {t('Filter by name (ascending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrderByDescending) }}>
-                            {t('Filter by name (descending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrder) }}>
-                            {t('Filter by rating (ascending)')}
-                        </p>
-                        <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrderByDescending) }}>
-                            {t('Filter by rating (descending)')}
-                        </p>
+                    <div className="flex flex-col gap-[15px] overflow-scroll">
+                        <div className={`${style.headerFilter}`}>
+                            <h1 className={`${style.title}`}>{t('Filters')}</h1>
+                            <FontAwesomeIcon icon={isOpen ? faClose : faAngleDown} className={`${style.turnButton}`} onClick={() => { setOpen(!isOpen) }} />
+                        </div>
+                        <div className={`${style.mainFilter} ${isOpen ? style.opened : style.closed}`}>
+                            {categories?.pageables?.map(item => {
+                                return (
+                                    <p key={item.title} className={`${style.item} ${category === item.title ? style.selected : null}`} onClick={() => { nav("/catalog/" + item.title) }}>
+                                        {localStorage.getItem("lang") == LanguageType.UA ? item.uaTitle : item.title}
+                                    </p>
+                                )
+                            })}
+                            {/* <hr />
+                            <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrder) }}>
+                                {t('Filter by name (ascending)')}
+                            </p>
+                            <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterNameOrderByDescending) }}>
+                                {t('Filter by name (descending)')}
+                            </p>
+                            <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrder) }}>
+                                {t('Filter by rating (ascending)')}
+                            </p>
+                            <p className={`${style.item}`} onClick={() => { Filter(ExpressionTypes.FilterRatingOrderByDescending) }}>
+                                {t('Filter by rating (descending)')}
+                            </p> */}
+                        </div>
                     </div>
                 </div>
             </aside>
             {
-                products?.total ?
+                products && products.total ?
                     <aside className={`${style.productContainer}`}>
                         {
                             products?.pageables?.map(item => {
@@ -119,9 +122,12 @@ export const CatalogView: React.FC = () => {
                                 )
                             })
                         }
-                        <div className={`${style.paginatorContainer}`}>
-                            <Paginator total={products?.total ? products?.total : 0} onPaginate={onPaginate} />
-                        </div>
+                        {
+                            products.total !== 1 &&
+                            <div className={`${style.paginatorContainer}`}>
+                                <Paginator total={products?.total ? products?.total : 0} onPaginate={onPaginate} />
+                            </div>
+                        }
                     </aside> :
                     <aside className={`${style.productErrorContainer}`}>
                         <div className={`${style.errorContainer}`}>

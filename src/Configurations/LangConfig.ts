@@ -97,6 +97,7 @@ i18n.use(initReactI18next).init({
         "Login": "Login",
         //Detail product
         "Article №:": "Article №:",
+        "Size №:": "Size №:",
         //Admin manage 
         "There are": "There are",
         "pages and": "pages and",
@@ -226,6 +227,7 @@ i18n.use(initReactI18next).init({
         "Login": "Вхід",
          //Detail product
          "Article №:": "Код №:",
+         "Size №:": "Розмір №:",
          //Admin manage 
         "There are": "Існує",
         "pages and": "сторінок і",

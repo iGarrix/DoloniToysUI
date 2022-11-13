@@ -1,7 +1,6 @@
 
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import { AdminLayout } from './Components/Layouts/AdminLayout';
 import { AuthLayout } from './Components/Layouts/AuthLayout';
@@ -16,6 +15,7 @@ import { ManageProductView } from './Components/Views/Admins/ManageProductView';
 import { CreateProductView } from './Components/Views/Admins/ManageProductView/CreateProductView';
 import { CatalogView } from './Components/Views/CatalogView';
 import { ProductDetails } from './Components/Views/CatalogView/ProductDetails';
+import { CategoryView } from './Components/Views/CategoryView';
 import { ContactsView } from './Components/Views/ContactsView';
 import { ForpartnersView as ForpartnersView } from './Components/Views/ForpartnersView';
 import { MainView } from './Components/Views/MainView';
@@ -56,8 +56,7 @@ function App() {
   }
 
   useEffect(() => {
-    login();
-    document.documentElement.scrollTo(0,0);
+    login(); 
   }, []);
 
   const { auth, isLoading, error } = useAppSelector(state => state.accountReducer);
@@ -68,9 +67,11 @@ function App() {
         <Route path='/' element={<LoaderLayout />}>
           <Route path='/' element={<MainLayout />} >
               <Route index element={<MainView />} />
-              <Route path='catalog' element={<CatalogView />} >
+              <Route path='catalog' element={<CategoryView />}></Route>
+              <Route path='catalog/:category' element={<CatalogView />}/>
+              {/* <Route path='catalog' element={<CatalogView />} >
                 <Route path=':category' element={<CatalogView />}/>
-              </Route>
+              </Route> */}
               <Route path='product/:article' element={<ProductDetails />}/>
               <Route path='about' element={<AboutusView />} />
               <Route path='for-partners' element={<ForpartnersView />} />

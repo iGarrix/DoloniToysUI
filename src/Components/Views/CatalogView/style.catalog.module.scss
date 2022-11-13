@@ -8,7 +8,7 @@
         padding-top: 40px;
         padding-bottom: 40px;
         .filterGridWrapper {
-            @apply  bg-white flex flex-col h-auto sticky left-0 shadow-sm overflow-hidden;
+            @apply  bg-white flex flex-col sticky left-0 shadow-sm;
             border-radius: 15px;
             gap: 15px;
             padding-left: 20px;

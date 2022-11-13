@@ -14,7 +14,11 @@ export const categorySlice = createSlice({
     initialState,
     reducers: {
         initCategories(state: ICategoryState, action: PayloadAction<IPaginateResponse<ICategory>>) {
+            let arr = action.payload.pageables?.reverse();
             state.categories = action.payload;
+            if (arr) {        
+                state.categories.pageables = arr;
+            }
             state.isLoading = false;
             state.error = '';
             state.successMessage = '';

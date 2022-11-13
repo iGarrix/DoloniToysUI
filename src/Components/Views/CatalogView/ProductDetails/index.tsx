@@ -41,7 +41,7 @@ export const ProductDetails : React.FC = () => {
                         )
                     })
                 }
-                <div className={`${style.paginatorContainer}`}>
+                {/* <div className={`${style.paginatorContainer}`}>
                     {
                         selectedProduct?.images.map((item, index) => {
                             return (
@@ -51,7 +51,7 @@ export const ProductDetails : React.FC = () => {
                             )
                         })
                     }
-                </div>
+                </div> */}
             </aside>         
             <aside className={`${style.side_2}`}>
                 <div className={`${style.extendContainer}`}>
@@ -61,6 +61,7 @@ export const ProductDetails : React.FC = () => {
                     <h1 className={`${style.title}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaTitle : selectedProduct?.title}</h1>
                     <h2 className={`${style.desc}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaDescription : selectedProduct?.description}</h2>
                     <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
+                    <p className={`${style.article}`}>{t("Size №:")} {selectedProduct?.size}</p>
                 </div>
             </aside>
         </section>

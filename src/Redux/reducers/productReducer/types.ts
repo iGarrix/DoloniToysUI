@@ -9,6 +9,7 @@ export interface IProduct {
     uaDescription: string,
     rating: number,
     article: string,
+    size: string,
     create: Date,
 }
 

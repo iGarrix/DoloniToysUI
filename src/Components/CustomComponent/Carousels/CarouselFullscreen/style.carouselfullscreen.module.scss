@@ -1,8 +1,8 @@
 .carouselFullContainer {
-    @apply w-screen overflow-hidden relative;
+    @apply w-screen overflow-hidden relative object-contain;
 
     .maincarouselFull {
-        @apply flex overflow-x-hidden relative;
+        @apply flex overflow-x-hidden relative w-full;
 
     
     }

@@ -15,7 +15,7 @@ export const RecommendCard : React.FC<IRecommendCard> = ({...props}) => {
             props.variant === RecCardType.Like ? 
             <img alt="icon" src={like} className={`${style.image}`} /> : 
             props.variant === RecCardType.Geograph ? 
-            <img alt="icon" src={geog} className={`${style.image}`} /> : 
+            <img alt="icon" src={geog} className={``} /> : 
             null}
             <h1 className={`${style.title}`}>{props.title}</h1>
         </div>

@@ -16,6 +16,7 @@ export const productSlice = createSlice({
     reducers: {
         initProducts(state: IProductState, action: PayloadAction<IPaginateResponse<IProduct>>) {
             state.products = action.payload;
+            state.selectedProduct = null;
             state.isLoading = false;
             state.error = '';
             state.successMessage = '';

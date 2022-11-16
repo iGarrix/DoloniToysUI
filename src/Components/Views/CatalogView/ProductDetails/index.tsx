@@ -61,7 +61,10 @@ export const ProductDetails : React.FC = () => {
                     <h1 className={`${style.title}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaTitle : selectedProduct?.title}</h1>
                     <h2 className={`${style.desc}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaDescription : selectedProduct?.description}</h2>
                     <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
-                    <p className={`${style.article}`}>{t("Size №:")} {selectedProduct?.size}</p>
+                    {
+                        selectedProduct?.size &&
+                    <p className={`${style.article}`}>{t("Size")}: {selectedProduct?.size}</p>
+                    }
                 </div>
             </aside>
         </section>

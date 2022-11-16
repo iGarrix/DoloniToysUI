@@ -31,7 +31,7 @@ i18n.use(initReactI18next).init({
         "Sections": "Sections",
         "Carousel": "Carousel",
         // Simple Banner
-        "The most interesting products on the market": "The most interesting products on the market",
+        "Our small users participate in the development of new products": "Our small users participate in the development of new products",
         "Order products from us and get a lot of exciting, incredible and developing products right now.": "Order products from us and get a lot of exciting, incredible and developing products right now.",
         // Simple Banner 2
         "We create everything together for you": "We create everything together for you",
@@ -97,7 +97,7 @@ i18n.use(initReactI18next).init({
         "Login": "Login",
         //Detail product
         "Article №:": "Article №:",
-        "Size №:": "Size №:",
+        "Size": "Size",
         //Admin manage 
         "There are": "There are",
         "pages and": "pages and",
@@ -161,7 +161,7 @@ i18n.use(initReactI18next).init({
         "Sections": "Секції",
         "Carousel": "Карусель",
         // Simple Banner
-        "The most interesting products on the market": "Найцікавіша продукція на ринку",
+        "Our small users participate in the development of new products": "У розробці нових товарів приймають участь наші маленькі користувачі",
         "Order products from us and get a lot of exciting, incredible and developing products right now.": "Замовте продукцію в нас і отримайте безліч захоплюючих, неймовірних і розвиваючих товарів прямо зараз.",
         // Simple Banner 2
         "We create everything together for you": "Ми створюємо все разом для вас",
@@ -227,7 +227,7 @@ i18n.use(initReactI18next).init({
         "Login": "Вхід",
          //Detail product
          "Article №:": "Код №:",
-         "Size №:": "Розмір №:",
+         "Size": "Розмір",
          //Admin manage 
         "There are": "Існує",
         "pages and": "сторінок і",

@@ -68,7 +68,7 @@
 
 
     .productContainer {
-        @apply col-span-5 w-full grid grid-cols-4 items-start;
+        @apply col-span-5 w-full grid grid-cols-4 items-start h-min;
         column-gap: 30px;
         row-gap: 30px;
         padding-top: 40px;

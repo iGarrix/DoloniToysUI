@@ -48,7 +48,7 @@ export const CatalogView: React.FC = () => {
                 filterParam: "*",
                 page: 1,
                 take: 24
-            }
+            } 
             fetchFilterProducts(request);
         }
         else {

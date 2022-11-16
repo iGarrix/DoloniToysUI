@@ -25,7 +25,7 @@ export const CategoryView : React.FC = () => {
 
     function onSelectCategory(title: string) {
         nav(title);
-        window.location.reload();
+        //window.location.reload();
     }
 
     return (

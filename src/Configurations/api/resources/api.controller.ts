@@ -18,6 +18,7 @@ export enum ProductController {
     Get = "GET_BY_ARTICLE",
     GetFilter = "GET_PRODUCTS_BY_CATEGORY",
     Change = "CHANGE_PRODUCT",
+    ChangeImage = "CHANGE_IMAGE_PRODUCT",
     Remove = "REMOVE_PRODUCT",
 }
 

@@ -69,6 +69,7 @@ export const ManageProductView : React.FC = () => {
                                 <th className={`${style.title}`}>{t("Title")}</th>
                                 <th className={`${style.title}`}>{t("Create time")}</th>
                                 <th className={`${style.title}`}>{t("Delete")}</th>
+                                <th className={`${style.title}`}>{t("Edit")}</th>
                             </tr>
                         </thead>
                         <tbody className={`${style.mainContainer}`}>
@@ -84,6 +85,7 @@ export const ManageProductView : React.FC = () => {
                                             </td>
                                             <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
                                             <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveProduct(item)}}>{t("Remove")}</button></td>                            
+                                            <td className={`${style.item} w-[10%]`}><button className={`${style.editbtn}`} onClick={() => {nav("edit-product/" + item.article)}}>{t("Edit")}</button></td>                            
                                         </tr>
                                     )
                                 })

@@ -1,5 +1,5 @@
 .container {
-    @apply flex justify-center items-center w-full h-screen overflow-hidden;
+    @apply flex justify-center items-center w-full h-full;
 
     .blockSide {
         @apply flex flex-col items-center shadow-2xl bg-banana-100/80;
@@ -37,7 +37,7 @@
                 @apply w-full flex justify-center;
 
                 .imageContainer {
-                    @apply relative overflow-hidden rounded-xl bg-white;
+                    @apply relative overflow-hidden rounded-xl;
                     width: 100px;
                     height: 100px;
                     .imageEffect {
@@ -49,7 +49,7 @@
                     }
 
                     .image {
-                        @apply cursor-pointer transition-all object-contain w-full h-full;
+                        @apply cursor-pointer transition-all object-cover w-full h-full;
                     }
                 }
             }

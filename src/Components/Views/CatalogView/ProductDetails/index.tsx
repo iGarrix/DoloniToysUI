@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../Configurations/api/resources/api.resourceimage";
 import { LanguageType, ReplaceArticle } from "../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../Redux/hooks/hooks";
 import { GetProduct } from "../../../../Redux/reducers/productReducer/action";
+import { DefButton } from "../../../Common/Buttons/DefButton";
 
 import style from "./style.pdetail.module.scss";
 
@@ -14,9 +15,11 @@ export const ProductDetails : React.FC = () => {
     const {t} = useTranslation();
     const {article} = useParams();
     const dispatch = useAppDispatch();
+    const nav = useNavigate();
     const [selectImage, setSelectImage] = useState(0);
 
     const { selectedProduct } = useAppSelector(state => state.productReducer);
+    const { auth } = useAppSelector(state => state.accountReducer);
 
     async function fetchProduct() {
         if (article) {
@@ -64,6 +67,15 @@ export const ProductDetails : React.FC = () => {
                     {
                         selectedProduct?.size &&
                     <p className={`${style.article}`}>{t("Size")}: {selectedProduct?.size}</p>
+                    }
+                    {
+                        auth &&
+                        <Fragment>
+                            <hr />
+                            <div className="flex gap-[10px]">
+                                <DefButton title={t(`Edit`)} onClick={() => {nav("/for-admins/edit-product/" + selectedProduct?.article)}} />
+                            </div>
+                        </Fragment>
                     }
                 </div>
             </aside>

@@ -13,6 +13,7 @@ import { CreateCategoryView } from './Components/Views/Admins/ManageCategoryView
 import { ManageContactView } from './Components/Views/Admins/ManageContactView';
 import { ManageProductView } from './Components/Views/Admins/ManageProductView';
 import { CreateProductView } from './Components/Views/Admins/ManageProductView/CreateProductView';
+import { EditProductView } from './Components/Views/Admins/ManageProductView/EditProductView';
 import { CatalogView } from './Components/Views/CatalogView';
 import { ProductDetails } from './Components/Views/CatalogView/ProductDetails';
 import { CategoryView } from './Components/Views/CategoryView';
@@ -88,6 +89,7 @@ function App() {
             <Route path="reports" element={<ManageContactView />} />
             <Route path="create-category" element={<CreateCategoryView />} />
             <Route path="create-product" element={<CreateProductView />} />
+            <Route path="edit-product/:article" element={<EditProductView />} />
           </Route>
 
           <Route path='*' element={<Oops />} />

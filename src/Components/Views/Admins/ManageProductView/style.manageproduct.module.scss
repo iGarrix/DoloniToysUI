@@ -62,6 +62,7 @@
                         @apply flex gap-[5px] items-center;
 
                         .imageitem {
+                            @apply object-contain aspect-square;
                             height: 64px;
                             width: 64px;
                         }
@@ -69,6 +70,9 @@
 
                     .removebtn {
                         @apply w-full h-full flex justify-center text-cherry-200;
+                    }
+                    .editbtn {
+                        @apply w-full h-full flex justify-center text-green-500;
                     }
                 }
             }

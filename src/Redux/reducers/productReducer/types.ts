@@ -25,6 +25,33 @@ export interface ICreateProductRequest {
     categoryTitle: string,
 }
 
+export interface IEditProductRequest {
+    article: string,
+    newTitle: string,
+    newUaTitle: string,
+    newDescription: string,
+    newUaDescription: string,
+    newRating: number,
+    newArticle: string,
+    newSize: string,
+}
+
+export interface IEditProductForm {
+    newTitle: string,
+    newUaTitle: string,
+    newDescription: string,
+    newUaDescription: string,
+    newRating: number,
+    newArticle: string,
+    newSize: string,
+}
+
+export interface IEditImageProductRequest {
+    article: string,
+    imageKey: string,
+    newImage: File,
+}
+
 export interface ICreateProductForm {
     title: string,
     uatitle: string,
@@ -57,4 +84,14 @@ export const CreateProductScheme = Yup.object({
     article: Yup.string().required("Article is required"),
     size: Yup.string().required("Size is required"),
     categoryTitle: Yup.string().required("Category title is required"),
+});
+
+export const EditProductScheme = Yup.object({
+    newTitle: Yup.string().min(1, "Title is required"),
+    newUaTitle: Yup.string().min(1, "Title in UA is required"),
+    newDescription: Yup.string().min(1, "Desciption is required"),
+    newUaDescription: Yup.string().min(1, "Desciption in UA is required"),
+    newRating: Yup.number(),
+    newArticle: Yup.string().min(1, "Article is required"),
+    newSize: Yup.string().min(1, "Size is required"),
 });

@@ -12,21 +12,13 @@ import { GetLanguage, IGlobalData } from './Configurations/globals';
 const store = setupStore();
 setup(store);
 
-let global_data: IGlobalData = {
-  language: GetLanguage(),
-};
-
-export const GlobalValues = React.createContext(global_data);
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <GlobalValues.Provider value={global_data}>
         <App />
-      </GlobalValues.Provider>
     </Provider>
   </BrowserRouter>
 );

@@ -40,7 +40,7 @@ i18n.use(initReactI18next).init({
         "Why should you choose us?": "Why should you choose us?",
         "A large selection of products": "A large selection of products",
         "Many positive reviews": "Many positive reviews",
-        "Toys from all over the world": "Toys from all over the world",
+        "Toys from the manufacturer of children's happiness": "Toys from the manufacturer of children's happiness",
         // Section
         "Section": "Section",
         // Carousel Banner 1
@@ -172,7 +172,7 @@ i18n.use(initReactI18next).init({
         "Why should you choose us?": "Чому варто обрати нас?",
         "A large selection of products": "Великий вибір товарів",
         "Many positive reviews": "Багато позитивних відгуків",
-        "Toys from all over the world": "Іграшки з всього світу",
+        "Toys from the manufacturer of children's happiness": "Іграшки від виробника дитячого щастя",
         // Section
         "Section": "Розділи",
         // Carousel Banner 1

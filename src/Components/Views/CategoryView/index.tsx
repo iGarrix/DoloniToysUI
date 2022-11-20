@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom";
-import { GlobalValues } from "../../..";
 import { ImageCombiner, ImagePaths } from "../../../Configurations/api/resources/api.resourceimage";
 import { LanguageType } from "../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks/hooks";
@@ -16,7 +15,6 @@ export const CategoryView : React.FC = () => {
     const nav = useNavigate();
     const dispatch = useAppDispatch();
     const { categories } = useAppSelector(state => state.categoryReducer);
-    const global_data = useContext(GlobalValues);
 
     async function fetchCategory(page: number, take: number) {
         await dispatch(GetAllCategory(page, take));
@@ -41,7 +39,7 @@ export const CategoryView : React.FC = () => {
                         categories?.pageables?.map(item => {
                             return (
                                 <CategoryCard key={item.image} onSelect={() => { onSelectCategory(item.title); } } src={ImageCombiner(ImagePaths.Category, item.image)} 
-                                title={global_data.language === LanguageType.EN ? item.title : item.uaTitle} />
+                                title={localStorage.getItem("lang") == LanguageType.EN ? item.title : item.uaTitle} />
                             )
                         })
                     }

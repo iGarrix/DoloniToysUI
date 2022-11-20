@@ -14,7 +14,7 @@ export const RecommendBlock : React.FC = () => {
             <aside className={`${style.cardblock}`}>
                 <RecommendCard title={t(`A large selection of products`)} variant={RecCardType.Gift} />
                 <RecommendCard title={t(`Many positive reviews`)} variant={RecCardType.Like} />
-                <RecommendCard title={t(`Toys from all over the world`)} variant={RecCardType.Geograph} />
+                <RecommendCard title={t(`Toys from the manufacturer of children's happiness`)} variant={RecCardType.Geograph} />
             </aside>
         </section>
     )

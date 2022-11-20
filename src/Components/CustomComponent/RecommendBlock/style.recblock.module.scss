@@ -11,8 +11,8 @@
     }
 
     .cardblock {
-        @apply flex flex-wrap;
-        gap: 120px;
+        @apply grid grid-cols-3;
+        gap: 100px;
     }
 
     // Adaptive Size [MM]
@@ -28,7 +28,7 @@
     @media (min-width: 640px) and (max-width: 767px) {       
         @apply sm:text-center sm:w-full;
         .cardblock {
-            @apply sm:flex sm:justify-center;
+            @apply sm:grid-cols-2 sm:justify-center;
             gap: 25px;
         }
     }
@@ -37,7 +37,7 @@
     @media (min-width: 768px) and (max-width: 1023px) {     
         @apply md:text-center md:w-full;
         .cardblock {
-            @apply md:flex md:justify-center;
+            @apply md:grid-cols-3 md:justify-center;
             gap: 25px;
         }
     }

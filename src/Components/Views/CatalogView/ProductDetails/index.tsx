@@ -41,17 +41,17 @@ export const ProductDetails : React.FC = () => {
                         )
                     })
                 }
-                {/* <div className={`${style.paginatorContainer}`}>
+                <div className={`${style.paginatorContainer}`}>
                     {
-                        selectedProduct?.images.map((item, index) => {
+                        selectedProduct && selectedProduct.images.length > 1 && selectedProduct.images.map((item, index) => {
                             return (
-                                <img alt="img" key={index} src={ImageCombiner(ImagePaths.Product, selectedProduct? selectedProduct.images[index] : "")} 
+                                <img alt="img" key={index} src={ImageCombiner(ImagePaths.Product, selectedProduct ? selectedProduct.images[index] : "")} 
                                 className={`${style.item} ${selectImage === index ? style.selected : null}`}
                                 onError={(tg: any) => { tg.target.src = ErrorImage}} onClick={() => {setSelectImage(index)}}/>
                             )
                         })
                     }
-                </div> */}
+                </div>
             </aside>         
             <aside className={`${style.side_2}`}>
                 <div className={`${style.extendContainer}`}>

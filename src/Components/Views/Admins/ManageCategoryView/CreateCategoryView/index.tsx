@@ -26,6 +26,8 @@ export const CreateCategoryView : React.FC = () => {
 
     const values : ICreateCategoryForm = {
         title: "",
+        uatitle: "",
+        rating: 0
     }
 
     const onSubmitForm = async (values: ICreateCategoryForm) => {
@@ -33,7 +35,9 @@ export const CreateCategoryView : React.FC = () => {
             try {
                 var request: ICreateCategoryRequest = {
                     title: values.title,
-                    image: targetFile
+                    image: targetFile,
+                    uaTitle: values.uatitle,
+                    rating: values.rating
                 };
                 await dispatch(CreateCategory(request));
                 nav('../categories');
@@ -83,6 +87,8 @@ export const CreateCategoryView : React.FC = () => {
                     </div>          
                     <div className={`${style.fieldBlock}`}>
                         <Field placeholder={t("Title")} name="title" type="text" />
+                        <Field placeholder={t("Title in UA")} name="uatitle" type="text" />
+                        <Field placeholder={t("Rating")} name="rating" type="number" />
                     </div>
                     <div className={`${style.buttonContainer}`}>
                         <DefButton title={t("Create")} />

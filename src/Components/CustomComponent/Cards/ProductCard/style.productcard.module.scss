@@ -14,7 +14,7 @@
     }
 
     .img {
-        @apply bg-cover object-cover;
+        @apply bg-cover object-contain aspect-square;
         width: 250px;
         height: 250px;
     }

@@ -34,6 +34,8 @@ export const CreateCategory = (data: ICreateCategoryRequest) => async (dispatch:
         dispatch(categorySlice.actions.initLoading());
         const form: FormData = new FormData();
         form.append("Title", data.title);
+        form.append("UaTitle", data.uaTitle);
+        form.append("Rating", data.rating.toString());
         form.append("Image", data.image);
         if (form) {         
             const request = await http.post<any | IExceptionHandleResponse>(GetApiUrl(CategoryController.Default, CategoryController.Add), form);

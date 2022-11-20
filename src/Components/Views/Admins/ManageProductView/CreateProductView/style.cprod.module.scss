@@ -8,7 +8,7 @@
         padding-bottom: 5vh;
         padding-left: 4vw;
         padding-right: 4vw;
-        width: 30%;
+        width: auto;
         gap: 20px;
         .titleBlock {
             @apply flex flex-col;
@@ -115,7 +115,7 @@
     
     .container {
         .blockSide {
-            width: 60%;
+            width: auto;
     
             .formContainer {
                 @apply lg:h-full;
@@ -131,7 +131,7 @@
     
     .container {
         .blockSide {
-            width: 50%;
+            width: auto;
     
             .formContainer {
                 @apply xl:h-full;

@@ -94,14 +94,15 @@ export const CreateProduct = (data: ICreateProductRequest) => async (dispatch: A
         dispatch(productSlice.actions.initLoading());
         const form: FormData = new FormData();
         form.append("Title", data.title);
+        form.append("UaTitle", data.uatitle);
         for (let index = 0; index < data.images.length; ++index) {
-            console.log();
             form.append("Images", data.images[index]);
         }
-        form.append("Images", data.images[0]);
         form.append("Description", data.description);
+        form.append("UaDescription", data.uadescription);
         form.append("Rating", `${data.rating}`);
         form.append("Article", data.article);
+        form.append("Size", data.size);
         form.append("CategoryTitle", data.categoryTitle);
         if (form) {         
             const request = await http.post<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Add), form);

@@ -18,6 +18,10 @@ export enum LanguageType {
     EN = "en",
 } 
 
+export interface IGlobalData {
+    language: LanguageType,
+}
+
 export interface IPaginateResponse<T> {
     totalObj: number,
     total: number,
@@ -56,6 +60,17 @@ export function changeLanguage(lang: string) {
     }
     else {
         i18n.changeLanguage(LanguageType.EN);
+    }
+}
+
+export function GetLanguage() : LanguageType
+{
+    const lang = localStorage.getItem("lang");
+    if (lang) {
+        return <LanguageType>lang;
+    }
+    else {
+        return LanguageType.EN;
     }
 }
 

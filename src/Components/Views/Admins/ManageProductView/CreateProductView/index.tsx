@@ -28,9 +28,12 @@ export const CreateProductView : React.FC = () => {
 
     const values : ICreateProductForm = {
         title: "",
+        uatitle: "",
         description: "",
+        uadescription: "",
         rating: 0,
         article: "",
+        size: "",
         categoryTitle: "",
     }
 
@@ -47,11 +50,14 @@ export const CreateProductView : React.FC = () => {
             try {
                 var request: ICreateProductRequest = {
                     title: values.title,
-                    images: targetFile,
+                    uatitle: values.uatitle,
+                    uadescription: values.uadescription,
                     description: values.description,
+                    images: targetFile,
                     rating: values.rating,
                     article: values.article,
                     categoryTitle: values.categoryTitle,
+                    size: values.size,
                 };
                 await dispatch(CreateProduct(request));
                 nav('..');
@@ -100,10 +106,19 @@ export const CreateProductView : React.FC = () => {
                         </div>
                     </div>          
                     <div className={`${style.fieldBlock}`}>
-                        <Field placeholder={t("Title")} name="title" type="text" />
-                        <Field placeholder={t("Description")} name="description" type="text" />
-                        <Field placeholder={t("Article")} name="article" type="text" />
-                        <Field placeholder={t("Rating")} name="rating" type="number" />
+                        <div className="flex gap-[15px]">
+                            <Field placeholder={t("Title")} name="title" type="text" />
+                            <Field placeholder={t("Title in UA")} name="uatitle" type="text" />
+                        </div>
+                        <div className="flex gap-[15px]">                       
+                            <Field placeholder={t("Description")} name="description" type="text" />
+                            <Field placeholder={t("Description in UA")} name="uadescription" type="text" />
+                        </div>
+                        <div className="flex gap-[15px]">                                    
+                            <Field placeholder={t("Article")} name="article" type="text" />
+                            <Field placeholder={t("Rating")} name="rating" type="number" />
+                        </div>
+                        <Field placeholder={t("Size")} name="size" type="text" />
                         {
                             categories && categories.pageables &&
                             <FormikDropdown name={"categoryTitle"} title={t("Category")} options={categories?.pageables?.map(item => { return {key: item.title, value: item.title}})} />

@@ -23,10 +23,8 @@ export const CatalogView: React.FC = () => {
     const { categories } = useAppSelector(state => state.categoryReducer);
     const { products, error, isLoading, successMessage } = useAppSelector(state => state.productReducer);
     const dispatch = useAppDispatch();
-    const history = useLocation();
-    const [isPending, startTransition] = useTransition();
 
-    
+    const [isPending, startTransition] = useTransition();    
 
     async function fetchFilterProducts(request: IGetProductFilter) {
         await dispatch(GetAllFilteredProduct(request));
@@ -52,7 +50,6 @@ export const CatalogView: React.FC = () => {
             fetchFilterProducts(request);
         }
         else {
-            //fetchProduct(1, 24);
             Filter(ExpressionTypes.FilterRatingOrderByDescending, 1);
         }
         //window.scrollTo(0,0);
@@ -62,7 +59,6 @@ export const CatalogView: React.FC = () => {
         console.log(event);
         startTransition(() => {
             Filter(ExpressionTypes.FilterRatingOrderByDescending, event);
-            //fetchProduct(event, 24);
             window.document.documentElement.scrollTo(0, 0);
         });
     }

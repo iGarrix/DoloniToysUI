@@ -6,7 +6,7 @@
         width: 50vw;
         height: 90vh;
         .image {
-            @apply object-contain;
+            @apply object-contain aspect-square;
             width: 600px;
             height: 600px;
         }
@@ -15,19 +15,19 @@
             @apply absolute bottom-0 left-0 p-3 flex flex-wrap gap-2;
 
             .item {
-                @apply object-cover bg-cover transition-all border-2 rounded-md shadow-sm cursor-pointer;
-                width: 64px;
-                height: 64px;
+                @apply object-contain bg-cover transition-all border-2 rounded-md shadow-sm cursor-pointer;
+                width: 80px;
+                height: 80px;
                 &:hover {
-                    @apply border-cherry-200;
+                    @apply border-cherry-200/80;
                 }
                 &:to {
-                    @apply border-cherry-200;
+                    @apply border-cherry-200/80;
                 }
             }
 
             .selected {
-                @apply border-cherry-100;
+                @apply border-cherry-200;
             }
         }
     }

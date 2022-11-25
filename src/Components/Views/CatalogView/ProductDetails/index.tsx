@@ -73,7 +73,7 @@ export const ProductDetails : React.FC = () => {
                         <Fragment>
                             <hr />
                             <div className="flex gap-[10px]">
-                                <DefButton title={t(`Edit`)} onClick={() => {nav("/for-admins/edit-product/" + selectedProduct?.article)}} />
+                                <DefButton title={t(`Edit`)} onClick={() => {nav("/for-admins/edit-product/" + ReplaceArticle(selectedProduct? selectedProduct.article : "", true))}} />
                             </div>
                         </Fragment>
                     }

@@ -54,11 +54,13 @@ export const LoginView : React.FC = () => {
                             <Field placeholder={t("Password")} name="password" type="password" />
                         </div>
                         <div className={`${style.buttonContainer}`}>
-                            <DefButton title={t("Back")} onClick={() => {nav(-1)}}/>
                             <DefButton title={t("Login")} />
                         </div>
                     </Form>
                 </Formik>
+                <div className="w-full flex justify-end">
+                            <DefButton title={t("Back")} onClick={() => {nav("/")}}/>
+                </div>
             </aside>
         </section>
     )

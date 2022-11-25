@@ -1,6 +1,6 @@
 import { defaultErrorMessage } from "../../../Configurations/api";
 import { QuestionController } from "../../../Configurations/api/resources/api.controller";
-import http from "../../../Configurations/axios/axios";
+import http, { auth_http } from "../../../Configurations/axios/axios";
 import { GetApiUrl, IExceptionHandleResponse, IPaginateResponse } from "../../../Configurations/globals";
 import { AppDispatch } from "../../store/store";
 import { contactSlice } from "./contactSlice";
@@ -32,14 +32,17 @@ export const SendContact = (data: ISendContactRequest) => async (dispatch: AppDi
 export const GetAllContact = (page: number, take: number) => async (dispatch: AppDispatch) => {
     try {
         dispatch(contactSlice.actions.onLoading());
-        const request = await http.get<IPaginateResponse<IContact> | IExceptionHandleResponse>(GetApiUrl(QuestionController.Default, QuestionController.Get), {params: {page: page, take: take}});
-        const error : IExceptionHandleResponse = request.data as IExceptionHandleResponse;
-        if ('StatusCode' in error) {
-           throw error;
-        }
-        const response : IPaginateResponse<IContact> = request.data as IPaginateResponse<IContact>;
-        if (response) {         
-            dispatch(contactSlice.actions.onInitContacts(response));
+        var token = localStorage.getItem("token");
+        if (token) {         
+            const request = await auth_http(token).get<IPaginateResponse<IContact> | IExceptionHandleResponse>(GetApiUrl(QuestionController.Default, QuestionController.Get), {params: {page: page, take: take}});
+            const error : IExceptionHandleResponse = request.data as IExceptionHandleResponse;
+            if ('StatusCode' in error) {
+               throw error;
+            }
+            const response : IPaginateResponse<IContact> = request.data as IPaginateResponse<IContact>;
+            if (response) {         
+                dispatch(contactSlice.actions.onInitContacts(response));
+            }
         }
     } catch (e) {
         const error = e as IExceptionHandleResponse;

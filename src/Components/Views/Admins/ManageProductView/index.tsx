@@ -83,9 +83,9 @@ export const ManageProductView : React.FC = () => {
                                                     {item.title}
                                                 </div>
                                             </td>
-                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + item.article)}}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
+                                            <td className={`${style.item} w-[45%] cursor-pointer`} onClick={() => {nav("/product/" + ReplaceArticle(item.article, true))}}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
                                             <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveProduct(item)}}>{t("Remove")}</button></td>                            
-                                            <td className={`${style.item} w-[10%]`}><button className={`${style.editbtn}`} onClick={() => {nav("edit-product/" + item.article)}}>{t("Edit")}</button></td>                            
+                                            <td className={`${style.item} w-[10%]`}><button className={`${style.editbtn}`} onClick={() => {nav("edit-product/" + ReplaceArticle(item.article, true))}}>{t("Edit")}</button></td>                            
                                         </tr>
                                     )
                                 })

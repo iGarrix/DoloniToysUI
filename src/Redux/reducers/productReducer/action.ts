@@ -1,7 +1,7 @@
 import { defaultErrorMessage } from "../../../Configurations/api";
 import { IGetProductFilter } from "../../../Configurations/api/requestmodels/models";
 import { ProductController } from "../../../Configurations/api/resources/api.controller";
-import http from "../../../Configurations/axios/axios";
+import http, { auth_http } from "../../../Configurations/axios/axios";
 import { GetApiUrl, IExceptionHandleResponse, IPaginateResponse } from "../../../Configurations/globals";
 import { AppDispatch } from "../../store/store";
 import { productSlice } from "./productSlice";
@@ -110,8 +110,9 @@ export const CreateProduct = (data: ICreateProductRequest) => async (dispatch: A
         form.append("Article", data.article);
         form.append("Size", data.size);
         form.append("CategoryTitle", data.categoryTitle);
-        if (form) {
-            const request = await http.post<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Add), form);
+        var token = localStorage.getItem("token");
+        if (form && token) {
+            const request = await auth_http(token).post<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Add), form);
             const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
             if ('StatusCode' in error) {
                 throw error;
@@ -134,8 +135,9 @@ export const EditImageProduct = (data: IEditImageProductRequest) => async (dispa
         form.append("Article", data.article);
         form.append("ImageKey", data.imageKey);
         form.append("NewImage", data.newImage);
-        if (form) {
-            const request = await http.put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.ChangeImage), form);
+        var token = localStorage.getItem("token");
+        if (form && token) {
+            const request = await auth_http(token).put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.ChangeImage), form);
             const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
             if ('StatusCode' in error) {
                 throw error;
@@ -154,10 +156,13 @@ export const EditImageProduct = (data: IEditImageProductRequest) => async (dispa
 export const EditProduct = (data: IEditProductRequest) => async (dispatch: AppDispatch) => {
     try {
         dispatch(productSlice.actions.initLoading());
-        const request = await http.put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Change), data);
-        const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
-        if ('StatusCode' in error) {
-            throw error;
+        var token = localStorage.getItem("token");
+        if (token) {          
+            const request = await auth_http(token).put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Change), data);
+            const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
+            if ('StatusCode' in error) {
+                throw error;
+            }
         }
     } catch (e) {
         const error = e as IExceptionHandleResponse;
@@ -176,10 +181,13 @@ export const RemoveProduct = (product: IProduct) => async (dispatch: AppDispatch
         const model: IRemoveProductRequest = {
             article: product.article
         }
-        const request = await http.delete<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Remove), { data: model });
-        const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
-        if ('StatusCode' in error) {
-            throw error;
+        var token = localStorage.getItem("token");
+        if (token) {       
+            const request = await auth_http(token).delete<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Remove), { data: model });
+            const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
+            if ('StatusCode' in error) {
+                throw error;
+            }
         }
     } catch (e) {
         const error = e as IExceptionHandleResponse;

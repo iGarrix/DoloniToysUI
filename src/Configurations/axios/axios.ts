@@ -7,12 +7,14 @@ export default axios.create({
     "Content-type": "application/json",
   },
 });
-export const axiosPrivate = axios.create({
+
+
+export const auth_http = (token : string) => axios.create({
   baseURL: apiUrl,
   headers: {
     "Content-type": "application/json",
+    Authorization: "Bearer " + token
   },
-  withCredentials: true,
 });
 
 export interface IAuthConfig {

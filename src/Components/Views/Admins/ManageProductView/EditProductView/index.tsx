@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../../Configurations/api/resources/api.resourceimage";
+import { ReplaceArticle } from "../../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../../Redux/hooks/hooks";
 import { EditImageProduct, EditProduct, GetProduct } from "../../../../../Redux/reducers/productReducer/action";
 import { productSlice } from "../../../../../Redux/reducers/productReducer/productSlice";
@@ -33,7 +34,7 @@ export const EditProductView: React.FC = () => {
 
     async function fetchSelectedProduct() {
         if (article) {
-            await dispatch(GetProduct(article));
+            await dispatch(GetProduct(ReplaceArticle(article, false)));
         }
     }
 
@@ -45,7 +46,7 @@ export const EditProductView: React.FC = () => {
         if (article) {      
             try {
                 var request: IEditProductRequest = {
-                    article: article,
+                    article: ReplaceArticle(article, false),
                     newTitle: values.newTitle ? values.newTitle : selectedProduct? selectedProduct.title : "",
                     newUaTitle: values.newUaTitle ? values.newUaTitle : selectedProduct? selectedProduct.uaTitle : "",
                     newDescription: values.newDescription ? values.newDescription : selectedProduct? selectedProduct.description : "",

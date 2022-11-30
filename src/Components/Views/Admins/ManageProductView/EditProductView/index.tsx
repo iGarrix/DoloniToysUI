@@ -1,3 +1,5 @@
+import { faImage } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,9 +7,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../../Configurations/api/resources/api.resourceimage";
 import { ReplaceArticle } from "../../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../../Redux/hooks/hooks";
-import { EditImageProduct, EditProduct, GetProduct } from "../../../../../Redux/reducers/productReducer/action";
+import { AddImageProduct, EditImageProduct, EditProduct, GetProduct } from "../../../../../Redux/reducers/productReducer/action";
 import { productSlice } from "../../../../../Redux/reducers/productReducer/productSlice";
-import { EditProductScheme, IEditImageProductRequest, IEditProductForm, IEditProductRequest } from "../../../../../Redux/reducers/productReducer/types";
+import { EditProductScheme, IAddNewImageProductRequest, IEditImageProductRequest, IEditProductForm, IEditProductRequest } from "../../../../../Redux/reducers/productReducer/types";
 import { DefButton } from "../../../../Common/Buttons/DefButton";
 import { Field } from "../../../../Common/Inputs/Field";
 import style from "./editproduct.module.scss";
@@ -74,7 +76,20 @@ export const EditProductView: React.FC = () => {
                 newImage: selectedFile
             }
             await dispatch(EditImageProduct(request));
-            nav("/product/" + selectedProduct.article);
+            nav("/product/" + ReplaceArticle(selectedProduct.article, true));
+        }
+    }
+
+    async function AddImage(e: any) {
+        if (e && selectedProduct) {
+            var selectedFile = e.target.files[0];
+            const request : IAddNewImageProductRequest = {
+                article: selectedProduct.article,
+                newImage: selectedFile
+            }
+            //console.log(request);
+            await dispatch(AddImageProduct(request));
+            nav("/product/" + ReplaceArticle(selectedProduct.article, true));
         }
     }
 
@@ -82,7 +97,7 @@ export const EditProductView: React.FC = () => {
         <section className={`${style.container}`}>
             <aside className={`${style.blockSide}`}>
                 <div className={`${style.titleBlock}`}>
-                    <h1 className={`${style.title}`}>{t("Edit product")}</h1>
+                    <h1 className={`${style.title}`}>{t("Edit Product")}</h1>
                 </div>
                 <div className="grid grid-cols-6 mm:grid-cols-3 flex-wrap gap-[15px]">
                 {
@@ -100,7 +115,12 @@ export const EditProductView: React.FC = () => {
                         })        
                     }
                     {[...Array(6 - (selectedProduct ? selectedProduct.images.length : 0))].map((x, i) =>
-                        <div key={i} className="w-[80px] h-[80px] bg-white/80 rounded-sm overflow-hidden flex items-center justify-center font-bold text-2xl">?</div>
+                        <div key={i}>
+                            <input type="file" id="fileadd" accept="image/*" onChange={async (event: any) => { await AddImage(event) }} className="hidden" />
+                            <label htmlFor="fileadd" className="w-[80px] h-[80px] bg-white rounded-sm overflow-hidden flex items-center justify-center font-bold text-2xl border-2 hover:border-cherry-200 cursor-pointer">  
+                                <FontAwesomeIcon icon={faImage} />
+                            </label>
+                        </div>
                     )}
                 </div>
                 <Formik initialValues={values} validationSchema={EditProductScheme} onSubmit={onSubmitForm}>

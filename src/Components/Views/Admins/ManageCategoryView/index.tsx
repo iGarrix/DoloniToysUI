@@ -67,6 +67,7 @@ export const ManageCategoryView : React.FC = () => {
                                 <th className={`${style.title}`}>{t("Title")}</th>
                                 <th className={`${style.title}`}>{t("Create time")}</th>
                                 <th className={`${style.title}`}>{t("Delete")}</th>
+                                <th className={`${style.title}`}>{t("Edit")}</th>
                             </tr>
                         </thead>
                         <tbody className={`${style.mainContainer}`}>
@@ -81,7 +82,8 @@ export const ManageCategoryView : React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className={`${style.item} w-[45%]`}>{moment(item.create).format("dddd DD.MM.YYYY HH:mm")}</td>
-                                            <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveCategory(item)}}>{t("Remove")}</button></td>                            
+                                            <td className={`${style.item} w-[10%]`}><button className={`${style.removebtn}`} onClick={() => {onRemoveCategory(item)}}>{t("Remove")}</button></td>       
+                                            <td className={`${style.item} w-[10%]`}><button className={`${style.editbtn}`} onClick={() => {nav("edit-category/" + item.title)}}>{t("Edit")}</button></td>                     
                                         </tr>
                                     )
                                 })

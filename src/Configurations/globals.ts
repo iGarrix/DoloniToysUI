@@ -78,9 +78,9 @@ export function GetLanguage() : LanguageType
 export function ReplaceArticle(article: string, isTo: boolean) 
 {
     if (isTo) {
-        return article.replace("/", "_");
+        return article.replaceAll("/", "_");
     }
-    return article.replace("_", "/");
+    return article.replaceAll("_", "/");
 }
 
 export interface IBaseReducerState {

@@ -52,6 +52,11 @@ export interface IEditImageProductRequest {
     newImage: File,
 }
 
+export interface IAddNewImageProductRequest {
+    article: string,
+    newImage: File,
+}
+
 export interface ICreateProductForm {
     title: string,
     uatitle: string,

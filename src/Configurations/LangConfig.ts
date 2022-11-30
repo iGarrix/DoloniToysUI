@@ -99,6 +99,8 @@ i18n.use(initReactI18next).init({
         "Article №:": "Article №:",
         "Size": "Size",
         //Admin manage 
+        "Edit Category": "Edit Category",
+        "Edit Product": "Edit Product",
         "There are": "There are",
         "pages and": "pages and",
         "categories,": "categories,",
@@ -232,6 +234,8 @@ i18n.use(initReactI18next).init({
          "Article №:": "Код №:",
          "Size": "Розмір",
          //Admin manage 
+        "Edit Category": "Зміна Категорії",
+        "Edit Product": "Зміна Продукта",
         "There are": "Існує",
         "pages and": "сторінок і",
         "categories,": "категорії,",

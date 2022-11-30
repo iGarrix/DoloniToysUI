@@ -5,7 +5,7 @@ import http, { auth_http } from "../../../Configurations/axios/axios";
 import { GetApiUrl, IExceptionHandleResponse, IPaginateResponse } from "../../../Configurations/globals";
 import { AppDispatch } from "../../store/store";
 import { productSlice } from "./productSlice";
-import { ICreateProductRequest, IEditImageProductRequest, IEditProductRequest, IProduct, IRemoveProductRequest } from "./types";
+import { IAddNewImageProductRequest, ICreateProductRequest, IEditImageProductRequest, IEditProductRequest, IProduct, IRemoveProductRequest } from "./types";
 
 export const GetAllProduct = (page: number, take: number) => async (dispatch: AppDispatch) => {
     try {
@@ -138,6 +138,30 @@ export const EditImageProduct = (data: IEditImageProductRequest) => async (dispa
         var token = localStorage.getItem("token");
         if (form && token) {
             const request = await auth_http(token).put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.ChangeImage), form);
+            const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
+            if ('StatusCode' in error) {
+                throw error;
+            }
+        }
+    } catch (e) {
+        const error = e as IExceptionHandleResponse;
+        if (error) {
+            dispatch(productSlice.actions.initError(error.Message));
+        }
+        else {
+            dispatch(productSlice.actions.initError(defaultErrorMessage));
+        }
+    }
+}
+export const AddImageProduct = (data: IAddNewImageProductRequest) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(productSlice.actions.initLoading());
+        const form: FormData = new FormData();
+        form.append("Article", data.article);
+        form.append("NewImage", data.newImage);
+        var token = localStorage.getItem("token");
+        if (form && token) {
+            const request = await auth_http(token).put<any | IExceptionHandleResponse>(GetApiUrl(ProductController.Default, ProductController.Addmage), form);
             const error: IExceptionHandleResponse = request.data as IExceptionHandleResponse;
             if ('StatusCode' in error) {
                 throw error;

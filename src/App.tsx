@@ -10,6 +10,7 @@ import { AboutusView } from './Components/Views/AboutusView';
 import { LoginView } from './Components/Views/Admins/Auth/LoginView';
 import { ManageCategoryView } from './Components/Views/Admins/ManageCategoryView';
 import { CreateCategoryView } from './Components/Views/Admins/ManageCategoryView/CreateCategoryView';
+import { EditCategoryView } from './Components/Views/Admins/ManageCategoryView/EditCategoryView';
 import { ManageContactView } from './Components/Views/Admins/ManageContactView';
 import { ManageProductView } from './Components/Views/Admins/ManageProductView';
 import { CreateProductView } from './Components/Views/Admins/ManageProductView/CreateProductView';
@@ -86,6 +87,7 @@ function App() {
           <Route path='for-admins' element={<AuthLayout isPredicate={auth !== null || localStorage.getItem("token") !== null} elseReturn="/login" ><AdminLayout /></AuthLayout>} >
             <Route index element={<ManageProductView />} />
             <Route path="categories" element={<ManageCategoryView />} />
+            <Route path="categories/edit-category/:title" element={<EditCategoryView />} />
             <Route path="reports" element={<ManageContactView />} />
             <Route path="create-category" element={<CreateCategoryView />} />
             <Route path="create-product" element={<CreateProductView />} />

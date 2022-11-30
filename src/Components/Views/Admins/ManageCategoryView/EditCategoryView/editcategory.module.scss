@@ -1,0 +1,145 @@
+.container {
+    @apply flex justify-center items-center w-full h-full;
+
+    .blockSide {
+        @apply flex flex-col items-center shadow-2xl bg-banana-100/80;
+        border-radius: 15px;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        width: auto;
+        gap: 20px;
+        .titleBlock {
+            @apply flex flex-col;
+            gap: 5px;
+            .title {
+                @apply text-2xl text-center;
+                font-weight: 700;
+            }
+
+            .desc {
+                @apply text-lg text-center;
+                font-weight: 500;
+            }
+
+            .error {
+                @apply text-red-500 text-center;
+                font-weight: 500;
+            }
+        }
+
+        .formContainer {
+            @apply flex flex-col w-full;
+            gap: 20px;
+
+            .imageBlock {
+                @apply w-full flex justify-center;
+
+                .imageContainer {
+                    @apply relative overflow-hidden rounded-xl;
+                    width: 100px;
+                    height: 100px;
+                    .imageEffect {
+                        @apply w-full h-full transition-all bg-black/60 opacity-0 hover:opacity-100 absolute flex justify-center items-center;
+
+                        .icon {
+                            @apply invert dark:invert-0 text-3xl cursor-pointer;
+                        }
+                    }
+
+                    .image {
+                        @apply cursor-pointer transition-all object-cover w-full h-full;
+                    }
+                }
+            }
+
+            .fieldBlock {
+                @apply flex flex-col;
+                gap: 10px;
+            }
+
+            .buttonContainer {
+                @apply w-full flex justify-end;
+                gap: 5%;
+            }
+        }
+    
+    }
+}
+
+// Adaptive Size [MM]
+.container {
+    .blockSide {
+        @apply mm:w-full mm:h-full mm:rounded-none ;
+
+        .formContainer {
+            @apply mm:h-full;
+            .buttonContainer {
+                @apply mm:mt-auto;
+            }
+        }
+    }
+}
+// Adaptive Size [SM]
+.container {
+    .blockSide {
+        @apply sm:w-full sm:h-full sm:rounded-none ;
+
+        .formContainer {
+            @apply sm:h-full;
+            .buttonContainer {
+                @apply sm:mt-auto;
+            }
+        }
+    }
+}
+// Adaptive Size [MD]
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .container {
+        .blockSide {
+            width: 80%;
+    
+            .formContainer {
+                @apply md:h-full;
+                .buttonContainer {
+                    @apply md:mt-auto;
+                }
+            }
+        }
+    }
+}
+// Adaptive Size [LG]
+@media (min-width: 1024px) and (max-width: 1279px) {
+    
+    .container {
+        .blockSide {
+            width: auto;
+    
+            .formContainer {
+                @apply lg:h-full;
+                .buttonContainer {
+                    @apply lg:mt-auto;
+                }
+            }
+        }
+    }
+}
+// Adaptive Size [XL]
+@media (min-width: 1280px) and (max-width: 1535px) {
+    
+    .container {
+        .blockSide {
+            width: auto;
+    
+            .formContainer {
+                @apply xl:h-full;
+                .buttonContainer {
+                    @apply xl:mt-auto;
+                }
+            }
+        }
+    }
+}
+// Adaptive Size [FULL]

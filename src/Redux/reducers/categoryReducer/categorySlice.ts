@@ -4,6 +4,7 @@ import { ICategory, ICategoryState } from "./types";
 
 const initialState: ICategoryState = {
     categories: null,
+    selectedCategory: null,
     isLoading: false,
     error: "",
     successMessage: "",
@@ -15,6 +16,12 @@ export const categorySlice = createSlice({
     reducers: {
         initCategories(state: ICategoryState, action: PayloadAction<IPaginateResponse<ICategory>>) {
             state.categories = action.payload;
+            state.isLoading = false;
+            state.error = '';
+            state.successMessage = '';
+        },
+        initSelectedCategory(state: ICategoryState, action: PayloadAction<ICategory>) {
+            state.selectedCategory = action.payload;
             state.isLoading = false;
             state.error = '';
             state.successMessage = '';
@@ -32,8 +39,12 @@ export const categorySlice = createSlice({
             state.successMessage = action.payload;
             state.isLoading = false;
         },
+        disposeSelection(state: ICategoryState) {
+            state.selectedCategory = null;
+        },
         ClearAll(state: ICategoryState) {
             state.categories = null;
+            state.selectedCategory = null;
             state.isLoading = false;
             state.error = '';
             state.successMessage = '';

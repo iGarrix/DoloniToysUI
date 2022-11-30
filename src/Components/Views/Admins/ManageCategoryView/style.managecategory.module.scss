@@ -71,6 +71,9 @@
                     .removebtn {
                         @apply w-full h-full flex justify-center text-cherry-200;
                     }
+                    .editbtn {
+                        @apply w-full h-full flex justify-center text-green-500;
+                    }
                 }
             }
         }

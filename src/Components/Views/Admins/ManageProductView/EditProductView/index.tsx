@@ -25,13 +25,14 @@ export const EditProductView: React.FC = () => {
     const { selectedProduct } = useAppSelector(state => state.productReducer);
 
     const values: IEditProductForm = {
-        newTitle: selectedProduct? selectedProduct.title : "",
-        newUaTitle: selectedProduct? selectedProduct.uaTitle : "",
-        newDescription: selectedProduct? selectedProduct.description : "",
-        newUaDescription: selectedProduct? selectedProduct.uaDescription : "",
-        newRating: selectedProduct? selectedProduct.rating : 0,
-        newArticle: selectedProduct? selectedProduct.article : "",
-        newSize: selectedProduct? selectedProduct.size : ""
+        newTitle: selectedProduct ? selectedProduct.title : "",
+        newUaTitle: selectedProduct ? selectedProduct.uaTitle : "",
+        newDescription: selectedProduct ? selectedProduct.description : "",
+        newUaDescription: selectedProduct ? selectedProduct.uaDescription : "",
+        newRating: selectedProduct ? selectedProduct.rating : 0,
+        newArticle: selectedProduct ? selectedProduct.article : "",
+        newSize: selectedProduct ? selectedProduct.size : "",
+        newBoxSize: selectedProduct ? selectedProduct.boxSize : "",
     }
 
     async function fetchSelectedProduct() {
@@ -49,13 +50,14 @@ export const EditProductView: React.FC = () => {
             try {
                 var request: IEditProductRequest = {
                     article: ReplaceArticle(article, false),
-                    newTitle: values.newTitle ? values.newTitle : selectedProduct? selectedProduct.title : "",
-                    newUaTitle: values.newUaTitle ? values.newUaTitle : selectedProduct? selectedProduct.uaTitle : "",
-                    newDescription: values.newDescription ? values.newDescription : selectedProduct? selectedProduct.description : "",
-                    newUaDescription: values.newUaDescription ? values.newUaDescription : selectedProduct? selectedProduct.uaDescription : "",
-                    newRating: values.newRating ? values.newRating : selectedProduct? selectedProduct.rating : 1,
-                    newArticle: values.newArticle ? values.newArticle : selectedProduct? selectedProduct.article : "",
-                    newSize: values.newSize ? values.newSize : selectedProduct? selectedProduct.size : ""
+                    newTitle: values.newTitle ? values.newTitle : selectedProduct ? selectedProduct.title : "",
+                    newUaTitle: values.newUaTitle ? values.newUaTitle : selectedProduct ? selectedProduct.uaTitle : "",
+                    newDescription: values.newDescription ? values.newDescription : selectedProduct ? selectedProduct.description : "",
+                    newUaDescription: values.newUaDescription ? values.newUaDescription : selectedProduct ? selectedProduct.uaDescription : "",
+                    newRating: values.newRating ? values.newRating : selectedProduct ? selectedProduct.rating : 1,
+                    newArticle: values.newArticle ? values.newArticle : selectedProduct ? selectedProduct.article : "",
+                    newSize: values.newSize ? values.newSize : selectedProduct ? selectedProduct.size : "",
+                    newBoxSize: values.newBoxSize ? values.newBoxSize : selectedProduct ? selectedProduct.boxSize : "",
                 };
                 await dispatch(EditProduct(request));
                 nav('..');
@@ -138,7 +140,10 @@ export const EditProductView: React.FC = () => {
                                 <Field placeholder={t("Article")} value={selectedProduct?.article} name="newArticle" type="text" />
                                 <Field placeholder={t("Rating")} value={selectedProduct?.rating.toString()} name="newRating" type="number" />
                             </div>
-                            <Field placeholder={t("Size")} value={selectedProduct?.size} name="newSize" type="text" />
+                            <div className="grid grid-cols-2 w-full gap-[15px] mm:grid-cols-1">                                    
+                                <Field placeholder={t("Size")} value={selectedProduct?.size} name="newSize" type="text" />                   
+                                <Field placeholder={t("Box Size")} value={selectedProduct?.boxSize} name="newBoxSize" type="text" />                   
+                            </div>
                         </div>
                         <div className={`${style.buttonContainer}`}>
                             <DefButton title={t("Edit")} />

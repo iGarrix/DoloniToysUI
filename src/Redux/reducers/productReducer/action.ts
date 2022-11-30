@@ -109,6 +109,7 @@ export const CreateProduct = (data: ICreateProductRequest) => async (dispatch: A
         form.append("Rating", `${data.rating}`);
         form.append("Article", data.article);
         form.append("Size", data.size);
+        form.append("BoxSize", data.boxSize);
         form.append("CategoryTitle", data.categoryTitle);
         var token = localStorage.getItem("token");
         if (form && token) {

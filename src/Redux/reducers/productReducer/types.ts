@@ -10,6 +10,7 @@ export interface IProduct {
     rating: number,
     article: string,
     size: string,
+    boxSize: string,
     create: Date,
 }
 
@@ -22,6 +23,7 @@ export interface ICreateProductRequest {
     rating: number,
     article: string,
     size: string,
+    boxSize: string,
     categoryTitle: string,
 }
 
@@ -34,6 +36,7 @@ export interface IEditProductRequest {
     newRating: number,
     newArticle: string,
     newSize: string,
+    newBoxSize: string,
 }
 
 export interface IEditProductForm {
@@ -44,6 +47,7 @@ export interface IEditProductForm {
     newRating: number,
     newArticle: string,
     newSize: string,
+    newBoxSize: string,
 }
 
 export interface IEditImageProductRequest {
@@ -65,6 +69,7 @@ export interface ICreateProductForm {
     rating: number,
     article: string,
     size: string,
+    boxSize: string,
     categoryTitle: string,
 }
 
@@ -88,6 +93,7 @@ export const CreateProductScheme = Yup.object({
     rating: Yup.number().required("Rating is required"),
     article: Yup.string().required("Article is required"),
     size: Yup.string().required("Size is required"),
+    boxSize: Yup.string().required("Box size is required"),
     categoryTitle: Yup.string().required("Category title is required"),
 });
 
@@ -99,4 +105,5 @@ export const EditProductScheme = Yup.object({
     newRating: Yup.number(),
     newArticle: Yup.string().min(1, "Article is required"),
     newSize: Yup.string().min(1, "Size is required"),
+    newBoxSize: Yup.string().min(1, "Box size is required"),
 });

@@ -10,6 +10,8 @@ import { DefButton } from "../../../Common/Buttons/DefButton";
 import style from "./style.pdetail.module.scss";
 
 const extend = require('../../../../Assets/Icons/detailextend.png');
+const productSize = require('../../../../Assets/Icons/productSize.png');
+const boxSize = require('../../../../Assets/Icons/boxSize.png');
 
 export const ProductDetails : React.FC = () => {
     const {t} = useTranslation();
@@ -65,8 +67,17 @@ export const ProductDetails : React.FC = () => {
                     <h2 className={`${style.desc}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaDescription : selectedProduct?.description}</h2>
                     <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
                     {
-                        selectedProduct?.size &&
-                    <p className={`${style.article}`}>{t("Size")}: {selectedProduct?.size}</p>
+                        selectedProduct &&
+                        <div className="flex gap-[3vw]">
+                            <div className="flex flex-col gap-[.7vw] items-center justify-center">
+                                <img alt="productSize" src={productSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
+                                <p className={`${style.article}`}>{selectedProduct.size}</p>
+                            </div> 
+                            <div className="flex flex-col gap-[.7vw] items-center">
+                                <img alt="boxSize" src={boxSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
+                                <p className={`${style.article}`}>{selectedProduct.boxSize}</p>
+                            </div> 
+                        </div>
                     }
                     {
                         auth &&

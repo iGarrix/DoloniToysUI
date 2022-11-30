@@ -98,6 +98,7 @@ i18n.use(initReactI18next).init({
         //Detail product
         "Article №:": "Article №:",
         "Size": "Size",
+        "Box Size": "Box Size",
         //Admin manage 
         "Edit Category": "Edit Category",
         "Edit Product": "Edit Product",
@@ -233,6 +234,7 @@ i18n.use(initReactI18next).init({
          //Detail product
          "Article №:": "Код №:",
          "Size": "Розмір",
+         "Box Size": "Розмір Коробки",
          //Admin manage 
         "Edit Category": "Зміна Категорії",
         "Edit Product": "Зміна Продукта",

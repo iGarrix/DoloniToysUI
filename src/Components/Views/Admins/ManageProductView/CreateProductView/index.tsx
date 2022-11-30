@@ -35,6 +35,7 @@ export const CreateProductView : React.FC = () => {
         article: "",
         size: "",
         categoryTitle: "",
+        boxSize: ""
     }
 
     async function fetchCategory(page: number, take: number) {
@@ -58,6 +59,7 @@ export const CreateProductView : React.FC = () => {
                     article: values.article,
                     categoryTitle: values.categoryTitle,
                     size: values.size,
+                    boxSize: values.boxSize
                 };
                 await dispatch(CreateProduct(request));
                 nav('..');
@@ -118,7 +120,10 @@ export const CreateProductView : React.FC = () => {
                             <Field placeholder={t("Article")} name="article" type="text" />
                             <Field placeholder={t("Rating")} name="rating" type="number" />
                         </div>
-                        <Field placeholder={t("Size")} name="size" type="text" />
+                        <div className="flex gap-[15px]">                                    
+                            <Field placeholder={t("Size")} name="size" type="text" />
+                            <Field placeholder={t("Box Size")} name="boxSize" type="text" />
+                        </div>
                         {
                             categories && categories.pageables &&
                             <FormikDropdown name={"categoryTitle"} title={t("Category")} options={categories?.pageables?.map(item => { return {key: item.title, value: item.title}})} />

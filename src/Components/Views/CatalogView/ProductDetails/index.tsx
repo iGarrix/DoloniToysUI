@@ -66,19 +66,22 @@ export const ProductDetails : React.FC = () => {
                     <h1 className={`${style.title}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaTitle : selectedProduct?.title}</h1>
                     <h2 className={`${style.desc}`}>{localStorage.getItem("lang") == LanguageType.UA ? selectedProduct?.uaDescription : selectedProduct?.description}</h2>
                     <p className={`${style.article}`}>{t("Article №:")} {selectedProduct?.article}</p>
-                    {
-                        selectedProduct &&
                         <div className="flex gap-[3vw]">
-                            <div className="flex flex-col gap-[.7vw] items-center justify-center">
-                                <img alt="productSize" src={productSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
-                                <p className={`${style.article}`}>{selectedProduct.size}</p>
-                            </div> 
-                            <div className="flex flex-col gap-[.7vw] items-center">
-                                <img alt="boxSize" src={boxSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
-                                <p className={`${style.article}`}>{selectedProduct.boxSize}</p>
-                            </div> 
+                            {
+                                selectedProduct && selectedProduct.size !== "" &&
+                                <div className="flex flex-col gap-[.7vw] items-center justify-center">
+                                    <img alt="productSize" src={productSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
+                                    <p className={`${style.article}`}>{selectedProduct.size}</p>
+                                </div> 
+                            }
+                            {
+                                selectedProduct && selectedProduct.boxSize !== "" &&
+                                <div className="flex flex-col gap-[.7vw] items-center">
+                                    <img alt="boxSize" src={boxSize} className="w-[54px] h-[54px] object-contain aspect-square"/>
+                                    <p className={`${style.article}`}>{selectedProduct.boxSize}</p>
+                                </div> 
+                            }                  
                         </div>
-                    }
                     {
                         auth &&
                         <Fragment>

@@ -43,12 +43,10 @@
         }
 
         .contentContainer {
-            @apply w-full h-full flex flex-col z-10;
+            @apply w-full h-full flex flex-col justify-center z-10;
             padding-left: 20%;
             padding-right: 20%;
             gap: 20px;
-            padding-top: 40%;
-            padding-bottom: 40%;
             .title {
                 @apply text-2xl;
                 font-weight: 700;

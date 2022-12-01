@@ -29,6 +29,7 @@ export interface ICreateProductRequest {
 
 export interface IEditProductRequest {
     article: string,
+    categoryTitle: string,
     newTitle: string,
     newUaTitle: string,
     newDescription: string,
@@ -48,6 +49,7 @@ export interface IEditProductForm {
     newArticle: string,
     newSize: string,
     newBoxSize: string,
+    categoryTitle: string,
 }
 
 export interface IEditImageProductRequest {
@@ -106,4 +108,5 @@ export const EditProductScheme = Yup.object({
     newArticle: Yup.string().min(1, "Article is required"),
     newSize: Yup.string().min(1, "Size is required"),
     newBoxSize: Yup.string().min(1, "Box size is required"),
+    categoryTitle: Yup.string(),
 });

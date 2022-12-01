@@ -7,10 +7,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ErrorImage, ImageCombiner, ImagePaths } from "../../../../../Configurations/api/resources/api.resourceimage";
 import { ReplaceArticle } from "../../../../../Configurations/globals";
 import { useAppDispatch, useAppSelector } from "../../../../../Redux/hooks/hooks";
+import { GetAllCategory } from "../../../../../Redux/reducers/categoryReducer/action";
 import { AddImageProduct, EditImageProduct, EditProduct, GetProduct } from "../../../../../Redux/reducers/productReducer/action";
 import { productSlice } from "../../../../../Redux/reducers/productReducer/productSlice";
 import { EditProductScheme, IAddNewImageProductRequest, IEditImageProductRequest, IEditProductForm, IEditProductRequest } from "../../../../../Redux/reducers/productReducer/types";
 import { DefButton } from "../../../../Common/Buttons/DefButton";
+import { FormikDropdown } from "../../../../Common/Dropdowns/FormikDropdown";
 import { Field } from "../../../../Common/Inputs/Field";
 import style from "./editproduct.module.scss";
 
@@ -23,6 +25,15 @@ export const EditProductView: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState("");
 
     const { selectedProduct } = useAppSelector(state => state.productReducer);
+    const {categories} = useAppSelector(state => state.categoryReducer);
+
+    async function fetchCategory(page: number, take: number) {
+        await dispatch(GetAllCategory(page, take));
+    }
+
+    useEffect(() => {
+        fetchCategory(1, 100);
+    }, []);
 
     const values: IEditProductForm = {
         newTitle: selectedProduct ? selectedProduct.title : "",
@@ -33,6 +44,7 @@ export const EditProductView: React.FC = () => {
         newArticle: selectedProduct ? selectedProduct.article : "",
         newSize: selectedProduct ? selectedProduct.size : "",
         newBoxSize: selectedProduct ? selectedProduct.boxSize : "",
+        categoryTitle: "",
     }
 
     async function fetchSelectedProduct() {
@@ -58,6 +70,7 @@ export const EditProductView: React.FC = () => {
                     newArticle: values.newArticle ? values.newArticle : selectedProduct ? selectedProduct.article : "",
                     newSize: values.newSize ? values.newSize : selectedProduct ? selectedProduct.size : "",
                     newBoxSize: values.newBoxSize ? values.newBoxSize : selectedProduct ? selectedProduct.boxSize : "",
+                    categoryTitle: values.categoryTitle
                 };
                 await dispatch(EditProduct(request));
                 nav('..');
@@ -89,7 +102,6 @@ export const EditProductView: React.FC = () => {
                 article: selectedProduct.article,
                 newImage: selectedFile
             }
-            //console.log(request);
             await dispatch(AddImageProduct(request));
             nav("/product/" + ReplaceArticle(selectedProduct.article, true));
         }
@@ -144,6 +156,10 @@ export const EditProductView: React.FC = () => {
                                 <Field placeholder={t("Size")} value={selectedProduct?.size} name="newSize" type="text" />                   
                                 <Field placeholder={t("Box Size")} value={selectedProduct?.boxSize} name="newBoxSize" type="text" />                   
                             </div>
+                            {
+                                categories && categories.pageables &&
+                                <FormikDropdown name={"categoryTitle"} title={t("Category")} options={categories?.pageables?.map(item => { return {key: item.title, value: item.title}})} />
+                            }
                         </div>
                         <div className={`${style.buttonContainer}`}>
                             <DefButton title={t("Edit")} />

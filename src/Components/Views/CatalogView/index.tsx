@@ -34,23 +34,19 @@ export const CatalogView: React.FC = () => {
         await dispatch(GetAllCategory(page, take));
     }
 
-    // async function fetchProduct(page: number, take: number) {
-    //     await dispatch(GetAllProduct(page, take))
-    // }
-
     useEffect(() => {
         fetchCategory(1, 1000);
         if (category) {
             const request: IGetProductFilter = {
                 categoryTitle: category,
-                filterParam: "*",
+                filterParam: ExpressionTypes.FilterRatingOrder,
                 page: 1,
                 take: 24
             } 
             fetchFilterProducts(request);
         }
         else {
-            Filter(ExpressionTypes.FilterRatingOrderByDescending, 1);
+            Filter(ExpressionTypes.FilterRatingOrder, 1);
         }
         //window.scrollTo(0,0);
     }, [category]);
@@ -58,7 +54,7 @@ export const CatalogView: React.FC = () => {
     const onPaginate = async (event: number) => {
         console.log(event);
         startTransition(() => {
-            Filter(ExpressionTypes.FilterRatingOrderByDescending, event);
+            Filter(ExpressionTypes.FilterRatingOrder, event);
             window.document.documentElement.scrollTo(0, 0);
         });
     }

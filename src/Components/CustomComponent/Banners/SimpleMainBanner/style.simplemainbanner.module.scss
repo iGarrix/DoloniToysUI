@@ -4,11 +4,11 @@
     padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
-    gap: 50px;
+    gap: 100px;
 
     .firstside {
-        @apply col-span-6 flex flex-col justify-center relative;
-        padding-left: 20%;
+        @apply col-span-6 flex flex-col items-center justify-center relative;
+        padding-left: 20%;  
         gap: 40px;
 
         .title {
@@ -39,9 +39,9 @@
 
 
     .secondside {
-        @apply col-span-3 w-full;
+        @apply col-span-3 overflow-hidden flex justify-center;
         .banner_3_img {
-            @apply w-full bg-cover object-cover;
+            @apply w-full bg-cover object-contain;
             height: 390px;
             border-radius: 15px;
         }

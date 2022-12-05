@@ -11,8 +11,8 @@
     }
 
     .footer {
-        @apply w-screen h-full left-0 bg-dark flex items-start justify-between flex-wrap;
-        gap: 40px;
+        @apply w-screen h-full left-0 bg-dark flex items-start flex-wrap;
+        gap: 100px;
         padding-left: 120px;
         padding-right: 120px;
         .footer_item {

@@ -21,7 +21,7 @@ export const SimpleMainBanner : React.FC = () => {
                 {/* <p className={`${style.desc} z-10`}>{t(`Order products from us and get a lot of exciting, incredible and developing products right now.`)}</p> */}
             </aside>
             <aside className={`${style.secondside}`}>
-                <img alt="banner3" src={banner} className={`${style.banner_3_img}`}  />
+                <div className="rounded-[15px] overflow-hidden w-fit"><img alt="banner3" src={banner} className={`${style.banner_3_img}`}  /></div>
             </aside>
         </section>
     )

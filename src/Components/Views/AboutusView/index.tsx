@@ -44,7 +44,7 @@ export const AboutusView : React.FC = () => {
                         <p className={`${style.desc}`}>{t(`We offer a wide range of different types of safe and interesting toys and goods for children for every taste and preference. Our children's toys, roller coasters, colorful constructors, sand toys, cars, motorbikes and many other wonderful toys can be useful to your child today. They will occupy the first place on the shelf of your store, and will be a worthy competition to foreign analogues.`)}</p>
                     </div>
                 </aside>
-                <div className="flex justify-center items-center bg-bluesky-100 pb-[20px]">
+                <div className="flex justify-center items-center bg-bluesky-100 pb-[2   0px]">
                     <video  height="80vh" className="h-[80vh] z-10" controls={true} >
                         <source src={video} type="video/mp4" />
                     </video> 

@@ -1,8 +1,6 @@
 import { ICarouselFullscreen } from "./types.carouselfullscreen"
 
-import style from "./style.carouselfullscreen.module.scss";
-import { useState, useEffect } from "react";
-import { Guid } from "guid-typescript";
+import { useEffect, useState } from "react";
 
 const next = require('../../../../Assets/Icons/Next.png');
 const prev = require('../../../../Assets/Icons/Prev.png');
@@ -11,6 +9,18 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
 
 
     const [selInd, setSelInd] = useState(props.selectedIndex);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (selInd < props.images.length - 1) {
+                setSelInd(selInd + 1);
+            }
+            else {
+                setSelInd(0);
+            }
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [selInd]);
 
     function onNext() 
     {
@@ -34,9 +44,16 @@ export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) =
 
     return (
         <div className="w-screen max-h-[90vh] h-[90vh] overflow-hidden relative">
-            <img alt="bg" src={props.images[selInd]} 
+            {
+                props.images.map((item, index) => {
+                    return (
+                        index === selInd &&
+                        <img alt="bg" key={index} src={item} 
                     className={`w-full h-full aspect-square
                     mm:object-contain sm:object-contain md:object-contain lg:object-contain xl:object-cover object-cover`} />
+                    )
+                })
+            }
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-between px-[2vw]">
                 <img alt="prev" src={prev} className="w-[48px] h-[48px] cursor-pointer" onClick={onPrev} />
                 <img alt="next" src={next} className="w-[48px] h-[48px] cursor-pointer" onClick={onNext} />

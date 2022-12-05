@@ -52,7 +52,7 @@ export const MainFooter: React.FC = () => {
                     <ol className={`${style.list}`}>
                         <li onClick={() => { onNavigateWithScroll("/contact-us", null) }}>{t(`Email`)}</li>
                         <li onClick={() => { onNavigateWithScroll("/contact-us", null) }}>{t(`Contact number`)}</li>
-                        <li onClick={() => { onNavigateWithScroll("/for-admins", null) }}>{t(`For admins`)}</li>
+                        {/* <li onClick={() => { onNavigateWithScroll("/for-admins", null) }}>{t(`For admins`)}</li> */}
                     </ol>
                 </div>
             </footer>

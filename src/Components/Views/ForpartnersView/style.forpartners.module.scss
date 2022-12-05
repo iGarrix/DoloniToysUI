@@ -87,12 +87,13 @@
         @apply w-full flex justify-center;
         padding-top:100px;
         padding-bottom: 100px;
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 20%;
+        padding-right: 20%;
 
         .extendGridContainer {
-            @apply grid grid-rows-1 grid-cols-2 bg-cherry-100 overflow-hidden;
+            @apply flex bg-cherry-100 overflow-hidden;
             border-radius: 15px;
+            padding-left: 5%;
 
             .image {
                 @apply w-full object-cover bg-cover;

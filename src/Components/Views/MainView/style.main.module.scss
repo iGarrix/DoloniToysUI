@@ -1,7 +1,19 @@
 .slidercarouserContainer {
-    @apply bg-bluesky-100 mm:py-0 sm:py-0 md:py-0;
+    @apply bg-bluesky-100 mm:py-0 sm:py-0 md:py-0 flex items-center justify-between flex-wrap;
+    @apply mm:justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-center xl:justify-center;
+
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+    gap: 20px;
+
+    .item {
+        @apply object-cover bg-cover mm:rounded-none sm:rounded-none md:rounded-none;
+        border-radius: 15px;
+        width: 320px;
+        height: 320px;
+    }
 }
 
 .carouselChildContainer {
@@ -19,6 +31,7 @@
     padding-bottom: 50px;
 
     .item {
+        @apply object-cover;
         border-radius: 15px;
         width: 350px;
         height: 350px;

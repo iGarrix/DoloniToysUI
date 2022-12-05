@@ -6,7 +6,7 @@ import { ErrorImage } from "../../../../Configurations/api/resources/api.resourc
 export const ProductCard : React.FC<IProductCardProps>= ({...props}) => {
     
     return (
-        <div className={`${style.productCardContainer} h-full`} onClick={props.onClick}>
+        <div className={`${style.productCardContainer} h-min`} onClick={props.onClick}>
             <img alt="imageProduct" src={props.src} className={`${style.img}`} onError={(tg: any) => { tg.target.src = ErrorImage}} />
             <h1 className={`${style.title}`}>{props.title}</h1>
         </div>

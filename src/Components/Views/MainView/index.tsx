@@ -6,8 +6,6 @@ import { MainBannerOne } from "../../CustomComponent/Banners/MainBannerOne";
 import { SimpleMainBanner } from "../../CustomComponent/Banners/SimpleMainBanner";
 import { Carousel } from "../../CustomComponent/Carousels/Carousel";
 import { CarouselFullscreen } from "../../CustomComponent/Carousels/CarouselFullscreen";
-import { CarouselMainBannerOne } from "../../CustomComponent/Carousels/CarouselPages/CarouselMainBannerOne";
-import { CarouselMainBannerTwo } from "../../CustomComponent/Carousels/CarouselPages/CarouselMainBannerTwo";
 import { MainFooter } from "../../CustomComponent/Footers/MainFooter";
 import { RecommendBlock } from "../../CustomComponent/RecommendBlock";
 import { Section } from "../../CustomComponent/Section";
@@ -18,26 +16,27 @@ const bg2 = require('../../../Assets/Backgrounds/bg2.jpg');
 const bg3 = require('../../../Assets/Backgrounds/bg3.jpg');
 const bg4 = require('../../../Assets/Backgrounds/bg4.jpg');
 const bg5 = require('../../../Assets/Backgrounds/bg5.jpg');
-const bg6 = require('../../../Assets/Backgrounds/bg6.jpg');
-const bg7 = require('../../../Assets/Backgrounds/bg7.jpg');
-const bg8 = require('../../../Assets/Backgrounds/bg8.jpg');
-const bg9 = require('../../../Assets/Backgrounds/bg9.jpg');
 
-const mbg1 = require('../../../Assets/Backgrounds/mini_banner1.png');
-const mbg2 = require('../../../Assets/Backgrounds/mini_banner2.png');
-const mbg3 = require('../../../Assets/Backgrounds/mini_banner3.png');
+const mbg1 = require('../../../Assets/Backgrounds/bg6.jpg');
+const mbg2 = require('../../../Assets/Backgrounds/bg7.jpg');
+const mbg3 = require('../../../Assets/Backgrounds/bg8.jpg');
+// const mbg1 = require('../../../Assets/Backgrounds/mini_banner1.png');
+// const mbg2 = require('../../../Assets/Backgrounds/mini_banner2.png');
+// const mbg3 = require('../../../Assets/Backgrounds/mini_banner3.png');
+
+const banner1 = require('../../../Assets/Backgrounds/Banner1.jpg');
+const banner2 = require('../../../Assets/Backgrounds/Banner2.jpg');
+const banner3 = require('../../../Assets/Backgrounds/Banner3.jpg');
+const banner4 = require('../../../Assets/Backgrounds/Banner4.jpg');
+const banner5 = require('../../../Assets/Backgrounds/Banner5.jpg');
 
 export const MainView: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const rf = useRef<HTMLDivElement | any>();
     const nav = useNavigate();
-    async function fetch() {
-        await dispatch(GetAllCategory(1, 10));
-    }
 
     useEffect(() => {
-        //console.log(window.document.getElementById('mainCarousel')?.scrollHeight);
         rf.current?.scrollIntoView({ behavior: "smooth", block: 'center' })
     }, []);
 
@@ -47,17 +46,9 @@ export const MainView: React.FC = () => {
 
     return (
         <section className="flex flex-col bg-light">
-            <CarouselFullscreen childrens={
-                [
-                    {
-                        children: <CarouselMainBannerOne />
-                    },
-                    {
-                        children: <CarouselMainBannerTwo />
-                    },
-                ]} />
+            <CarouselFullscreen selectedIndex={0} images={[banner1, banner2, banner3, banner4, banner5]} />
             <section className={`${style.slidercarouserContainer}`} id="main_carousel">
-                <Carousel childrens={
+                {/* <Carousel childrens={
                     [
                         {
                             children: <div className={`${style.carouselChildContainer}`}>
@@ -106,7 +97,12 @@ export const MainView: React.FC = () => {
                         },
 
                     ]
-                } />
+                } /> */}
+                <img alt="bg1" src={bg1} className={`${style.item}`} />
+                <img alt="bg1" src={bg3} className={`${style.item}`} />
+                <img alt="bg1" src={bg4} className={`${style.item}`} />
+                <img alt="bg1" src={bg2} className={`${style.item}`} />
+                <img alt="bg1" src={bg5} className={`${style.item}`} />
             </section>
             <section className={`${style.thirdblockImages}`}>
                 <img alt="mbg1" src={mbg1} className={`${style.item}`}/>

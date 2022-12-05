@@ -9,84 +9,45 @@ const prev = require('../../../../Assets/Icons/Prev.png');
 
 export const CarouselFullscreen : React.FC<ICarouselFullscreen> = ({...props}) => {
 
-    const [interval, initInterval] = useState(0);
-    const [carousel, setCarousel] = useState(() => {
-        const carousel = window.document.getElementById("mainCarouselFull");
-        if (carousel) {      
-            return carousel;
-        }
-        return null;
-    });
-    const [left, setLeft] = useState(0);
-    const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        const carousel = window.document.getElementById("mainCarouselFull");
-        if (carousel) {      
-            setCarousel(carousel);
-            setLeft(0);
-            carousel.scrollTo(0, 0);
-        }
-    }, []);
+    const [selInd, setSelInd] = useState(props.selectedIndex);
 
-    useEffect(() => {
-        if (interval > 0) {          
-            const intervalId = setInterval(() => {
-                initInterval(interval - 1);
-            }, 1000);
-            return () => clearInterval(intervalId);
+    function onNext() 
+    {
+        if (selInd < props.images.length - 1) {
+            setSelInd(selInd + 1);
         }
-    }, [interval]);
-
-    function onNext() {
-        if (carousel && interval === 0) {      
-            carousel.scrollTo(carousel.scrollLeft + (carousel.clientWidth), 0);
-            setLeft(carousel.scrollLeft + (carousel.clientWidth));
-            if (count < props.childrens.length - 1) {          
-                setCount(count + 1);
-                initInterval(1);
-            }
+        else {
+            setSelInd(0);
         }
     }
 
-    function onPrev() {
-        if (carousel && interval === 0) {      
-            carousel.scrollTo(carousel.scrollLeft - (carousel.clientWidth), 0);
-            setLeft(carousel.scrollLeft - (carousel.clientWidth));
-            if (count > 0) {             
-                setCount(count - 1);
-                initInterval(1);
-            }
+    function onPrev()
+    {
+        if (selInd > 0) {
+            setSelInd(selInd - 1);
+        }
+        else {
+            setSelInd(props.images.length - 1);
         }
     }
 
     return (
-        <div className={`${style.carouselFullContainer}`} id="#none">
-            <div className={`${style.maincarouselFull}`} id="mainCarouselFull">
-                {
-                    props.childrens.map(item => {
-                        return (
-                            <div key={Guid.create().toString()} className={`${style.carouselFullItemImage}`}>
-                                {item.children}
-                            </div>
-                        )
-                    })
-                }
+        <div className="w-screen max-h-[90vh] h-[90vh] overflow-hidden relative">
+            <img alt="bg" src={props.images[selInd]} 
+                    className={`w-full h-full aspect-square
+                    mm:object-contain sm:object-contain md:object-contain lg:object-contain xl:object-cover object-cover`} />
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-between px-[2vw]">
+                <img alt="prev" src={prev} className="w-[48px] h-[48px] cursor-pointer" onClick={onPrev} />
+                <img alt="next" src={next} className="w-[48px] h-[48px] cursor-pointer" onClick={onNext} />
             </div>
-            <div className={`${style.npbuttonContainer}`}>
-                <button className={`${style.npbutton} ${left === 0 ? "hidden" : "flex"}`} onClick={onPrev}>
-                    <img alt="next" src={prev} />
-                </button>
-                <button className={`${style.npbutton} ml-auto`} onClick={onNext}>
-                    <img alt="next" src={next} />
-                </button>
-            </div>
-            <div className={`${style.counterContainer} z-[100]`}>
-                <div className={`${style.bodyContainer}`}>
+            <div className="absolute bottom-0 left-0 w-full flex items-center justify-center pb-[2vw]">
+                <div className="bg-white rounded-[15px] px-[1vw] py-[0.4vw] flex gap-[0.5vw]">
                     {
-                        props.childrens.map((item : any, key: number) => {
+                        props.images.map((item, index) => {
                             return (
-                                <div key={key} className={`${style.bodyItem} ${key === count ? style.selected : null}`}></div>
+                                <div key={index} 
+                                className={`${selInd === index ? "bg-cherry-200" : "border border-cherry-200"} rounded-full w-[20px] h-[20px]`}></div>
                             )
                         })
                     }

@@ -44,7 +44,7 @@ export const ForpartnersView: React.FC = () => {
             </aside>
             <aside className={`${style.fourthContainer}`}>
                 <div className={`${style.extendGridContainer}`}>
-                    <img alt="bg10" src={bg10} className={`${style.image}`} />
+                    <img alt="bg10" src={bg10} className={`rounded-md object-contain h-[400px]`} />
                     <div className={`${style.titleContainer}`}>
                         <p className={`${style.title}`}>{t("A qualified team of developers, designers, designers and marketers works on the creation of products. All models of our products are unique, because they are approved by the most demanding experts - kids.")}</p>
                     </div>
@@ -95,7 +95,7 @@ export const ForpartnersView: React.FC = () => {
                     </div>
                 </div>
                 <div className={`${style.imageContainer}`}>
-                    <img alt="mother2" src={mother2} className={`${style.imageItem}`} />
+                    <img alt="mother2" src={mother2} className={`rounded-md object-contain h-[400px]`} />
                 </div>
             </aside>
         </section>

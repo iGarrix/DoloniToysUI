@@ -5,6 +5,6 @@ export interface ICarousel {
 }
 
 export interface ICarouselItem {
-    children: ReactNode,
+    children: any,
     // key: string,
 }

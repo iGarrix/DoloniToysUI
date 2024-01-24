@@ -25,3 +25,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar-track {
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgb(0 0 0 / 0.8);
+  
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0px;
+	background-color: #b3b3b3;
+}

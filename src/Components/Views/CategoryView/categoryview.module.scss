@@ -1,68 +1,68 @@
 .catview {
-    @apply w-full flex flex-col bg-light items-center;
-    padding-top: 2vw;
-    gap: 2vw;
+	@apply w-full flex flex-col bg-light items-center;
+	padding-top: 2vw;
+	gap: 2vw;
 
-    .title {
-        @apply text-3xl font-bold;
-    }
+	.title {
+		@apply text-3xl font-bold;
+	}
 
-    .wrapper {
-        @apply flex justify-center bg-bluesky-100 w-full h-full relative;
-        padding-top: 4vw;
-        padding-bottom: 4vw;
+	.wrapper {
+		@apply flex flex-col items-center justify-center bg-bluesky-100 w-full h-full relative;
+		padding-top: 2vw;
+		padding-bottom: 4vw;
 
-        .gridView {
-            @apply grid grid-cols-4 z-10;
-            gap: 1.5vw;
-        }
-    }
+		.gridView {
+			@apply grid grid-cols-4 z-10;
+			gap: 1.5vw;
+		}
+	}
 }
 
 // Adaptive Size [MM]
-@media (min-width: 310px) and (max-width: 640px) {    
-    .catview {
-        .wrapper {
-            .gridView {
-                @apply grid-cols-1;
-                gap: 2rem;
-            }
-        }
-    }
+@media (min-width: 310px) and (max-width: 640px) {
+	.catview {
+		.wrapper {
+			.gridView {
+				@apply grid-cols-1;
+				gap: 2rem;
+			}
+		}
+	}
 }
 
 // Adaptive Size [SM]
-@media (min-width: 640px) and (max-width: 767px) {       
-    .catview {
-        .wrapper {
-            .gridView {
-                @apply grid-cols-2;
-                gap: 2rem;
-            }
-        }
-    }
+@media (min-width: 640px) and (max-width: 767px) {
+	.catview {
+		.wrapper {
+			.gridView {
+				@apply grid-cols-2;
+				gap: 2rem;
+			}
+		}
+	}
 }
 
 // Adaptive Size [MD]
-@media (min-width: 768px) and (max-width: 1023px) {     
-    .catview {
-        .wrapper {
-            .gridView {
-                @apply grid-cols-2;
-                gap: 1rem;
-            }
-        }
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+	.catview {
+		.wrapper {
+			.gridView {
+				@apply grid-cols-2;
+				gap: 1rem;
+			}
+		}
+	}
 }
 
 // Adaptive Size [LG]
 @media (min-width: 1024px) and (max-width: 1279px) {
-    .catview {
-        .wrapper {
-            .gridView {
-                @apply grid-cols-3;
-                gap: 2rem;
-            }
-        }
-    }
+	.catview {
+		.wrapper {
+			.gridView {
+				@apply grid-cols-3;
+				gap: 2rem;
+			}
+		}
+	}
 }

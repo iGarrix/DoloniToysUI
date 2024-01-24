@@ -1,6 +1,7 @@
 export interface IGetProductFilter {
-    categoryTitle: string,
-    filterParam: string,
-    page: number,
-    take: number,
+	categoryTitle: string;
+	filterParam: string;
+	page: number;
+	take: number;
+	isEco?: boolean;
 }

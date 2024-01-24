@@ -1,4 +1,3 @@
-
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
@@ -28,78 +27,112 @@ import { useAppDispatch, useAppSelector } from './Redux/hooks/hooks';
 import { GetAdmin } from './Redux/reducers/accountReducer/actions';
 
 function App() {
+	const dispatch = useAppDispatch();
 
-  const dispatch = useAppDispatch();
+	const [lang, setLang] = useState(() => {
+		const local_lang = localStorage.getItem('lang');
+		if (local_lang) {
+			return local_lang;
+		} else {
+			localStorage.setItem('lang', LanguageType.EN);
+			return LanguageType.EN;
+		}
+	});
 
-  const [lang, setLang] = useState(() => {
-    const local_lang = localStorage.getItem("lang");
-    if (local_lang) {
-        return local_lang;
-    }
-    else {
-      localStorage.setItem("lang", LanguageType.EN);
-      return LanguageType.EN;
-    }
-  });
+	useEffect(() => {
+		if (lang) {
+			i18n.changeLanguage(lang);
+		} else {
+			i18n.changeLanguage(LanguageType.EN);
+		}
+	}, [lang]);
 
-  useEffect(() => {
-    if (lang) {   
-      i18n.changeLanguage(lang);
-    }
-    else {
-      i18n.changeLanguage(LanguageType.EN);
-    }
-  }, [lang]);
+	async function login() {
+		if (localStorage.getItem('token')) {
+			await dispatch(GetAdmin());
+		}
+	}
 
-  async function login() {
-    if (localStorage.getItem('token')) {
-      await dispatch(GetAdmin());
-    }
-  }
+	useEffect(() => {
+		login();
+	}, []);
 
-  useEffect(() => {
-    login(); 
-  }, []);
+	const { auth, isLoading, error } = useAppSelector(
+		(state) => state.accountReducer
+	);
 
-  const { auth, isLoading, error } = useAppSelector(state => state.accountReducer);
+	return (
+		<main className="min-h-screen h-screen overflow-x-hidden scroll scroll-smooth bg-dark">
+			<Routes>
+				<Route path="/" element={<LoaderLayout />}>
+					<Route path="/" element={<MainLayout />}>
+						<Route index element={<MainView />} />
+						<Route
+							path="catalog"
+							element={<CategoryView isEco={false} />}></Route>
+						<Route
+							path="catalog/eco"
+							element={<CategoryView isEco={true} />}></Route>
+						<Route
+							path="catalog/:category"
+							element={<CatalogView isEco={false} />}
+						/>
+						<Route
+							path="catalog/eco/:category"
+							element={<CatalogView isEco={true} />}
+						/>
 
-  return (
-    <main className='min-h-screen h-screen overflow-x-hidden scroll scroll-smooth bg-dark'>
-      <Routes>
-        <Route path='/' element={<LoaderLayout />}>
-          <Route path='/' element={<MainLayout />} >
-              <Route index element={<MainView />} />
-              <Route path='catalog' element={<CategoryView />}></Route>
-              <Route path='catalog/:category' element={<CatalogView />}/>
-              {/* <Route path='catalog' element={<CatalogView />} >
+						{/* <Route path='catalog' element={<CatalogView />} >
                 <Route path=':category' element={<CatalogView />}/>
               </Route> */}
-              <Route path='product/:article' element={<ProductDetails />}/>
-              <Route path='about' element={<AboutusView />} />
-              <Route path='for-partners' element={<ForpartnersView />} />
-              <Route path='contact-us' element={<ContactsView />} />
-          </Route>
+						<Route path="product/:article" element={<ProductDetails />} />
+						<Route path="about" element={<AboutusView />} />
+						<Route path="for-partners" element={<ForpartnersView />} />
+						<Route path="contact-us" element={<ContactsView />} />
+					</Route>
 
+					<Route
+						path="login"
+						element={
+							<AuthLayout
+								isPredicate={
+									auth === null && localStorage.getItem('token') === null
+								}
+								elseReturn="/">
+								<Outlet />
+							</AuthLayout>
+						}>
+						<Route index element={<LoginView />} />
+					</Route>
+					<Route
+						path="for-admins"
+						element={
+							<AuthLayout
+								isPredicate={
+									auth !== null || localStorage.getItem('token') !== null
+								}
+								elseReturn="/login">
+								<AdminLayout />
+							</AuthLayout>
+						}>
+						<Route index element={<ManageProductView />} />
+						<Route path="categories" element={<ManageCategoryView />} />
+						<Route
+							path="categories/edit-category/:title"
+							element={<EditCategoryView />}
+						/>
+						<Route path="reports" element={<ManageContactView />} />
+						<Route path="create-category" element={<CreateCategoryView />} />
+						<Route path="create-product" element={<CreateProductView />} />
+						<Route path="edit-product/:article" element={<EditProductView />} />
+					</Route>
 
-          <Route path='login' element={<AuthLayout isPredicate={auth === null && localStorage.getItem("token") === null} elseReturn="/" ><Outlet/></AuthLayout>} >
-            <Route index element={<LoginView />} />
-          </Route>
-          <Route path='for-admins' element={<AuthLayout isPredicate={auth !== null || localStorage.getItem("token") !== null} elseReturn="/login" ><AdminLayout /></AuthLayout>} >
-            <Route index element={<ManageProductView />} />
-            <Route path="categories" element={<ManageCategoryView />} />
-            <Route path="categories/edit-category/:title" element={<EditCategoryView />} />
-            <Route path="reports" element={<ManageContactView />} />
-            <Route path="create-category" element={<CreateCategoryView />} />
-            <Route path="create-product" element={<CreateProductView />} />
-            <Route path="edit-product/:article" element={<EditProductView />} />
-          </Route>
-
-          <Route path='*' element={<Oops />} />
-        </Route>
-        <Route path='*' element={<Oops />} />
-      </Routes>
-    </main>
-  );
+					<Route path="*" element={<Oops />} />
+				</Route>
+				<Route path="*" element={<Oops />} />
+			</Routes>
+		</main>
+	);
 }
 
 export default App;

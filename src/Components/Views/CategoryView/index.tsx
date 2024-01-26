@@ -19,7 +19,9 @@ export const CategoryView: React.FC<any> = (props: { isEco: boolean }) => {
 	const { categories } = useAppSelector((state) => state.categoryReducer);
 
 	async function fetchCategory(page: number, take: number) {
-		await dispatch(GetAllCategory(page, take, props.isEco));
+		await dispatch(
+			GetAllCategory(page, take, props.isEco ? 'eco' : 'standart')
+		);
 	}
 
 	useEffect(() => {

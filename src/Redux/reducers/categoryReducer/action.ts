@@ -15,7 +15,7 @@ import {
 } from './types';
 
 export const GetAllCategory =
-	(page: number, take: number, isEco?: boolean) =>
+	(page: number, take: number, isEco?: string) =>
 	async (dispatch: AppDispatch) => {
 		try {
 			dispatch(categorySlice.actions.initLoading());

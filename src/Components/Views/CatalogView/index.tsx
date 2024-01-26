@@ -12,10 +12,7 @@ import {
 import { LanguageType, ReplaceArticle } from '../../../Configurations/globals';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks/hooks';
 import { GetAllCategory } from '../../../Redux/reducers/categoryReducer/action';
-import {
-	GetAllFilteredProduct,
-	GetAllProduct,
-} from '../../../Redux/reducers/productReducer/action';
+import { GetAllFilteredProduct } from '../../../Redux/reducers/productReducer/action';
 import { Paginator } from '../../Common/Paginator';
 import { ProductCard } from '../../CustomComponent/Cards/ProductCard';
 
@@ -27,9 +24,7 @@ export const CatalogView: React.FC<any> = (props: { isEco: boolean }) => {
 	const nav = useNavigate();
 	const [isOpen, setOpen] = useState(true);
 	const { categories } = useAppSelector((state) => state.categoryReducer);
-	const { products, error, isLoading, successMessage } = useAppSelector(
-		(state) => state.productReducer
-	);
+	const { products } = useAppSelector((state) => state.productReducer);
 	const dispatch = useAppDispatch();
 
 	const [isPending, startTransition] = useTransition();
@@ -39,14 +34,16 @@ export const CatalogView: React.FC<any> = (props: { isEco: boolean }) => {
 	}
 
 	async function fetchCategory(page: number, take: number) {
-		await dispatch(GetAllCategory(page, take, props.isEco));
+		await dispatch(
+			GetAllCategory(page, take, props.isEco ? 'eco' : 'standart')
+		);
 	}
 
 	useEffect(() => {
 		fetchCategory(1, 1000);
 		if (category) {
 			const request: IGetProductFilter = {
-				categoryTitle: category.replace('Eco ', '').replace('Еко ', ''),
+				categoryTitle: category,
 				filterParam: ExpressionTypes.FilterRatingOrder,
 				page: 1,
 				take: 24,
@@ -69,9 +66,7 @@ export const CatalogView: React.FC<any> = (props: { isEco: boolean }) => {
 
 	async function Filter(filterParams: string, page: number) {
 		const request: IGetProductFilter = {
-			categoryTitle: category
-				? category.replace('Eco ', '').replace('Еко ', '')
-				: '*',
+			categoryTitle: category ? category : '*',
 			filterParam: filterParams,
 			page: page,
 			take: 24,

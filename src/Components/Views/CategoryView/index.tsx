@@ -45,8 +45,8 @@ export const CategoryView: React.FC<any> = (props: { isEco: boolean }) => {
 				<div className={style.gridView}>
 					<div className="col-span-full grid grid-cols-12 gap-[1rem] mm:flex mm:flex-col sm:grid">
 						<button
-							className={`text-center border-[3px] font-black text-2xl py-[.5rem] border-dark rounded-xl flex items-center justify-center col-span-5 col-start-2 px-[1rem] ${
-								props.isEco ? '' : 'bg-yellow-400'
+							className={`text-center font-black text-2xl py-[.5rem] rounded-xl flex items-center justify-center col-span-5 col-start-2 px-[1rem] ${
+								props.isEco ? 'bg-neutral-400/70' : 'bg-lime-400'
 							}`}
 							onClick={() => {
 								nav('/catalog');
@@ -54,8 +54,8 @@ export const CategoryView: React.FC<any> = (props: { isEco: boolean }) => {
 							{t(`Standart Product Line`)}
 						</button>
 						<button
-							className={`text-center border-[3px] font-black text-2xl py-[.5rem] border-dark rounded-xl flex items-center justify-center col-span-5 px-[1rem] ${
-								props.isEco ? 'bg-lime-400' : ''
+							className={`text-center font-black text-2xl py-[.5rem] rounded-xl flex items-center justify-center col-span-5 px-[1rem] ${
+								props.isEco ? 'bg-lime-400' : 'bg-neutral-400/70'
 							}`}
 							onClick={() => {
 								nav('/catalog/eco');
